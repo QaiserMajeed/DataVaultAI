@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Data Valut AI - Enterprise software development and AI solutions. GDPR-compliant, secure data processing, and predictive analytics for global businesses.">
-    <meta name="keywords" content="AI solutions, GDPR compliant software, enterprise AI, data analytics, machine learning, secure data processing">
-    <title>Data Valut AI | Enterprise AI & Software Solutions</title>
+    <meta name="description" content="Data Valut AI - FullStack AI Development. Build intelligent applications with cutting-edge AI models, modern frameworks, and scalable architecture.">
+    <meta name="keywords" content="FullStack AI development, AI applications, LLM integration, machine learning, AI engineering, intelligent systems">
+    <title>Data Valut AI | FullStack AI Development</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,35 +18,42 @@
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
                 }
             }
         }
     </script>
 
     <style>
-        @keyframes gradient-x {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        .mesh-gradient-light {
+            background:
+                radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(236, 72, 153, 0.3) 0px, transparent 50%);
+        }
+
+        .mesh-gradient-dark {
+            background:
+                radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.25) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.25) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.2) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(236, 72, 153, 0.25) 0px, transparent 50%);
         }
 
         .gradient-animate {
             background-size: 200% 200%;
-            animation: gradient-x 15s ease infinite;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         @keyframes fade-in-up {
@@ -63,29 +70,13 @@
         .fade-in-up {
             animation: fade-in-up 0.6s ease-out forwards;
         }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .mesh-gradient {
-            background:
-                radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.3) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 50%, rgba(236, 72, 153, 0.3) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 100%, rgba(139, 92, 246, 0.3) 0px, transparent 50%);
-        }
     </style>
 </head>
 
-<body class="font-sans antialiased bg-white text-slate-900">
+<body class="font-sans antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/70 backdrop-blur-xl border-b border-slate-200/50 z-50">
+    <nav class="fixed top-0 w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 z-50 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
@@ -96,27 +87,38 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
                         </div>
-                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white dark:border-slate-900 animate-pulse"></div>
                     </div>
-                    <div class="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
+                    <div class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                         Data Valut AI
                     </div>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="#home" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Home</a>
-                    <a href="#services" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Services</a>
-                    <a href="#portfolio" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Portfolio</a>
-                    <a href="#technology" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Stack</a>
-                    <a href="#contact" class="ml-4 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full transition-all shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/50">
+                    <a href="#home" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Home</a>
+                    <a href="#services" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Services</a>
+                    <a href="#portfolio" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Portfolio</a>
+                    <a href="#technology" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Stack</a>
+
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ml-2">
+                        <svg id="sunIcon" class="w-5 h-5 text-slate-600 dark:text-slate-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <svg id="moonIcon" class="w-5 h-5 text-slate-600 dark:text-slate-300 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <a href="#contact" class="ml-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full transition-all shadow-lg shadow-blue-500/50 dark:shadow-blue-500/30 hover:shadow-xl">
                         Get Started
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
-                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-slate-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <svg class="w-6 h-6 text-slate-900 dark:text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
@@ -124,12 +126,16 @@
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl">
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl">
             <div class="px-4 py-4 space-y-2">
-                <a href="#home" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Home</a>
-                <a href="#services" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Services</a>
-                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Portfolio</a>
-                <a href="#technology" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Stack</a>
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Home</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Services</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Portfolio</a>
+                <a href="#technology" class="block px-3 py-2 text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Stack</a>
+                <button id="darkModeToggleMobile" class="w-full px-3 py-2 text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg text-left">
+                    <span class="dark:hidden">🌙 Dark Mode</span>
+                    <span class="hidden dark:inline">☀️ Light Mode</span>
+                </button>
                 <a href="#contact" class="block px-3 py-2 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-center">Get Started</a>
             </div>
         </div>
@@ -138,56 +144,56 @@
     <!-- Hero Section -->
     <section id="home" class="relative pt-32 pb-24 overflow-hidden">
         <!-- Animated Background -->
-        <div class="absolute inset-0 mesh-gradient opacity-60"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))]"></div>
+        <div class="absolute inset-0 mesh-gradient-light dark:mesh-gradient-dark opacity-60"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.05),rgba(0,0,0,0))]"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto space-y-8 fade-in-up">
                 <!-- Badge -->
-                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-slate-200 shadow-lg">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-full border border-slate-200 dark:border-slate-700 shadow-lg">
                     <span class="relative flex h-2 w-2">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                     </span>
-                    <span class="text-sm font-medium text-slate-700">Trusted by Global Enterprises</span>
+                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">FullStack AI Development Platform</span>
                 </div>
 
                 <!-- Main Headline -->
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                    <span class="block text-slate-900">Build the Future</span>
+                    <span class="block text-slate-900 dark:text-white">Build AI-Powered</span>
                     <span class="block mt-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                        With AI That Scales
+                        FullStack Applications
                     </span>
                 </h1>
 
-                <p class="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-                    Enterprise-grade AI solutions and software development that transform businesses. GDPR-compliant, secure, and built for the modern era.
+                <p class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl mx-auto">
+                    End-to-end AI development from intelligent backends to dynamic frontends. Build, deploy, and scale AI applications with modern frameworks and LLM integration.
                 </p>
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <a href="#contact" class="group inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full transition-all shadow-2xl shadow-blue-500/50 hover:shadow-blue-500/70 hover:-translate-y-0.5">
-                        Start Your Project
+                    <a href="#contact" class="group inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full transition-all shadow-2xl shadow-blue-500/50 dark:shadow-blue-500/30 hover:shadow-blue-500/70 hover:-translate-y-0.5">
+                        Start Building AI
                         <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                     </a>
-                    <a href="#portfolio" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-slate-700 bg-white hover:bg-slate-50 rounded-full border-2 border-slate-200 transition-all shadow-lg hover:shadow-xl">
-                        View Case Studies
+                    <a href="#portfolio" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full border-2 border-slate-200 dark:border-slate-700 transition-all shadow-lg hover:shadow-xl">
+                        View AI Projects
                     </a>
                 </div>
 
                 <!-- Trust Indicators -->
                 <div class="flex flex-wrap items-center justify-center gap-6 pt-8">
-                    <div class="flex items-center space-x-2 text-sm text-slate-600">
-                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span class="font-medium">GDPR Compliant</span>
-                    </div>
-                    <div class="flex items-center space-x-2 text-sm text-slate-600">
+                    <div class="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
                         <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span class="font-medium">SOC 2 Certified</span>
+                        <span class="font-medium">LLM Integration</span>
                     </div>
-                    <div class="flex items-center space-x-2 text-sm text-slate-600">
+                    <div class="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
                         <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span class="font-medium">ISO 27001</span>
+                        <span class="font-medium">Modern Frameworks</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="font-medium">Production Ready</span>
                     </div>
                 </div>
             </div>
@@ -195,28 +201,28 @@
             <!-- Floating Cards -->
             <div class="relative mt-20 max-w-5xl mx-auto">
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                    <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Custom Development</h3>
-                        <p class="text-sm text-slate-600">Scalable, cloud-native solutions tailored to your needs</p>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">AI Backend</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">FastAPI, LangChain, vector databases</p>
                     </div>
 
                     <div class="bg-gradient-to-br from-purple-500 to-pink-500 p-6 rounded-2xl shadow-2xl hover:shadow-purple-500/50 transition-all hover:-translate-y-1 transform md:translate-y-4">
                         <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">AI & ML Solutions</h3>
-                        <p class="text-sm text-purple-100">Intelligent automation and predictive analytics</p>
+                        <h3 class="text-lg font-bold text-white mb-2">LLM Integration</h3>
+                        <p class="text-sm text-purple-100">GPT-4, Claude, Llama, custom models</p>
                     </div>
 
-                    <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                    <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Data Security</h3>
-                        <p class="text-sm text-slate-600">Enterprise-grade security and compliance</p>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Modern Frontend</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">React, Next.js, TypeScript, Tailwind</p>
                     </div>
                 </div>
             </div>
@@ -224,116 +230,116 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-32 bg-slate-50">
+    <section id="services" class="py-32 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">What We Do</span>
-                <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-slate-900">Services Built for Scale</h2>
-                <p class="text-xl text-slate-600">End-to-end technology solutions for modern enterprises</p>
+                <span class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-semibold rounded-full mb-4">FullStack AI Services</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-slate-900 dark:text-white">End-to-End AI Development</h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400">From intelligent APIs to interactive UIs, we build complete AI solutions</p>
             </div>
 
             <!-- Bento Grid Services -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Software Development -->
-                <div class="group bg-white p-8 rounded-3xl border border-slate-200 hover:border-blue-300 hover:shadow-2xl transition-all duration-300 lg:col-span-2">
+                <!-- AI Backend Development -->
+                <div class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-2xl transition-all duration-300 lg:col-span-2">
                     <div class="flex items-start justify-between mb-6">
                         <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         </div>
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">Popular</span>
+                        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-semibold rounded-full">Core Service</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Custom Software Development</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">Build scalable, cloud-native applications with modern architecture. From microservices to serverless, we deliver enterprise-grade solutions.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">AI Backend Development</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Build intelligent APIs with LLM integration, vector search, and AI model serving. FastAPI, LangChain, and modern Python frameworks.</p>
 
                     <div class="space-y-2 mb-6">
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Microservices & cloud-native architecture
+                            LLM API integration (OpenAI, Anthropic, HuggingFace)
                         </div>
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Full-stack: React, Node.js, Python, Go
+                            Vector databases (Pinecone, Weaviate, ChromaDB)
                         </div>
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            CI/CD, DevOps, and infrastructure automation
+                            RAG pipelines & semantic search
                         </div>
                     </div>
                 </div>
 
-                <!-- AI & ML -->
+                <!-- Frontend AI Integration -->
                 <div class="group bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 p-8 rounded-3xl shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 text-white">
                     <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">AI & Machine Learning</h3>
-                    <p class="text-purple-100 mb-6 leading-relaxed">Transform your business with intelligent automation, predictive analytics, and cutting-edge ML models.</p>
+                    <h3 class="text-2xl font-bold mb-3">AI-Powered Frontends</h3>
+                    <p class="text-purple-100 mb-6 leading-relaxed">Build dynamic UIs with real-time AI interactions, streaming responses, and intelligent components.</p>
 
                     <div class="space-y-2">
                         <div class="flex items-center text-sm">
                             <svg class="w-4 h-4 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Predictive models & forecasting
+                            React, Next.js, TypeScript
                         </div>
                         <div class="flex items-center text-sm">
                             <svg class="w-4 h-4 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            NLP, computer vision, LLMs
+                            Real-time streaming UI
                         </div>
                         <div class="flex items-center text-sm">
                             <svg class="w-4 h-4 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Ethical AI & explainability
+                            Chat interfaces & AI widgets
                         </div>
                     </div>
                 </div>
 
-                <!-- Data Strategy -->
-                <div class="group bg-white p-8 rounded-3xl border border-slate-200 hover:border-green-300 hover:shadow-2xl transition-all duration-300">
+                <!-- ML Model Development -->
+                <div class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-green-300 dark:hover:border-green-500 hover:shadow-2xl transition-all duration-300">
                     <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Data Engineering</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">Build modern data platforms that unlock insights and drive decisions.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">ML Model Development</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Custom models, fine-tuning, and deployment pipelines.</p>
 
                     <div class="space-y-2">
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Data lakes & warehouses
+                            LLM fine-tuning & LoRA
                         </div>
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Real-time streaming pipelines
+                            PyTorch, TensorFlow
                         </div>
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            GDPR-compliant architecture
+                            Model serving & MLOps
                         </div>
                     </div>
                 </div>
 
-                <!-- Cloud Infrastructure -->
-                <div class="group bg-white p-8 rounded-3xl border border-slate-200 hover:border-orange-300 hover:shadow-2xl transition-all duration-300 lg:col-span-2">
+                <!-- FullStack AI Apps -->
+                <div class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-500 hover:shadow-2xl transition-all duration-300 lg:col-span-2">
                     <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Cloud & DevOps</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">Multi-cloud infrastructure, automation, and modern DevOps practices for high-velocity teams.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">Complete AI Applications</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Build production-ready AI applications with complete frontend-backend integration, authentication, and deployment.</p>
 
                     <div class="grid sm:grid-cols-2 gap-2">
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Kubernetes & containers
+                            End-to-end architecture
                         </div>
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Infrastructure as Code
+                            Auth & user management
                         </div>
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Multi-cloud: AWS, Azure, GCP
+                            Database & caching
                         </div>
-                        <div class="flex items-center text-sm text-slate-700">
+                        <div class="flex items-center text-sm text-slate-700 dark:text-slate-300">
                             <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Security & compliance
+                            Cloud deployment & CI/CD
                         </div>
                     </div>
                 </div>
@@ -342,55 +348,57 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-32 bg-white">
+    <section id="portfolio" class="py-32 bg-white dark:bg-slate-950 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="inline-block px-4 py-2 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Success Stories</span>
-                <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-slate-900">Real Impact, Real Results</h2>
-                <p class="text-xl text-slate-600">Delivering measurable outcomes for global enterprises</p>
+                <span class="inline-block px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-sm font-semibold rounded-full mb-4">AI Projects</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-slate-900 dark:text-white">Built with AI</h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400">Real-world AI applications deployed at scale</p>
             </div>
 
             <!-- Featured Case Study -->
-            <div class="mb-12 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl overflow-hidden border border-blue-100">
+            <div class="mb-12 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-3xl overflow-hidden border border-blue-100 dark:border-blue-900/30">
                 <div class="p-8 lg:p-12">
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1.5 text-xs font-semibold rounded-full bg-blue-500 text-white">AI & ML</span>
-                        <span class="px-3 py-1.5 text-xs font-semibold rounded-full bg-purple-500 text-white">FinTech</span>
+                        <span class="px-3 py-1.5 text-xs font-semibold rounded-full bg-blue-500 text-white">FullStack AI</span>
+                        <span class="px-3 py-1.5 text-xs font-semibold rounded-full bg-purple-500 text-white">LLM Integration</span>
                     </div>
 
-                    <h3 class="text-3xl lg:text-4xl font-bold mb-6 text-slate-900">Real-Time AI Fraud Detection Platform</h3>
+                    <h3 class="text-3xl lg:text-4xl font-bold mb-6 text-slate-900 dark:text-white">AI-Powered Document Intelligence Platform</h3>
 
                     <!-- Metrics -->
                     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-                        <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl">
-                            <div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">30%</div>
-                            <div class="text-sm text-slate-600 font-medium">Faster Detection</div>
+                        <div class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm p-6 rounded-2xl">
+                            <div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">10M+</div>
+                            <div class="text-sm text-slate-600 dark:text-slate-400 font-medium">Documents Processed</div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl">
-                            <div class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">$2.4M</div>
-                            <div class="text-sm text-slate-600 font-medium">Annual Savings</div>
+                        <div class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm p-6 rounded-2xl">
+                            <div class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">95%</div>
+                            <div class="text-sm text-slate-600 dark:text-slate-400 font-medium">Accuracy Rate</div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl">
-                            <div class="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">99.7%</div>
-                            <div class="text-sm text-slate-600 font-medium">Model Accuracy</div>
+                        <div class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm p-6 rounded-2xl">
+                            <div class="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">80%</div>
+                            <div class="text-sm text-slate-600 dark:text-slate-400 font-medium">Time Saved</div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl">
-                            <div class="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">65K</div>
-                            <div class="text-sm text-slate-600 font-medium">TPS at Peak</div>
+                        <div class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm p-6 rounded-2xl">
+                            <div class="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">&lt;2s</div>
+                            <div class="text-sm text-slate-600 dark:text-slate-400 font-medium">Response Time</div>
                         </div>
                     </div>
 
                     <div class="prose prose-lg max-w-none">
-                        <p class="text-slate-700 leading-relaxed mb-6">
-                            Built a cutting-edge real-time fraud detection system for a global FinTech platform processing millions of daily transactions. Using ensemble ML models (XGBoost, neural networks) on AWS serverless architecture, we achieved sub-500ms latency with explainable AI for regulatory compliance.
+                        <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                            Built a complete FullStack AI application combining GPT-4 for document understanding, vector search for semantic retrieval, and a React frontend with real-time streaming. Handles millions of documents with sub-second response times.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">Python</span>
-                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">TensorFlow</span>
-                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">AWS Lambda</span>
-                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">Kinesis</span>
-                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">DynamoDB</span>
+                            <span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Python</span>
+                            <span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">FastAPI</span>
+                            <span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">LangChain</span>
+                            <span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">GPT-4</span>
+                            <span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Pinecone</span>
+                            <span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">React</span>
+                            <span class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">TypeScript</span>
                         </div>
                     </div>
                 </div>
@@ -398,86 +406,86 @@
 
             <!-- Grid Case Studies -->
             <div class="grid lg:grid-cols-2 gap-8">
-                <!-- E-Commerce Platform -->
-                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-slate-300 transition-all">
+                <!-- AI Chat Application -->
+                <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:border-slate-300 dark:hover:border-slate-700 transition-all">
                     <div class="p-8">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">Software Dev</span>
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-700">Retail</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400">Real-Time AI</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">Chat Interface</span>
                         </div>
 
-                        <h3 class="text-2xl font-bold mb-4 text-slate-900">Enterprise E-Commerce Platform</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">AI Conversational Platform</h3>
 
                         <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-slate-50 p-4 rounded-xl">
-                                <div class="text-2xl font-bold text-blue-600">99.99%</div>
-                                <div class="text-xs text-slate-600">Uptime</div>
+                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">1M+</div>
+                                <div class="text-xs text-slate-600 dark:text-slate-400">Daily Messages</div>
                             </div>
-                            <div class="bg-slate-50 p-4 rounded-xl">
-                                <div class="text-2xl font-bold text-purple-600">5x</div>
-                                <div class="text-xs text-slate-600">Traffic Growth</div>
+                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">50K</div>
+                                <div class="text-xs text-slate-600 dark:text-slate-400">Active Users</div>
                             </div>
-                            <div class="bg-slate-50 p-4 rounded-xl">
-                                <div class="text-2xl font-bold text-green-600">85%</div>
-                                <div class="text-xs text-slate-600">Revenue ↑</div>
+                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-green-600 dark:text-green-400">98%</div>
+                                <div class="text-xs text-slate-600 dark:text-slate-400">Satisfaction</div>
                             </div>
-                            <div class="bg-slate-50 p-4 rounded-xl">
-                                <div class="text-2xl font-bold text-orange-600">40%</div>
-                                <div class="text-xs text-slate-600">Faster Checkout</div>
+                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-orange-600 dark:text-orange-400">24/7</div>
+                                <div class="text-xs text-slate-600 dark:text-slate-400">Availability</div>
                             </div>
                         </div>
 
-                        <p class="text-slate-600 text-sm mb-4">
-                            Modernized monolithic platform with microservices architecture. 150+ stores, zero downtime during peak sales, seamless ERP integration.
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Streaming AI chat with Next.js, WebSockets, and Claude API. Real-time responses, context-aware conversations, multi-turn dialogue.
                         </p>
 
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">Java</span>
-                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">React</span>
-                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">Kafka</span>
-                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">Kubernetes</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300">Next.js</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300">Claude API</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300">WebSockets</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300">Redis</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Healthcare Data Platform -->
-                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-slate-300 transition-all">
+                <!-- ML Model Deployment -->
+                <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:border-slate-300 dark:hover:border-slate-700 transition-all">
                     <div class="p-8">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700">Data Platform</span>
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-700">Healthcare</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400">Custom Model</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400">Computer Vision</span>
                         </div>
 
-                        <h3 class="text-2xl font-bold mb-4 text-slate-900">HIPAA-Compliant Data Platform</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Visual AI Recognition System</h3>
 
                         <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-slate-50 p-4 rounded-xl">
-                                <div class="text-2xl font-bold text-blue-600">60%</div>
-                                <div class="text-xs text-slate-600">Faster Reporting</div>
+                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">99.2%</div>
+                                <div class="text-xs text-slate-600 dark:text-slate-400">Accuracy</div>
                             </div>
-                            <div class="bg-slate-50 p-4 rounded-xl">
-                                <div class="text-2xl font-bold text-green-600">100%</div>
-                                <div class="text-xs text-slate-600">Compliant</div>
+                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-green-600 dark:text-green-400">100ms</div>
+                                <div class="text-xs text-slate-600 dark:text-slate-400">Inference</div>
                             </div>
-                            <div class="bg-slate-50 p-4 rounded-xl">
-                                <div class="text-2xl font-bold text-purple-600">$800K</div>
-                                <div class="text-xs text-slate-600">Annual Savings</div>
+                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">5M</div>
+                                <div class="text-xs text-slate-600 dark:text-slate-400">Images/Day</div>
                             </div>
-                            <div class="bg-slate-50 p-4 rounded-xl">
-                                <div class="text-2xl font-bold text-indigo-600">15TB</div>
-                                <div class="text-xs text-slate-600">Data Migrated</div>
+                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Auto</div>
+                                <div class="text-xs text-slate-600 dark:text-slate-400">Scaling</div>
                             </div>
                         </div>
 
-                        <p class="text-slate-600 text-sm mb-4">
-                            Migrated 15+ legacy systems to cloud data vault with HIPAA/GDPR compliance. 1.2M patient records, zero downtime migration.
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Fine-tuned YOLO model for real-time object detection. Deployed with TorchServe on Kubernetes with auto-scaling.
                         </p>
 
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">GCP</span>
-                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">BigQuery</span>
-                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">HL7 FHIR</span>
-                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">Python</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300">PyTorch</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300">TorchServe</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300">Kubernetes</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300">FastAPI</span>
                         </div>
                     </div>
                 </div>
@@ -491,90 +499,89 @@
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-4">Our Stack</span>
-                <h2 class="text-4xl sm:text-5xl font-bold mb-6">Built with Modern Tech</h2>
-                <p class="text-xl text-slate-300">Cutting-edge tools and frameworks for enterprise solutions</p>
+                <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-4">Tech Stack</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6">FullStack AI Technologies</h2>
+                <p class="text-xl text-slate-300">Modern frameworks and tools for building AI applications</p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
-                    <div class="text-3xl mb-4">☁️</div>
-                    <h3 class="text-lg font-bold mb-3">Cloud</h3>
+                    <div class="text-3xl mb-4">🤖</div>
+                    <h3 class="text-lg font-bold mb-3">LLM APIs</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">AWS</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Azure</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">GCP</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">OpenAI</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Anthropic</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Cohere</span>
                     </div>
                 </div>
 
                 <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
-                    <div class="text-3xl mb-4">⚡</div>
-                    <h3 class="text-lg font-bold mb-3">Languages</h3>
+                    <div class="text-3xl mb-4">🐍</div>
+                    <h3 class="text-lg font-bold mb-3">AI Backend</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Python</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Go</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">TypeScript</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Rust</span>
-                    </div>
-                </div>
-
-                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
-                    <div class="text-3xl mb-4">🧠</div>
-                    <h3 class="text-lg font-bold mb-3">AI/ML</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">PyTorch</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">TensorFlow</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">FastAPI</span>
                         <span class="px-3 py-1 text-xs bg-white/10 rounded-full">LangChain</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Python</span>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">⚛️</div>
+                    <h3 class="text-lg font-bold mb-3">Frontend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">React</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Next.js</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">TypeScript</span>
                     </div>
                 </div>
 
                 <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
                     <div class="text-3xl mb-4">🗄️</div>
-                    <h3 class="text-lg font-bold mb-3">Data</h3>
+                    <h3 class="text-lg font-bold mb-3">Vector DBs</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">PostgreSQL</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">MongoDB</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Redis</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Pinecone</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Weaviate</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Chroma</span>
                     </div>
                 </div>
 
                 <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
-                    <div class="text-3xl mb-4">🚀</div>
-                    <h3 class="text-lg font-bold mb-3">DevOps</h3>
+                    <div class="text-3xl mb-4">🧠</div>
+                    <h3 class="text-lg font-bold mb-3">ML Frameworks</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Kubernetes</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">PyTorch</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">TensorFlow</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Transformers</span>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">☁️</div>
+                    <h3 class="text-lg font-bold mb-3">Deployment</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Vercel</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">AWS</span>
                         <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Docker</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Terraform</span>
                     </div>
                 </div>
 
                 <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
-                    <div class="text-3xl mb-4">📊</div>
-                    <h3 class="text-lg font-bold mb-3">Analytics</h3>
+                    <div class="text-3xl mb-4">💬</div>
+                    <h3 class="text-lg font-bold mb-3">RAG Tools</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Kafka</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Spark</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Airflow</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">LlamaIndex</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Haystack</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">txtai</span>
                     </div>
                 </div>
 
                 <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
                     <div class="text-3xl mb-4">🎨</div>
-                    <h3 class="text-lg font-bold mb-3">Frontend</h3>
+                    <h3 class="text-lg font-bold mb-3">UI Libraries</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">React</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Next.js</span>
                         <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Tailwind</span>
-                    </div>
-                </div>
-
-                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
-                    <div class="text-3xl mb-4">🔐</div>
-                    <h3 class="text-lg font-bold mb-3">Security</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">GDPR</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">SOC 2</span>
-                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">ISO 27001</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">shadcn/ui</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Framer</span>
                     </div>
                 </div>
             </div>
@@ -586,9 +593,9 @@
         <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
 
         <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl sm:text-5xl font-bold mb-6">Let's Build Something Amazing</h2>
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6">Let's Build AI Together</h2>
             <p class="text-xl text-purple-100 mb-12 max-w-2xl mx-auto">
-                Ready to transform your business with cutting-edge AI and software solutions? Let's talk.
+                Ready to build intelligent FullStack applications? Let's discuss your AI project.
             </p>
 
             <div class="grid sm:grid-cols-3 gap-6 mb-12">
@@ -600,20 +607,20 @@
 
                 <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
                     <div class="text-3xl mb-3">💬</div>
-                    <h3 class="font-bold mb-2">Schedule a Call</h3>
-                    <p class="text-purple-100">Book a free consultation</p>
+                    <h3 class="font-bold mb-2">Schedule</h3>
+                    <p class="text-purple-100">Free AI Consultation</p>
                 </div>
 
                 <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
-                    <div class="text-3xl mb-3">📍</div>
-                    <h3 class="font-bold mb-2">Global Presence</h3>
-                    <p class="text-purple-100">Europe & Americas</p>
+                    <div class="text-3xl mb-3">🌍</div>
+                    <h3 class="font-bold mb-2">Global</h3>
+                    <p class="text-purple-100">Remote-First Team</p>
                 </div>
             </div>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="mailto:hello@datavalutai.com?subject=Project Inquiry" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-purple-600 bg-white hover:bg-purple-50 rounded-full shadow-2xl transition-all">
-                    Start Your Project
+                <a href="mailto:hello@datavalutai.com?subject=AI Project Inquiry" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-purple-600 bg-white hover:bg-purple-50 rounded-full shadow-2xl transition-all">
+                    Start Your AI Project
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                 </a>
             </div>
@@ -621,7 +628,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-12 border-t border-slate-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="md:col-span-2">
@@ -635,29 +642,29 @@
                             Data Valut AI
                         </div>
                     </div>
-                    <p class="text-sm mb-4 max-w-md">Enterprise AI and software development for the modern era. Building secure, scalable, and compliant solutions.</p>
+                    <p class="text-sm mb-4 max-w-md">FullStack AI development for the modern era. Building intelligent applications with LLMs and modern frameworks.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">GDPR</span>
-                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">SOC 2</span>
-                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">ISO 27001</span>
+                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">AI-First</span>
+                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">FullStack</span>
+                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">Production Ready</span>
                     </div>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-4">Services</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#services" class="hover:text-white transition-colors">Software Development</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">AI & Machine Learning</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Data Engineering</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Cloud & DevOps</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">AI Backend Development</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Frontend Integration</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">ML Model Development</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">FullStack AI Apps</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-4">Company</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#portfolio" class="hover:text-white transition-colors">Case Studies</a></li>
-                        <li><a href="#technology" class="hover:text-white transition-colors">Technology</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition-colors">AI Projects</a></li>
+                        <li><a href="#technology" class="hover:text-white transition-colors">Tech Stack</a></li>
                         <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
@@ -671,6 +678,26 @@
 
     <!-- JavaScript -->
     <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeToggleMobile = document.getElementById('darkModeToggleMobile');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        function toggleDarkMode() {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        }
+
+        darkModeToggle?.addEventListener('click', toggleDarkMode);
+        darkModeToggleMobile?.addEventListener('click', toggleDarkMode);
+
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
