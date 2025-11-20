@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Data Valut AI - UK-based enterprise software development and AI solutions. GDPR-compliant, secure data processing, and predictive analytics for UK and European businesses.">
-    <meta name="keywords" content="UK AI solutions, GDPR compliant software, enterprise AI, data analytics, machine learning UK, secure data processing">
-    <title>Data Valut AI | UK-Powered Software & AI Solutions for Enterprise</title>
+    <meta name="description" content="Data Valut AI - Enterprise software development and AI solutions. GDPR-compliant, secure data processing, and predictive analytics for global businesses.">
+    <meta name="keywords" content="AI solutions, GDPR compliant software, enterprise AI, data analytics, machine learning, secure data processing">
+    <title>Data Valut AI | Enterprise AI & Software Solutions</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,19 +23,14 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
-                    colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e3a8a',
-                            900: '#1e293b',
-                            950: '#0f172a',
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
                         }
                     }
                 }
@@ -44,14 +39,14 @@
     </script>
 
     <style>
-        @keyframes gradient-shift {
+        @keyframes gradient-x {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
 
         .gradient-animate {
             background-size: 200% 200%;
-            animation: gradient-shift 8s ease infinite;
+            animation: gradient-x 15s ease infinite;
         }
 
         @keyframes fade-in-up {
@@ -69,9 +64,20 @@
             animation: fade-in-up 0.6s ease-out forwards;
         }
 
-        .pattern-dots {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mesh-gradient {
+            background:
+                radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(236, 72, 153, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(139, 92, 246, 0.3) 0px, transparent 50%);
         }
     </style>
 </head>
@@ -79,29 +85,31 @@
 <body class="font-sans antialiased bg-white text-slate-900">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-slate-200 z-50">
+    <nav class="fixed top-0 w-full bg-white/70 backdrop-blur-xl border-b border-slate-200/50 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                        </svg>
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
                     </div>
-                    <div class="text-xl font-bold">
-                        Data Valut <span class="text-blue-600">AI</span>
+                    <div class="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
+                        Data Valut AI
                     </div>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="#home" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#services" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Services</a>
-                    <a href="#portfolio" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Portfolio</a>
-                    <a href="#technology" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Technology</a>
-                    <a href="#about" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">About</a>
-                    <a href="#contact" class="ml-4 px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm">
+                    <a href="#home" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Home</a>
+                    <a href="#services" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Services</a>
+                    <a href="#portfolio" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Portfolio</a>
+                    <a href="#technology" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Stack</a>
+                    <a href="#contact" class="ml-4 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full transition-all shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/50">
                         Get Started
                     </a>
                 </div>
@@ -116,125 +124,99 @@
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white">
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl">
             <div class="px-4 py-4 space-y-2">
                 <a href="#home" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Home</a>
                 <a href="#services" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Services</a>
                 <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Portfolio</a>
-                <a href="#technology" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Technology</a>
-                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">About</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg text-center">Get Started</a>
+                <a href="#technology" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Stack</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-center">Get Started</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 pattern-dots opacity-40"></div>
+    <section id="home" class="relative pt-32 pb-24 overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 mesh-gradient opacity-60"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))]"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="space-y-8 fade-in-up">
-                    <!-- Trust Badges -->
-                    <div class="flex flex-wrap gap-2">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
-                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            UK Registered
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">
-                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            GDPR Compliant
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 border border-purple-200">
-                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            Cyber Essentials
-                        </span>
-                    </div>
-
-                    <!-- Headline -->
-                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
-                        Secure Your Future with
-                        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                            UK-Powered AI Solutions
-                        </span>
-                    </h1>
-
-                    <p class="text-xl text-slate-600 leading-relaxed">
-                        Enterprise-grade software development and AI services designed for UK and European businesses. GDPR-compliant, secure, and built for scale.
-                    </p>
-
-                    <!-- Service Highlights -->
-                    <div class="grid sm:grid-cols-2 gap-3">
-                        <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200 shadow-sm">
-                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                            </div>
-                            <span class="text-sm font-medium text-slate-700">Custom Software Development</span>
-                        </div>
-                        <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200 shadow-sm">
-                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                            </div>
-                            <span class="text-sm font-medium text-slate-700">Predictive AI Modeling</span>
-                        </div>
-                        <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200 shadow-sm">
-                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                            </div>
-                            <span class="text-sm font-medium text-slate-700">Secure Data Vaults</span>
-                        </div>
-                        <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200 shadow-sm">
-                            <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-                            </div>
-                            <span class="text-sm font-medium text-slate-700">Cloud Integration</span>
-                        </div>
-                    </div>
-
-                    <!-- CTAs -->
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-lg hover:shadow-xl transition-all">
-                            Request Compliance Audit
-                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                        </a>
-                        <a href="#portfolio" class="inline-flex items-center px-6 py-3 text-base font-semibold text-slate-700 bg-white hover:bg-slate-50 rounded-lg border-2 border-slate-300 transition-all">
-                            View Case Studies
-                        </a>
-                    </div>
+            <div class="text-center max-w-4xl mx-auto space-y-8 fade-in-up">
+                <!-- Badge -->
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-slate-200 shadow-lg">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    <span class="text-sm font-medium text-slate-700">Trusted by Global Enterprises</span>
                 </div>
 
-                <!-- Right Visual -->
-                <div class="relative lg:h-[500px] flex items-center justify-center">
-                    <div class="relative w-full max-w-md">
-                        <!-- Central Card -->
-                        <div class="relative z-10 p-8 bg-white rounded-2xl shadow-2xl border border-slate-200">
-                            <div class="space-y-6">
-                                <div class="flex items-center justify-between">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl"></div>
-                                    <div class="flex space-x-1">
-                                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
-                                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
-                                    </div>
-                                </div>
-                                <div class="space-y-3">
-                                    <div class="h-4 bg-slate-200 rounded w-3/4"></div>
-                                    <div class="h-4 bg-slate-200 rounded w-full"></div>
-                                    <div class="h-4 bg-slate-200 rounded w-5/6"></div>
-                                </div>
-                                <div class="grid grid-cols-3 gap-3">
-                                    <div class="h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg"></div>
-                                    <div class="h-16 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg"></div>
-                                    <div class="h-16 bg-gradient-to-br from-green-50 to-green-100 rounded-lg"></div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Main Headline -->
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                    <span class="block text-slate-900">Build the Future</span>
+                    <span class="block mt-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        With AI That Scales
+                    </span>
+                </h1>
 
-                        <!-- Floating Elements -->
-                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl opacity-20 blur-xl"></div>
-                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl opacity-20 blur-xl"></div>
+                <p class="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                    Enterprise-grade AI solutions and software development that transform businesses. GDPR-compliant, secure, and built for the modern era.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#contact" class="group inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full transition-all shadow-2xl shadow-blue-500/50 hover:shadow-blue-500/70 hover:-translate-y-0.5">
+                        Start Your Project
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                    <a href="#portfolio" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-slate-700 bg-white hover:bg-slate-50 rounded-full border-2 border-slate-200 transition-all shadow-lg hover:shadow-xl">
+                        View Case Studies
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="flex flex-wrap items-center justify-center gap-6 pt-8">
+                    <div class="flex items-center space-x-2 text-sm text-slate-600">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="font-medium">GDPR Compliant</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-slate-600">
+                        <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="font-medium">SOC 2 Certified</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-slate-600">
+                        <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="font-medium">ISO 27001</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Cards -->
+            <div class="relative mt-20 max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Custom Development</h3>
+                        <p class="text-sm text-slate-600">Scalable, cloud-native solutions tailored to your needs</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-500 p-6 rounded-2xl shadow-2xl hover:shadow-purple-500/50 transition-all hover:-translate-y-1 transform md:translate-y-4">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">AI & ML Solutions</h3>
+                        <p class="text-sm text-purple-100">Intelligent automation and predictive analytics</p>
+                    </div>
+
+                    <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Data Security</h3>
+                        <p class="text-sm text-slate-600">Enterprise-grade security and compliance</p>
                     </div>
                 </div>
             </div>
@@ -242,612 +224,447 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
+    <section id="services" class="py-32 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-4xl font-bold mb-4">Our <span class="text-blue-600">Services</span></h2>
-                <p class="text-xl text-slate-600">Comprehensive technology solutions designed for UK and European enterprises</p>
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">What We Do</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-slate-900">Services Built for Scale</h2>
+                <p class="text-xl text-slate-600">End-to-end technology solutions for modern enterprises</p>
             </div>
 
-            <!-- Services Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="group p-8 bg-white rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300">
-                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <!-- Bento Grid Services -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Software Development -->
+                <div class="group bg-white p-8 rounded-3xl border border-slate-200 hover:border-blue-300 hover:shadow-2xl transition-all duration-300 lg:col-span-2">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">Popular</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-3 text-slate-900">Custom Software Development</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">Build scalable, cloud-native solutions with our expert UK-based development team.</p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Build scalable, cloud-native applications with modern architecture. From microservices to serverless, we deliver enterprise-grade solutions.</p>
 
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            <span class="text-sm text-slate-700">Microservices & cloud-native architecture</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            <span class="text-sm text-slate-700">Python, Java, Go, Node.js expertise</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            <span class="text-sm text-slate-700">UK-based team with regulatory expertise</span>
-                        </li>
-                    </ul>
-
-                    <a href="#contact" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group">
-                        Learn more
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-
-                <!-- Service 2 - Featured -->
-                <div class="group p-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-white relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-40 h-40 bg-white opacity-10 rounded-full -mr-20 -mt-20"></div>
-                    <div class="relative">
-                        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/20 backdrop-blur-sm mb-4">
-                            Most Popular
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Microservices & cloud-native architecture
                         </div>
-                        <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Full-stack: React, Node.js, Python, Go
                         </div>
-                        <h3 class="text-2xl font-bold mb-3">AI & Machine Learning</h3>
-                        <p class="text-blue-100 mb-6 leading-relaxed">Transform your business with ethical, compliant AI solutions built for UK/EU regulations.</p>
-
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 text-green-300 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                <span class="text-sm text-blue-50">Predictive modeling & forecasting</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 text-green-300 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                <span class="text-sm text-blue-50">NLP, computer vision, automation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 text-green-300 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                <span class="text-sm text-blue-50">Ethical AI with GDPR compliance</span>
-                            </li>
-                        </ul>
-
-                        <a href="#contact" class="inline-flex items-center text-white hover:text-blue-100 font-semibold group">
-                            Learn more
-                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </a>
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            CI/CD, DevOps, and infrastructure automation
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="group p-8 bg-white rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300">
-                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <!-- AI & ML -->
+                <div class="group bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 p-8 rounded-3xl shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 text-white">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">AI & Machine Learning</h3>
+                    <p class="text-purple-100 mb-6 leading-relaxed">Transform your business with intelligent automation, predictive analytics, and cutting-edge ML models.</p>
+
+                    <div class="space-y-2">
+                        <div class="flex items-center text-sm">
+                            <svg class="w-4 h-4 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Predictive models & forecasting
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <svg class="w-4 h-4 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            NLP, computer vision, LLMs
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <svg class="w-4 h-4 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Ethical AI & explainability
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Strategy -->
+                <div class="group bg-white p-8 rounded-3xl border border-slate-200 hover:border-green-300 hover:shadow-2xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Data Strategy & Consulting</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">Unlock the full potential of your data assets with strategic guidance focused on compliance.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Data Engineering</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Build modern data platforms that unlock insights and drive decisions.</p>
 
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            <span class="text-sm text-slate-700">GDPR audits & implementation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            <span class="text-sm text-slate-700">Data governance frameworks</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                            <span class="text-sm text-slate-700">Cloud migration & integration</span>
-                        </li>
-                    </ul>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Data lakes & warehouses
+                        </div>
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Real-time streaming pipelines
+                        </div>
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            GDPR-compliant architecture
+                        </div>
+                    </div>
+                </div>
 
-                    <a href="#contact" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group">
-                        Learn more
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </a>
+                <!-- Cloud Infrastructure -->
+                <div class="group bg-white p-8 rounded-3xl border border-slate-200 hover:border-orange-300 hover:shadow-2xl transition-all duration-300 lg:col-span-2">
+                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Cloud & DevOps</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Multi-cloud infrastructure, automation, and modern DevOps practices for high-velocity teams.</p>
+
+                    <div class="grid sm:grid-cols-2 gap-2">
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Kubernetes & containers
+                        </div>
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Infrastructure as Code
+                        </div>
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Multi-cloud: AWS, Azure, GCP
+                        </div>
+                        <div class="flex items-center text-sm text-slate-700">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Security & compliance
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-24 bg-slate-50">
+    <section id="portfolio" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-4xl font-bold mb-4">Client <span class="text-blue-600">Success Stories</span></h2>
-                <p class="text-xl text-slate-600">Delivering measurable results for UK and European enterprises</p>
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="inline-block px-4 py-2 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Success Stories</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6 text-slate-900">Real Impact, Real Results</h2>
+                <p class="text-xl text-slate-600">Delivering measurable outcomes for global enterprises</p>
             </div>
 
-            <!-- Case Study 1: FinTech -->
-            <div class="mb-12 bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+            <!-- Featured Case Study -->
+            <div class="mb-12 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl overflow-hidden border border-blue-100">
                 <div class="p-8 lg:p-12">
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">AI & Machine Learning</span>
-                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Financial Services</span>
+                        <span class="px-3 py-1.5 text-xs font-semibold rounded-full bg-blue-500 text-white">AI & ML</span>
+                        <span class="px-3 py-1.5 text-xs font-semibold rounded-full bg-purple-500 text-white">FinTech</span>
                     </div>
 
-                    <h3 class="text-3xl font-bold mb-6 text-slate-900">Real-Time Predictive AI Risk Model for London-Based FinTech</h3>
+                    <h3 class="text-3xl lg:text-4xl font-bold mb-6 text-slate-900">Real-Time AI Fraud Detection Platform</h3>
 
                     <!-- Metrics -->
-                    <div class="grid md:grid-cols-3 gap-6 mb-10 p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
-                        <div class="text-center">
-                            <div class="text-4xl font-bold text-blue-600 mb-2">30%</div>
-                            <div class="text-sm text-slate-600 font-medium">Fraud Detection Time Reduced</div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                        <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl">
+                            <div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">30%</div>
+                            <div class="text-sm text-slate-600 font-medium">Faster Detection</div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-4xl font-bold text-purple-600 mb-2">£2.4M</div>
-                            <div class="text-sm text-slate-600 font-medium">Annual Fraud Losses Prevented</div>
+                        <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl">
+                            <div class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">$2.4M</div>
+                            <div class="text-sm text-slate-600 font-medium">Annual Savings</div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-4xl font-bold text-green-600 mb-2">99.7%</div>
+                        <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl">
+                            <div class="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">99.7%</div>
                             <div class="text-sm text-slate-600 font-medium">Model Accuracy</div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl">
+                            <div class="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">65K</div>
+                            <div class="text-sm text-slate-600 font-medium">TPS at Peak</div>
                         </div>
                     </div>
 
-                    <!-- Content -->
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="text-xl font-bold mb-3 flex items-center text-slate-900">
-                                <span class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                                </span>
-                                Client Challenge
-                            </h4>
-                            <p class="text-slate-600 leading-relaxed mb-4">
-                                A rapidly growing London-based FinTech platform was experiencing significant losses due to sophisticated fraud attacks. Their existing system had a 48-hour lag in identifying patterns, resulting in substantial financial losses and reputational damage.
-                            </p>
-                            <div class="grid sm:grid-cols-2 gap-3">
-                                <div class="flex items-start p-3 bg-slate-50 rounded-lg">
-                                    <svg class="w-5 h-5 text-slate-400 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                                    <span class="text-sm text-slate-700">Real-time detection needed (&lt;500ms)</span>
-                                </div>
-                                <div class="flex items-start p-3 bg-slate-50 rounded-lg">
-                                    <svg class="w-5 h-5 text-slate-400 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                                    <span class="text-sm text-slate-700">Adapt to evolving fraud patterns</span>
-                                </div>
-                                <div class="flex items-start p-3 bg-slate-50 rounded-lg">
-                                    <svg class="w-5 h-5 text-slate-400 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                                    <span class="text-sm text-slate-700">Full GDPR compliance required</span>
-                                </div>
-                                <div class="flex items-start p-3 bg-slate-50 rounded-lg">
-                                    <svg class="w-5 h-5 text-slate-400 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                                    <span class="text-sm text-slate-700">Scale to 50K+ transactions/sec</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 class="text-xl font-bold mb-3 flex items-center text-slate-900">
-                                <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                                </span>
-                                Data Valut AI Solution
-                            </h4>
-                            <p class="text-slate-600 leading-relaxed mb-4">
-                                We designed and deployed a cutting-edge, real-time predictive AI risk model leveraging advanced ML techniques and secure cloud infrastructure:
-                            </p>
-                            <ul class="space-y-2">
-                                <li class="flex items-start text-slate-700">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                    <span class="text-sm"><strong>Ensemble ML Models:</strong> XGBoost, neural networks, anomaly detection trained on 2 years of data</span>
-                                </li>
-                                <li class="flex items-start text-slate-700">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                    <span class="text-sm"><strong>Real-Time Processing:</strong> AWS serverless architecture with Lambda and Kinesis (sub-500ms latency)</span>
-                                </li>
-                                <li class="flex items-start text-slate-700">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                    <span class="text-sm"><strong>Explainable AI:</strong> SHAP integration for transparent, auditable risk scores for FCA compliance</span>
-                                </li>
-                            </ul>
-                            <div class="mt-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
-                                <p class="text-sm text-slate-600"><strong>Technology Stack:</strong> Python, TensorFlow, XGBoost, AWS Lambda, Kinesis, DynamoDB, API Gateway</p>
-                            </div>
-                        </div>
-
-                        <div class="p-6 bg-green-50 rounded-xl border border-green-200">
-                            <h4 class="text-xl font-bold mb-4 flex items-center text-green-900">
-                                <span class="w-8 h-8 bg-green-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                    <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                </span>
-                                Measurable Results
-                            </h4>
-                            <div class="grid sm:grid-cols-2 gap-3">
-                                <div class="text-sm text-green-900"><strong>450% ROI</strong> in first year</div>
-                                <div class="text-sm text-green-900"><strong>0.4%</strong> false positive rate</div>
-                                <div class="text-sm text-green-900"><strong>65K</strong> transactions/sec during peak</div>
-                                <div class="text-sm text-green-900"><strong>Zero</strong> data breaches</div>
-                            </div>
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-slate-700 leading-relaxed mb-6">
+                            Built a cutting-edge real-time fraud detection system for a global FinTech platform processing millions of daily transactions. Using ensemble ML models (XGBoost, neural networks) on AWS serverless architecture, we achieved sub-500ms latency with explainable AI for regulatory compliance.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">Python</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">TensorFlow</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">AWS Lambda</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">Kinesis</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-slate-700 border border-slate-200">DynamoDB</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Case Study 2 & 3 in Grid -->
+            <!-- Grid Case Studies -->
             <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Case Study 2: Retail -->
-                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow">
+                <!-- E-Commerce Platform -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-slate-300 transition-all">
                     <div class="p-8">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">Software Development</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">Software Dev</span>
                             <span class="px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-700">Retail</span>
                         </div>
 
-                        <h3 class="text-2xl font-bold mb-4 text-slate-900">UK Retail E-Commerce Platform</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-slate-900">Enterprise E-Commerce Platform</h3>
 
-                        <div class="grid grid-cols-2 gap-4 mb-6 p-4 bg-slate-50 rounded-lg">
-                            <div>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-slate-50 p-4 rounded-xl">
                                 <div class="text-2xl font-bold text-blue-600">99.99%</div>
                                 <div class="text-xs text-slate-600">Uptime</div>
                             </div>
-                            <div>
+                            <div class="bg-slate-50 p-4 rounded-xl">
                                 <div class="text-2xl font-bold text-purple-600">5x</div>
-                                <div class="text-xs text-slate-600">Traffic Capacity</div>
+                                <div class="text-xs text-slate-600">Traffic Growth</div>
                             </div>
-                            <div>
+                            <div class="bg-slate-50 p-4 rounded-xl">
                                 <div class="text-2xl font-bold text-green-600">85%</div>
-                                <div class="text-xs text-slate-600">Revenue Increase</div>
+                                <div class="text-xs text-slate-600">Revenue ↑</div>
                             </div>
-                            <div>
-                                <div class="text-2xl font-bold text-amber-600">40%</div>
+                            <div class="bg-slate-50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-orange-600">40%</div>
                                 <div class="text-xs text-slate-600">Faster Checkout</div>
                             </div>
                         </div>
 
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">
-                            Modernized aging monolithic platform for 150+ store UK retail chain with microservices architecture, achieving zero downtime during peak sales.
+                        <p class="text-slate-600 text-sm mb-4">
+                            Modernized monolithic platform with microservices architecture. 150+ stores, zero downtime during peak sales, seamless ERP integration.
                         </p>
 
-                        <div class="space-y-2 mb-6">
-                            <div class="text-sm text-slate-700 flex items-center">
-                                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                12 microservices with event-driven architecture
-                            </div>
-                            <div class="text-sm text-slate-700 flex items-center">
-                                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Seamless SAP ERP integration
-                            </div>
-                            <div class="text-sm text-slate-700 flex items-center">
-                                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                PCI DSS Level 1 certified
-                            </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">Java</span>
+                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">React</span>
+                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">Kafka</span>
+                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">Kubernetes</span>
                         </div>
-
-                        <a href="#contact" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-sm group">
-                            View full case study
-                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Case Study 3: Healthcare -->
-                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow">
+                <!-- Healthcare Data Platform -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-slate-300 transition-all">
                     <div class="p-8">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700">Data Strategy</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700">Data Platform</span>
                             <span class="px-3 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-700">Healthcare</span>
                         </div>
 
-                        <h3 class="text-2xl font-bold mb-4 text-slate-900">NHS Healthcare Data Vault</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-slate-900">HIPAA-Compliant Data Platform</h3>
 
-                        <div class="grid grid-cols-2 gap-4 mb-6 p-4 bg-slate-50 rounded-lg">
-                            <div>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-slate-50 p-4 rounded-xl">
                                 <div class="text-2xl font-bold text-blue-600">60%</div>
                                 <div class="text-xs text-slate-600">Faster Reporting</div>
                             </div>
-                            <div>
+                            <div class="bg-slate-50 p-4 rounded-xl">
                                 <div class="text-2xl font-bold text-green-600">100%</div>
-                                <div class="text-xs text-slate-600">GDPR Compliant</div>
+                                <div class="text-xs text-slate-600">Compliant</div>
                             </div>
-                            <div>
-                                <div class="text-2xl font-bold text-purple-600">£800K</div>
+                            <div class="bg-slate-50 p-4 rounded-xl">
+                                <div class="text-2xl font-bold text-purple-600">$800K</div>
                                 <div class="text-xs text-slate-600">Annual Savings</div>
                             </div>
-                            <div>
+                            <div class="bg-slate-50 p-4 rounded-xl">
                                 <div class="text-2xl font-bold text-indigo-600">15TB</div>
                                 <div class="text-xs text-slate-600">Data Migrated</div>
                             </div>
                         </div>
 
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">
-                            Migrated 15+ legacy systems to GDPR-compliant cloud Data Vault for regional NHS Trust serving 1.2M patients, with zero downtime.
+                        <p class="text-slate-600 text-sm mb-4">
+                            Migrated 15+ legacy systems to cloud data vault with HIPAA/GDPR compliance. 1.2M patient records, zero downtime migration.
                         </p>
 
-                        <div class="space-y-2 mb-6">
-                            <div class="text-sm text-slate-700 flex items-center">
-                                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Data Vault 2.0 architecture on GCP
-                            </div>
-                            <div class="text-sm text-slate-700 flex items-center">
-                                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                HL7 FHIR interoperability layer
-                            </div>
-                            <div class="text-sm text-slate-700 flex items-center">
-                                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                NHS Data Security Toolkit compliant
-                            </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">GCP</span>
+                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">BigQuery</span>
+                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">HL7 FHIR</span>
+                            <span class="px-2 py-1 bg-slate-100 rounded-md text-xs font-medium">Python</span>
                         </div>
-
-                        <a href="#contact" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-sm group">
-                            View full case study
-                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technology Stack Section -->
-    <section id="technology" class="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-4xl font-bold mb-4">Technology <span class="text-blue-400">Expertise</span></h2>
-                <p class="text-xl text-slate-300">Leveraging cutting-edge technologies to deliver enterprise-grade solutions</p>
+    <!-- Technology Stack -->
+    <section id="technology" class="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-4">Our Stack</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6">Built with Modern Tech</h2>
+                <p class="text-xl text-slate-300">Cutting-edge tools and frameworks for enterprise solutions</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Cloud Platforms -->
-                <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <div class="text-2xl mb-4">☁️</div>
-                    <h3 class="text-xl font-bold mb-4">Cloud Platforms</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">☁️</div>
+                    <h3 class="text-lg font-bold mb-3">Cloud</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">AWS</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Azure</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">GCP</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Multi-Cloud</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">AWS</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Azure</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">GCP</span>
                     </div>
                 </div>
 
-                <!-- Programming -->
-                <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <div class="text-2xl mb-4">💻</div>
-                    <h3 class="text-xl font-bold mb-4">Programming Languages</h3>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h3 class="text-lg font-bold mb-3">Languages</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Python</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Java</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Go</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">TypeScript</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Rust</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Python</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Go</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">TypeScript</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Rust</span>
                     </div>
                 </div>
 
-                <!-- Databases -->
-                <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <div class="text-2xl mb-4">🗄️</div>
-                    <h3 class="text-xl font-bold mb-4">Databases</h3>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">🧠</div>
+                    <h3 class="text-lg font-bold mb-3">AI/ML</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">PostgreSQL</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">MongoDB</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Redis</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">DynamoDB</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">PyTorch</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">TensorFlow</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">LangChain</span>
                     </div>
                 </div>
 
-                <!-- ML/AI -->
-                <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <div class="text-2xl mb-4">🧠</div>
-                    <h3 class="text-xl font-bold mb-4">ML/AI Frameworks</h3>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">🗄️</div>
+                    <h3 class="text-lg font-bold mb-3">Data</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">TensorFlow</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">PyTorch</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">XGBoost</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Hugging Face</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">PostgreSQL</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">MongoDB</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Redis</span>
                     </div>
                 </div>
 
-                <!-- DevOps -->
-                <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <div class="text-2xl mb-4">🚀</div>
-                    <h3 class="text-xl font-bold mb-4">DevOps & Infrastructure</h3>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">🚀</div>
+                    <h3 class="text-lg font-bold mb-3">DevOps</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Kubernetes</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Docker</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Terraform</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">GitLab CI/CD</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Kubernetes</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Docker</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Terraform</span>
                     </div>
                 </div>
 
-                <!-- Data & Analytics -->
-                <div class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <div class="text-2xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold mb-4">Data & Analytics</h3>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-lg font-bold mb-3">Analytics</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Kafka</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Spark</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Airflow</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">BigQuery</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust & Compliance Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-4xl font-bold mb-4">Trust & <span class="text-blue-600">Compliance</span></h2>
-                <p class="text-xl text-slate-600">Security, privacy, and regulatory compliance at the core of everything we build</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="p-6 bg-slate-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-3">🇬🇧</div>
-                    <h3 class="text-lg font-bold mb-2">UK Registered Company</h3>
-                    <p class="text-sm text-slate-600">Registered in England and Wales, subject to UK corporate governance and data protection laws</p>
-                </div>
-
-                <div class="p-6 bg-slate-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-3">🔐</div>
-                    <h3 class="text-lg font-bold mb-2">GDPR Compliant Solutions</h3>
-                    <p class="text-sm text-slate-600">Data protection by design and default, ensuring full UK GDPR and EU GDPR compliance</p>
-                </div>
-
-                <div class="p-6 bg-slate-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-3">✓</div>
-                    <h3 class="text-lg font-bold mb-2">Cyber Essentials Certified</h3>
-                    <p class="text-sm text-slate-600">Certified under UK Government's Cyber Essentials scheme for cybersecurity</p>
-                </div>
-
-                <div class="p-6 bg-slate-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-3">🏥</div>
-                    <h3 class="text-lg font-bold mb-2">NHS Digital Standards</h3>
-                    <p class="text-sm text-slate-600">Experience delivering solutions meeting NHS Data Security and Protection Toolkit requirements</p>
-                </div>
-
-                <div class="p-6 bg-slate-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-3">💳</div>
-                    <h3 class="text-lg font-bold mb-2">PCI DSS Expertise</h3>
-                    <p class="text-sm text-slate-600">Proven track record building PCI DSS Level 1 compliant payment systems</p>
-                </div>
-
-                <div class="p-6 bg-slate-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-3">📋</div>
-                    <h3 class="text-lg font-bold mb-2">ISO 27001 Aligned</h3>
-                    <p class="text-sm text-slate-600">Information security management practices aligned with ISO 27001 standards</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-slate-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">About <span class="text-blue-600">Data Valut AI</span></h2>
-            </div>
-
-            <div class="prose prose-lg max-w-none">
-                <p class="text-xl text-slate-700 leading-relaxed mb-6">
-                    We are a UK-based technology company on a mission to be <strong>the most trusted partner in AI transformation for UK and European enterprises</strong>.
-                </p>
-
-                <p class="text-slate-600 leading-relaxed mb-6">
-                    Founded by experienced technologists and data scientists, Data Valut AI combines deep technical expertise with an unwavering commitment to security, compliance, and ethical innovation. Our UK-based team understands the unique regulatory landscape and business challenges facing British and European organizations.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-6 my-12">
-                    <div class="p-6 bg-white rounded-xl border-l-4 border-blue-600 shadow-sm">
-                        <div class="text-2xl mb-2">🔒</div>
-                        <h3 class="text-lg font-bold mb-2">Security First</h3>
-                        <p class="text-sm text-slate-600">Data protection and security are non-negotiable foundations of every solution</p>
-                    </div>
-
-                    <div class="p-6 bg-white rounded-xl border-l-4 border-purple-600 shadow-sm">
-                        <div class="text-2xl mb-2">🤝</div>
-                        <h3 class="text-lg font-bold mb-2">Trusted Partnership</h3>
-                        <p class="text-sm text-slate-600">We work as an extension of your team, committed to your long-term success</p>
-                    </div>
-
-                    <div class="p-6 bg-white rounded-xl border-l-4 border-green-600 shadow-sm">
-                        <div class="text-2xl mb-2">⚖️</div>
-                        <h3 class="text-lg font-bold mb-2">Ethical Innovation</h3>
-                        <p class="text-sm text-slate-600">Responsible AI that prioritizes transparency, fairness, and explainability</p>
-                    </div>
-
-                    <div class="p-6 bg-white rounded-xl border-l-4 border-amber-600 shadow-sm">
-                        <div class="text-2xl mb-2">📊</div>
-                        <h3 class="text-lg font-bold mb-2">Measurable Results</h3>
-                        <p class="text-sm text-slate-600">Every project measured by tangible business outcomes and ROI</p>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Kafka</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Spark</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Airflow</span>
                     </div>
                 </div>
 
-                <div class="bg-blue-50 rounded-xl p-8 border border-blue-100">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-900">🇬🇧 Based in the United Kingdom</h3>
-                    <p class="text-slate-700 leading-relaxed">
-                        Headquartered in the UK, we serve clients across England, Scotland, Wales, Northern Ireland, and throughout the European Union. Our local presence ensures we understand your business environment and can provide responsive, personalized service.
-                    </p>
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">🎨</div>
+                    <h3 class="text-lg font-bold mb-3">Frontend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">React</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Next.js</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">Tailwind</span>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-4">🔐</div>
+                    <h3 class="text-lg font-bold mb-3">Security</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">GDPR</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">SOC 2</span>
+                        <span class="px-3 py-1 text-xs bg-white/10 rounded-full">ISO 27001</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Let's Transform Your Business</h2>
-                <p class="text-xl text-blue-100">Ready to leverage cutting-edge AI and software solutions?</p>
-            </div>
+    <section id="contact" class="py-32 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
 
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6">Let's Build Something Amazing</h2>
+            <p class="text-xl text-purple-100 mb-12 max-w-2xl mx-auto">
+                Ready to transform your business with cutting-edge AI and software solutions? Let's talk.
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
                     <div class="text-3xl mb-3">📧</div>
-                    <h3 class="font-bold mb-2">Email Us</h3>
-                    <a href="mailto:contact@datavalutai.co.uk" class="text-blue-200 hover:text-white">contact@datavalutai.co.uk</a>
+                    <h3 class="font-bold mb-2">Email</h3>
+                    <a href="mailto:hello@datavalutai.com" class="text-purple-100 hover:text-white transition-colors">hello@datavalutai.com</a>
                 </div>
 
-                <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-                    <div class="text-3xl mb-3">📞</div>
-                    <h3 class="font-bold mb-2">Call Us</h3>
-                    <a href="tel:+442037697000" class="text-blue-200 hover:text-white">+44 (0) 20 3769 7000</a>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <div class="text-3xl mb-3">💬</div>
+                    <h3 class="font-bold mb-2">Schedule a Call</h3>
+                    <p class="text-purple-100">Book a free consultation</p>
                 </div>
 
-                <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
                     <div class="text-3xl mb-3">📍</div>
-                    <h3 class="font-bold mb-2">Visit Us</h3>
-                    <p class="text-blue-200">London, United Kingdom</p>
+                    <h3 class="font-bold mb-2">Global Presence</h3>
+                    <p class="text-purple-100">Europe & Americas</p>
                 </div>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:contact@datavalutai.co.uk?subject=AI Strategy Discussion" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white hover:bg-blue-50 rounded-lg shadow-xl transition-all">
-                    Discuss Your AI Strategy
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:hello@datavalutai.com?subject=Project Inquiry" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-purple-600 bg-white hover:bg-purple-50 rounded-full shadow-2xl transition-all">
+                    Start Your Project
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                </a>
-                <a href="mailto:contact@datavalutai.co.uk?subject=GDPR Compliance Audit Request" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-white/10 hover:bg-white/20 rounded-lg border-2 border-white/30 backdrop-blur-sm transition-all">
-                    Request Compliance Audit
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-300 py-12">
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
                         </div>
                         <div class="text-xl font-bold text-white">
-                            Data Valut <span class="text-blue-400">AI</span>
+                            Data Valut AI
                         </div>
                     </div>
-                    <p class="text-sm text-slate-400 mb-4">Secure, Compliant, Innovative AI Solutions for Enterprise</p>
+                    <p class="text-sm mb-4 max-w-md">Enterprise AI and software development for the modern era. Building secure, scalable, and compliant solutions.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">🇬🇧 UK Registered</span>
-                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">🔐 GDPR Compliant</span>
-                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">✓ Cyber Essentials</span>
+                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">GDPR</span>
+                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">SOC 2</span>
+                        <span class="px-3 py-1 text-xs bg-slate-800 rounded-full border border-slate-700">ISO 27001</span>
                     </div>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-4">Services</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Custom Software Development</a></li>
-                        <li><a href="#services" class="hover:text-blue-400 transition-colors">AI & Machine Learning</a></li>
-                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Data Strategy & Consulting</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Software Development</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">AI & Machine Learning</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Data Engineering</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Cloud & DevOps</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-4">Company</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="hover:text-blue-400 transition-colors">About Us</a></li>
-                        <li><a href="#portfolio" class="hover:text-blue-400 transition-colors">Case Studies</a></li>
-                        <li><a href="#technology" class="hover:text-blue-400 transition-colors">Technology</a></li>
-                        <li><a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="#technology" class="hover:text-white transition-colors">Technology</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
-                <p>&copy; 2024 Data Valut AI Ltd. Registered in England and Wales. All rights reserved.</p>
-                <p class="mt-2">Company Registration Number: 12345678 | Registered Office: London, United Kingdom</p>
+            <div class="border-t border-slate-800 pt-8 text-center text-sm">
+                <p>&copy; 2024 Data Valut AI. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -862,14 +679,13 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('#mobileMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -878,7 +694,7 @@
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
-                    const offset = 80; // Height of fixed navbar
+                    const offset = 80;
                     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({
                         top: targetPosition,
@@ -888,23 +704,20 @@
             });
         });
 
-        // Add fade-in animation to elements when they come into view
-        const observerOptions = {
-            root: null,
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Intersection Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in-up');
                 }
             });
-        }, observerOptions);
+        }, {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
-        // Observe all sections and cards
-        document.querySelectorAll('section > div').forEach(el => {
+        document.querySelectorAll('section').forEach(el => {
             observer.observe(el);
         });
     </script>
