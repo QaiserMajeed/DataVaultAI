@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, ArrowRight } from 'lucide-react';
+import { Mail, ArrowRight, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
@@ -34,7 +34,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
                 >
                     <a
                         href="mailto:hello@datavaultai.com?subject=AI Project Consultation Request"
@@ -51,7 +51,30 @@ const Contact = () => {
                     </a>
                 </motion.div>
 
-                <div className="mt-12 flex items-center justify-center gap-8 text-teal-100 text-sm font-medium">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
+                >
+                    <a
+                        href="tel:+447440189478"
+                        className="inline-flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/30 transition-all hover:scale-105"
+                    >
+                        <Phone className="w-5 h-5" />
+                        <span>+44 07440 189478</span>
+                    </a>
+                    <a
+                        href="mailto:hello@datavaultai.com"
+                        className="inline-flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/30 transition-all hover:scale-105"
+                    >
+                        <Mail className="w-5 h-5" />
+                        <span>hello@datavaultai.com</span>
+                    </a>
+                </motion.div>
+
+                <div className="mt-6 flex items-center justify-center gap-8 text-teal-100 text-sm font-medium">
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
                         Available for new projects

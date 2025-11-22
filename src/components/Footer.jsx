@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Github, Twitter, Linkedin, Phone, Mail } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
@@ -35,12 +35,22 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-white font-bold mb-4">Company</h4>
-                        <ul className="space-y-2 text-sm">
+                        <h4 className="text-white font-bold mb-4">Contact</h4>
+                        <ul className="space-y-3 text-sm">
+                            <li>
+                                <a href="tel:+447440189478" className="hover:text-white transition-colors flex items-center gap-2">
+                                    <Phone className="w-4 h-4" />
+                                    <span>+44 07440 189478</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:hello@datavaultai.com" className="hover:text-white transition-colors flex items-center gap-2">
+                                    <Mail className="w-4 h-4" />
+                                    <span>hello@datavaultai.com</span>
+                                </a>
+                            </li>
                             <li><a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
                             <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
-                            <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
