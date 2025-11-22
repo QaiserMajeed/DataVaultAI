@@ -5,72 +5,127 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-            {/* Background Effects */}
-            <div className="absolute inset-0 bg-teal-950">
-                <div className="absolute top-0 -left-4 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob" />
-                <div className="absolute top-0 -right-4 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000" />
-                <div className="absolute -bottom-8 left-20 w-96 h-96 bg-coral-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000" />
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
-            </div>
-
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+                {/* Badge with orchestrated entrance */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-900/50 border border-teal-800 backdrop-blur-sm mb-8"
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full backdrop-blur-xl mb-8"
+                    style={{
+                        background: 'rgba(0, 217, 255, 0.1)',
+                        border: '1px solid rgba(0, 217, 255, 0.3)',
+                        boxShadow: '0 8px 32px rgba(0, 217, 255, 0.1)'
+                    }}
                 >
-                    <Sparkles className="w-4 h-4 text-coral-400" />
-                    <span className="text-sm font-medium text-teal-100">Next-Gen AI Development</span>
+                    <Sparkles className="w-4 h-4" style={{ color: '#00d9ff' }} />
+                    <span className="text-sm font-medium tracking-wide" style={{
+                        color: '#00f0ff',
+                        fontFamily: 'var(--font-mono)',
+                        letterSpacing: '0.05em'
+                    }}>
+                        Next-Gen AI Development
+                    </span>
                 </motion.div>
 
+                {/* Main heading with distinctive serif font */}
                 <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-8"
+                    transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight mb-8"
+                    style={{
+                        fontFamily: 'var(--font-display)',
+                        lineHeight: '1.1',
+                        background: 'linear-gradient(135deg, #ffffff 0%, #00d9ff 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text'
+                    }}
                 >
-                    We Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400">Intelligent</span>
+                    We Build
+                    <br />
+                    <span style={{
+                        background: 'linear-gradient(135deg, #00ffcc 0%, #00d9ff 50%, #ff6b35 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        fontStyle: 'italic'
+                    }}>
+                        Intelligent
+                    </span>
                     <br />
                     Digital Solutions
                 </motion.h1>
 
+                {/* Subtitle with elegant spacing */}
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-xl text-teal-100/70 max-w-2xl mx-auto mb-10 leading-relaxed"
+                    transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed"
+                    style={{
+                        color: 'rgba(255, 255, 255, 0.75)',
+                        fontWeight: '400',
+                        letterSpacing: '-0.01em'
+                    }}
                 >
                     Transform your business with custom AI applications. From predictive analytics to generative AI, we deliver enterprise-grade solutions that drive growth.
                 </motion.p>
 
+                {/* CTAs with sophisticated hover effects */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                    transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
                 >
                     <a
                         href="#contact"
-                        className="group px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-teal-600 to-emerald-600 rounded-full hover:shadow-2xl hover:shadow-teal-500/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+                        className="group relative px-10 py-5 text-lg font-semibold rounded-full overflow-hidden hover-lift"
+                        style={{
+                            background: 'linear-gradient(135deg, #00d9ff 0%, #00ffcc 100%)',
+                            color: '#041420',
+                            fontFamily: 'var(--font-body)',
+                            boxShadow: '0 20px 60px rgba(0, 217, 255, 0.3)',
+                            transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                        }}
                     >
-                        Start Your Project
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        <span className="relative z-10 flex items-center gap-2">
+                            Start Your Project
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                        </span>
+                        <div
+                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            style={{
+                                background: 'linear-gradient(135deg, #00ffcc 0%, #00d9ff 100%)'
+                            }}
+                        />
                     </a>
                     <a
                         href="#portfolio"
-                        className="px-8 py-4 text-lg font-semibold text-teal-100 bg-teal-900/50 border border-teal-800 rounded-full hover:bg-teal-800 hover:text-white transition-all hover:scale-105 active:scale-95 backdrop-blur-sm"
+                        className="px-10 py-5 text-lg font-semibold rounded-full border-2 backdrop-blur-sm hover-lift"
+                        style={{
+                            borderColor: 'rgba(0, 217, 255, 0.5)',
+                            color: '#00d9ff',
+                            background: 'rgba(0, 217, 255, 0.05)',
+                            fontFamily: 'var(--font-body)',
+                            transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                        }}
                     >
                         View Our Work
                     </a>
                 </motion.div>
 
-                {/* Stats/Trust Indicators */}
+                {/* Stats with staggered animation */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="mt-20 pt-10 border-t border-teal-800/50 grid grid-cols-2 md:grid-cols-4 gap-8"
+                    transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+                    className="pt-16 border-t grid grid-cols-2 md:grid-cols-4 gap-8"
+                    style={{
+                        borderColor: 'rgba(0, 217, 255, 0.2)'
+                    }}
                 >
                     {[
                         { label: 'Projects Delivered', value: '100+' },
@@ -78,9 +133,35 @@ const Hero = () => {
                         { label: 'Expert Developers', value: '15+' },
                         { label: 'Years Experience', value: '5+' },
                     ].map((stat, index) => (
-                        <div key={index}>
-                            <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                            <div className="text-sm text-teal-500 font-medium uppercase tracking-wider">{stat.label}</div>
+                        <div
+                            key={index}
+                            className="animate-in-1"
+                            style={{
+                                animationDelay: `${1.2 + index * 0.1}s`
+                            }}
+                        >
+                            <div
+                                className="text-4xl md:text-5xl font-bold mb-2"
+                                style={{
+                                    fontFamily: 'var(--font-display)',
+                                    background: 'linear-gradient(135deg, #ffffff 0%, #00d9ff 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text'
+                                }}
+                            >
+                                {stat.value}
+                            </div>
+                            <div
+                                className="text-sm font-medium uppercase tracking-wider"
+                                style={{
+                                    color: 'rgba(0, 217, 255, 0.7)',
+                                    fontFamily: 'var(--font-mono)',
+                                    letterSpacing: '0.1em'
+                                }}
+                            >
+                                {stat.label}
+                            </div>
                         </div>
                     ))}
                 </motion.div>
