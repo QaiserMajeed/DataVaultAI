@@ -1,7 +1,144 @@
 @import "tailwindcss";
 
 :root {
+    /* Deep Ocean Theme - Distinctive & Sophisticated */
+    --color-deep-ocean: #041420;
+    --color-ocean-dark: #082840;
+    --color-ocean-mid: #0a3d5c;
+    --color-ocean-light: #0d5278;
+
+    --color-aqua-bright: #00d9ff;
+    --color-aqua-glow: #00f0ff;
+    --color-cyan-electric: #00ffcc;
+
     --color-coral-400: #ff7f50;
     --color-coral-500: #ff6b35;
     --color-coral-600: #e85d2a;
+    --color-ember: #ff4d6d;
+    --color-sunset: #ff8c42;
+
+    /* Typography */
+    --font-display: 'Fraunces', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    font-variant-ligatures: common-ligatures;
+}
+
+body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sophisticated scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+    background: var(--color-aqua-bright);
+    color: var(--color-deep-ocean);
+}
+
+/* Animated gradient mesh background */
+@keyframes mesh-shift {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+@keyframes mesh-shift-alt {
+    0%, 100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translate(-40px, 40px) scale(1.2) rotate(5deg);
+    }
+}
+
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+/* Premium fade-in animation */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-scale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Stagger delays for orchestrated page load */
+.animate-in-1 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+.animate-in-2 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+.animate-in-3 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
+.animate-in-4 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
+.animate-in-5 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
+
+/* Sophisticated hover effects */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+/* Custom scrollbar for depth */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-deep-ocean);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-ocean-mid);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ocean-light);
 }

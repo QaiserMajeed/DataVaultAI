@@ -25,21 +25,39 @@ const Navbar = () => {
     return (
         <nav
             className={cn(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent',
+                'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
                 isScrolled
-                    ? 'bg-teal-950/80 backdrop-blur-md border-teal-800 py-3'
-                    : 'bg-transparent py-5'
+                    ? 'py-3'
+                    : 'py-5'
             )}
+            style={{
+                background: isScrolled
+                    ? 'rgba(4, 20, 32, 0.85)'
+                    : 'transparent',
+                backdropFilter: isScrolled ? 'blur(20px)' : 'none',
+                borderBottom: isScrolled ? '1px solid rgba(0, 217, 255, 0.15)' : '1px solid transparent'
+            }}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <a href="#" className="flex items-center gap-3 group">
-                        <div className="w-10 h-10 rounded-xl shadow-lg group-hover:shadow-teal-500/20 transition-all overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 p-1">
+                        <div
+                            className="w-10 h-10 rounded-xl overflow-hidden transition-all duration-300"
+                            style={{
+                                background: 'rgba(0, 217, 255, 0.1)',
+                                border: '1px solid rgba(0, 217, 255, 0.2)',
+                                padding: '2px',
+                                boxShadow: '0 4px 12px rgba(0, 217, 255, 0.15)'
+                            }}
+                        >
                             <Logo className="w-full h-full" />
                         </div>
-                        <span className="text-xl font-bold text-white tracking-tight">
-                            DataVault<span className="text-teal-400">.AI</span>
+                        <span
+                            className="text-xl font-bold text-white tracking-tight"
+                            style={{ fontFamily: 'var(--font-display)' }}
+                        >
+                            DataVault<span style={{ color: '#00d9ff' }}>.AI</span>
                         </span>
                     </a>
 
@@ -49,15 +67,37 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-teal-100/80 hover:text-white transition-colors relative group"
+                                className="relative group"
+                                style={{
+                                    fontSize: '14px',
+                                    fontWeight: '500',
+                                    color: 'rgba(255, 255, 255, 0.8)',
+                                    fontFamily: 'var(--font-body)',
+                                    transition: 'color 0.3s ease'
+                                }}
                             >
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-coral-500 transition-all group-hover:w-full" />
+                                <span
+                                    className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300"
+                                    style={{
+                                        width: '0',
+                                        background: 'linear-gradient(90deg, #00d9ff 0%, #00ffcc 100%)'
+                                    }}
+                                    onMouseEnter={(e) => e.currentTarget.style.width = '100%'}
+                                    onMouseLeave={(e) => e.currentTarget.style.width = '0'}
+                                />
                             </a>
                         ))}
                         <a
                             href="#contact"
-                            className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-teal-600 to-emerald-600 rounded-full hover:shadow-lg hover:shadow-teal-500/25 transition-all hover:scale-105 active:scale-95 border border-teal-500/20"
+                            className="px-6 py-2.5 text-sm font-semibold rounded-full hover-lift"
+                            style={{
+                                background: 'linear-gradient(135deg, #00d9ff 0%, #00ffcc 100%)',
+                                color: '#041420',
+                                fontFamily: 'var(--font-body)',
+                                boxShadow: '0 4px 20px rgba(0, 217, 255, 0.3)',
+                                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                            }}
                         >
                             Get Started
                         </a>
@@ -65,7 +105,8 @@ const Navbar = () => {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden p-2 text-teal-100 hover:text-white"
+                        className="md:hidden p-2 transition-colors duration-300"
+                        style={{ color: '#00d9ff' }}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,12 +116,23 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-teal-950 border-b border-teal-800 p-4 flex flex-col gap-4 shadow-2xl animate-in slide-in-from-top-5">
+                <div
+                    className="md:hidden absolute top-full left-0 right-0 p-4 flex flex-col gap-4 shadow-2xl animate-in slide-in-from-top-5"
+                    style={{
+                        background: 'rgba(4, 20, 32, 0.95)',
+                        backdropFilter: 'blur(20px)',
+                        borderBottom: '1px solid rgba(0, 217, 255, 0.2)'
+                    }}
+                >
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-base font-medium text-teal-100 hover:text-white hover:bg-teal-900 px-4 py-3 rounded-lg transition-colors"
+                            className="text-base font-medium px-4 py-3 rounded-lg transition-all duration-300"
+                            style={{
+                                color: 'rgba(255, 255, 255, 0.9)',
+                                fontFamily: 'var(--font-body)'
+                            }}
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             {link.name}
@@ -88,7 +140,12 @@ const Navbar = () => {
                     ))}
                     <a
                         href="#contact"
-                        className="text-center font-semibold text-white bg-gradient-to-r from-teal-600 to-emerald-600 py-3 rounded-lg"
+                        className="text-center font-semibold py-3 rounded-lg"
+                        style={{
+                            background: 'linear-gradient(135deg, #00d9ff 0%, #00ffcc 100%)',
+                            color: '#041420',
+                            fontFamily: 'var(--font-body)'
+                        }}
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         Get Started
