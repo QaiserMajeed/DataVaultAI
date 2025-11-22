@@ -94,7 +94,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ============================================
 // Navbar Scroll Effect
 // ============================================
-let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', function() {
@@ -106,8 +105,6 @@ window.addEventListener('scroll', function() {
     } else {
         navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
     }
-
-    lastScroll = currentScroll;
 });
 
 // ============================================
@@ -152,7 +149,6 @@ function highlightActiveNavLink() {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
 
         if (window.pageYOffset >= (sectionTop - navbarHeight - 100)) {
             currentSection = section.getAttribute('id');
@@ -176,7 +172,7 @@ window.addEventListener('load', highlightActiveNavLink);
 document.addEventListener('DOMContentLoaded', function() {
     const vizNodes = document.querySelectorAll('.node');
 
-    vizNodes.forEach((node, index) => {
+    vizNodes.forEach((node) => {
         // Randomize animation timing for organic feel
         const delay = Math.random() * 2;
         node.style.animationDelay = `${delay}s`;
@@ -197,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 // Metrics Counter Animation
 // ============================================
+// eslint-disable-next-line no-unused-vars
 function animateCounter(element, target, duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16); // 60 FPS
@@ -259,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 // Form Validation (if contact form added later)
 // ============================================
+// eslint-disable-next-line no-unused-vars
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -268,7 +266,7 @@ function validateEmail(email) {
 // Performance Optimization - Lazy Loading
 // ============================================
 if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;

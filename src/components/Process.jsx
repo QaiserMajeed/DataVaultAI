@@ -7,25 +7,29 @@ const steps = [
         icon: <Search className="w-6 h-6" />,
         title: 'Discovery',
         description: 'We analyze your requirements and define the project scope.',
-        color: 'teal',
+        bgColor: 'bg-teal-500/10',
+        textColor: 'text-teal-400',
     },
     {
         icon: <PenTool className="w-6 h-6" />,
         title: 'Design',
         description: 'We create the system architecture and technical specifications.',
-        color: 'emerald',
+        bgColor: 'bg-emerald-500/10',
+        textColor: 'text-emerald-400',
     },
     {
         icon: <Code2 className="w-6 h-6" />,
         title: 'Development',
         description: 'We build your solution using agile methodology and best practices.',
-        color: 'coral',
+        bgColor: 'bg-coral-500/10',
+        textColor: 'text-coral-400',
     },
     {
         icon: <Rocket className="w-6 h-6" />,
         title: 'Deployment',
         description: 'We launch your application and provide ongoing support.',
-        color: 'cyan',
+        bgColor: 'bg-cyan-500/10',
+        textColor: 'text-cyan-400',
     },
 ];
 
@@ -61,7 +65,7 @@ const Process = () => {
                                 className="group"
                             >
                                 <div className="bg-teal-900/40 p-6 rounded-2xl border border-teal-800 hover:border-teal-700 transition-all duration-300 relative h-full backdrop-blur-sm">
-                                    <div className={`w-12 h-12 rounded-xl bg-${step.color}-500/10 flex items-center justify-center mb-4 text-${step.color}-400 group-hover:scale-110 transition-transform duration-300`}>
+                                    <div className={`w-12 h-12 rounded-xl ${step.bgColor} flex items-center justify-center mb-4 ${step.textColor} group-hover:scale-110 transition-transform duration-300`}>
                                         {step.icon}
                                     </div>
                                     <div className="absolute -top-3 -right-3 w-8 h-8 bg-teal-800 rounded-full flex items-center justify-center border border-teal-700 text-sm font-bold text-teal-200">

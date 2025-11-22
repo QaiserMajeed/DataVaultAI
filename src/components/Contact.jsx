@@ -37,14 +37,14 @@ const Contact = () => {
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
                     <a
-                        href="mailto:hello@datavalutai.com?subject=AI Project Consultation Request"
+                        href="mailto:hello@datavaultai.com?subject=AI Project Consultation Request"
                         className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-teal-700 bg-white hover:bg-teal-50 rounded-full shadow-2xl transition-all hover:scale-105 group"
                     >
                         Get Free Consultation
                         <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
-                        href="mailto:hello@datavalutai.com?subject=Request Project Quote"
+                        href="mailto:hello@datavaultai.com?subject=Request Project Quote"
                         className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full border-2 border-white transition-all"
                     >
                         Request a Quote
