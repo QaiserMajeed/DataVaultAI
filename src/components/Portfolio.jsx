@@ -5,8 +5,9 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 const projects = [
     {
         id: 1,
-        title: 'AI Document Intelligence',
+        title: 'AI Document Intelligence Platform',
         category: 'Enterprise NLP',
+        description: 'Built an intelligent document processing system that extracts, classifies, and analyzes contracts, invoices, and reports. Reduced manual processing time by 85% and saved the client $500K annually.',
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
         stats: { documents: '10M+', accuracy: '95%' },
         tags: ['GPT-4', 'Pinecone', 'React'],
@@ -15,14 +16,16 @@ const projects = [
         id: 2,
         title: 'Customer Support AI Agent',
         category: 'SaaS Product',
+        description: 'Developed an AI-powered chatbot that handles 70% of customer inquiries automatically. Decreased response times from 2 hours to 30 seconds while maintaining 98% customer satisfaction.',
         image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=1200&q=80',
         stats: { users: '50K+', satisfaction: '98%' },
         tags: ['Claude API', 'Node.js', 'WebSocket'],
     },
     {
         id: 3,
-        title: 'Visual Quality Control',
+        title: 'Visual Quality Control System',
         category: 'Manufacturing',
+        description: 'Created a computer vision system that inspects products on assembly lines in real-time. Reduced defects by 40%, eliminated manual inspection costs, and achieved $200K+ ROI in the first year.',
         image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&q=80',
         stats: { speed: '50ms', detection: '99%' },
         tags: ['PyTorch', 'YOLO', 'Edge AI'],
@@ -44,7 +47,24 @@ const Portfolio = () => {
                     >
                         Our Work
                     </motion.span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Featured Projects</h2>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                    >
+                        Real AI Solutions, Real Results
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg text-teal-100/70"
+                    >
+                        See how we've helped businesses like yours leverage AI to increase efficiency, reduce costs, and drive growth.
+                    </motion.p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -68,8 +88,18 @@ const Portfolio = () => {
                                     </h3>
                                     {activeId === project.id && <ArrowRight className="text-emerald-500" />}
                                 </div>
-                                <p className="text-sm text-teal-400 mb-4">{project.category}</p>
-                                <div className="flex gap-2">
+                                <p className="text-sm text-teal-400 mb-3">{project.category}</p>
+                                {activeId === project.id && (
+                                    <motion.p
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: 'auto' }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        className="text-sm text-teal-100/70 mb-4 leading-relaxed"
+                                    >
+                                        {project.description}
+                                    </motion.p>
+                                )}
+                                <div className="flex gap-2 flex-wrap mt-4">
                                     {project.tags.map((tag) => (
                                         <span key={tag} className="px-2 py-1 text-xs rounded-md bg-teal-950 text-teal-200 border border-teal-800">
                                             {tag}
