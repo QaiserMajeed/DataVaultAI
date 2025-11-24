@@ -24,7 +24,7 @@ const Hero = () => {
                         fontFamily: 'var(--font-mono)',
                         letterSpacing: '0.05em'
                     }}>
-                        Next-Gen AI Development
+                        Production-Ready AI Development
                     </span>
                 </motion.div>
 
@@ -43,8 +43,9 @@ const Hero = () => {
                         backgroundClip: 'text'
                     }}
                 >
-                    We Build
+                    We Build AI Solutions
                     <br />
+                    That
                     <span style={{
                         background: 'linear-gradient(135deg, #00ffcc 0%, #00d9ff 50%, #ff6b35 100%)',
                         WebkitBackgroundClip: 'text',
@@ -52,10 +53,8 @@ const Hero = () => {
                         backgroundClip: 'text',
                         fontStyle: 'italic'
                     }}>
-                        Intelligent
+                        {' '}Drive Results
                     </span>
-                    <br />
-                    Digital Solutions
                 </motion.h1>
 
                 {/* Subtitle with elegant spacing */}
@@ -70,7 +69,7 @@ const Hero = () => {
                         letterSpacing: '-0.01em'
                     }}
                 >
-                    Transform your business with custom AI applications. From predictive analytics to generative AI, we deliver enterprise-grade solutions that drive growth.
+                    Helping businesses grow with fast, secure AI applications that increase efficiency, reduce costs, and unlock new revenue opportunities.
                 </motion.p>
 
                 {/* CTAs with sophisticated hover effects */}
@@ -92,7 +91,7 @@ const Hero = () => {
                         }}
                     >
                         <span className="relative z-10 flex items-center gap-2">
-                            Start Your Project
+                            Let's Build Your AI Solution
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                         </span>
                         <div
