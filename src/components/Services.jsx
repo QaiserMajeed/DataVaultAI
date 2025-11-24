@@ -6,7 +6,7 @@ const services = [
     {
         icon: <Server className="w-8 h-8 text-emerald-400" />,
         title: 'AI Backend Development',
-        description: 'Intelligent backend systems with LLM integration, vector search, and scalable AI infrastructure.',
+        description: 'Build intelligent systems that automate workflows, process data at scale, and deliver instant insights. From chatbots to recommendation engines, we create backends that work hard for your business.',
         features: ['Custom LLM Integration', 'RAG Pipelines', 'FastAPI/Node.js'],
         gradient: 'from-emerald-500/20 to-teal-500/20',
         border: 'group-hover:border-emerald-500/50',
@@ -14,7 +14,7 @@ const services = [
     {
         icon: <Monitor className="w-8 h-8 text-teal-400" />,
         title: 'AI Frontend Development',
-        description: 'Responsive, dynamic UIs with seamless AI integration, real-time features, and exceptional UX.',
+        description: 'Create intuitive interfaces that make AI accessible to your users. Fast, beautiful, and easy to use - we build frontends that turn complex AI into simple experiences.',
         features: ['React & Next.js', 'Real-time Streaming', 'Accessible Design'],
         gradient: 'from-teal-500/20 to-cyan-500/20',
         border: 'group-hover:border-teal-500/50',
@@ -22,7 +22,7 @@ const services = [
     {
         icon: <Brain className="w-8 h-8 text-coral-400" />,
         title: 'ML Model Development',
-        description: 'Custom machine learning models trained and fine-tuned for your specific business needs.',
+        description: 'Train custom models that solve your specific challenges. Whether detecting fraud, predicting customer behavior, or analyzing images - we build AI that delivers measurable ROI.',
         features: ['Model Training', 'Computer Vision', 'NLP Solutions'],
         gradient: 'from-coral-500/20 to-orange-500/20',
         border: 'group-hover:border-coral-500/50',
@@ -30,7 +30,7 @@ const services = [
     {
         icon: <Lightbulb className="w-8 h-8 text-yellow-400" />,
         title: 'AI Consulting & Strategy',
-        description: 'Strategic guidance to identify AI opportunities and create roadmaps for successful implementation.',
+        description: 'Not sure where to start? We help you identify high-impact AI opportunities, prioritize initiatives, and create roadmaps that deliver value fast.',
         features: ['Feasibility Assessment', 'Solution Architecture', 'Tech Stack Selection'],
         gradient: 'from-yellow-500/20 to-amber-500/20',
         border: 'group-hover:border-yellow-500/50',
@@ -60,7 +60,7 @@ const Services = () => {
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6"
                     >
-                        Custom AI Development
+                        Full-Stack AI Development Services
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ const Services = () => {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-teal-100/70"
                     >
-                        We build tailored AI solutions designed to solve complex business challenges and drive innovation.
+                        From strategy to deployment, we handle every aspect of your AI project. Fast, secure, and built to scale.
                     </motion.p>
                 </div>
 
