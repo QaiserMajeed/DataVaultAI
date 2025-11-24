@@ -5,29 +5,29 @@ import { motion } from 'framer-motion';
 const steps = [
     {
         icon: <Search className="w-6 h-6" />,
-        title: 'Discovery',
-        description: 'We analyze your requirements and define the project scope.',
+        title: 'Discovery & Strategy',
+        description: 'We identify high-impact AI opportunities for your business. Free consultation to understand your challenges, assess feasibility, and create a clear roadmap with defined success metrics.',
         bgColor: 'bg-teal-500/10',
         textColor: 'text-teal-400',
     },
     {
         icon: <PenTool className="w-6 h-6" />,
-        title: 'Design',
-        description: 'We create the system architecture and technical specifications.',
+        title: 'Design & Planning',
+        description: 'We design a solution architecture that scales with your business. Detailed specifications, timeline, and cost estimates so you know exactly what to expect before we write a single line of code.',
         bgColor: 'bg-emerald-500/10',
         textColor: 'text-emerald-400',
     },
     {
         icon: <Code2 className="w-6 h-6" />,
-        title: 'Development',
-        description: 'We build your solution using agile methodology and best practices.',
+        title: 'Agile Development',
+        description: 'See progress every 2 weeks with working demos. We build in short sprints so you can provide feedback early and often, ensuring the final product matches your vision perfectly.',
         bgColor: 'bg-coral-500/10',
         textColor: 'text-coral-400',
     },
     {
         icon: <Rocket className="w-6 h-6" />,
-        title: 'Deployment',
-        description: 'We launch your application and provide ongoing support.',
+        title: 'Launch & Support',
+        description: 'We handle deployment, monitoring, and optimization. Comprehensive training for your team, plus ongoing support packages to keep your AI solution running smoothly and improving over time.',
         bgColor: 'bg-cyan-500/10',
         textColor: 'text-cyan-400',
     },
@@ -46,8 +46,24 @@ const Process = () => {
                     >
                         Our Process
                     </motion.span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">How We Deliver</h2>
-                    <p className="text-lg text-teal-100/70">A proven methodology for successful AI implementation.</p>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                    >
+                        From Idea to Impact in 4 Simple Steps
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg text-teal-100/70"
+                    >
+                        Our proven process ensures your AI project delivers measurable results on time and within budget.
+                    </motion.p>
                 </div>
 
                 <div className="relative">
