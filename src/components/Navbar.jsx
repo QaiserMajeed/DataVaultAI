@@ -42,10 +42,11 @@ const Navbar = () => {
             )}
             style={{
                 background: isScrolled
-                    ? 'rgba(4, 20, 32, 0.85)'
-                    : 'transparent',
-                backdropFilter: isScrolled ? 'blur(20px)' : 'none',
-                borderBottom: isScrolled ? '1px solid rgba(0, 217, 255, 0.15)' : '1px solid transparent'
+                    ? 'rgba(15, 23, 42, 0.7)'
+                    : 'rgba(15, 23, 42, 0.3)',
+                backdropFilter: 'blur(20px)',
+                borderBottom: isScrolled ? '1px solid rgba(99, 102, 241, 0.1)' : '1px solid transparent',
+                boxShadow: isScrolled ? '0 4px 24px rgba(0, 0, 0, 0.1)' : 'none'
             }}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

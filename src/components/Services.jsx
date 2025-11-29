@@ -1,116 +1,181 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Server, Smartphone, Brain, Globe, ArrowRight } from 'lucide-react';
+import { Server, Smartphone, Brain, Globe, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
     {
-        icon: <Server className="w-8 h-8 text-emerald-400" />,
+        icon: Server,
         title: 'Web Development',
-        description: 'Build powerful, scalable web applications with modern frameworks. From custom CMS to enterprise solutions, we deliver high-performance applications that drive business growth.',
-        features: ['React & Next.js', 'Node.js Backend', 'API Development'],
-        gradient: 'from-emerald-500/20 to-teal-500/20',
-        border: 'group-hover:border-emerald-500/50',
-        link: '/services/web-development'
+        description: 'Enterprise web applications built with modern frameworks. Scalable architecture designed for high-traffic production environments.',
+        features: ['React / Next.js', 'Node.js / Python', 'REST / GraphQL API'],
+        link: '/services/web-development',
+        gridClass: 'md:col-span-2 md:row-span-2'
     },
     {
-        icon: <Smartphone className="w-8 h-8 text-teal-400" />,
-        title: 'Mobile Development',
-        description: 'Create exceptional mobile experiences for iOS and Android. Native or cross-platform, we build apps that users love with seamless performance and beautiful design.',
-        features: ['React Native', 'iOS & Android', 'Cross-Platform'],
-        gradient: 'from-teal-500/20 to-cyan-500/20',
-        border: 'group-hover:border-teal-500/50',
-        link: '/services/mobile-development'
-    },
-    {
-        icon: <Brain className="w-8 h-8 text-coral-400" />,
+        icon: Brain,
         title: 'AI Development',
-        description: 'Transform your business with intelligent automation. From chatbots to custom ML models, we build AI solutions that deliver measurable ROI and competitive advantage.',
-        features: ['LLM Integration', 'Machine Learning', 'AI Automation'],
-        gradient: 'from-coral-500/20 to-orange-500/20',
-        border: 'group-hover:border-coral-500/50',
-        link: '/services/ai-development'
+        description: 'Production-ready ML systems with continuous monitoring and optimization.',
+        features: ['LLM Integration', 'Computer Vision', 'NLP'],
+        link: '/services/ai-development',
+        gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
-        icon: <Globe className="w-8 h-8 text-blue-400" />,
-        title: 'Web Hosting',
-        description: 'Reliable, fast, and secure hosting solutions. From shared hosting to enterprise cloud deployments, we ensure your website is always available and performing at its best.',
-        features: ['Cloud Infrastructure', '99.9% Uptime', 'DDoS Protection'],
-        gradient: 'from-blue-500/20 to-cyan-500/20',
-        border: 'group-hover:border-blue-500/50',
-        link: '/services/web-hosting'
+        icon: Smartphone,
+        title: 'Mobile',
+        description: 'Native mobile applications for iOS and Android platforms.',
+        features: ['React Native', 'Swift / Kotlin'],
+        link: '/services/mobile-development',
+        gridClass: 'md:col-span-1 md:row-span-1'
+    },
+    {
+        icon: Globe,
+        title: 'Cloud Infrastructure',
+        description: 'Secure, scalable architecture with automated deployments and zero-downtime releases.',
+        features: ['AWS / Azure / GCP', 'Kubernetes / Docker', '24/7 Monitoring'],
+        link: '/services/web-hosting',
+        gridClass: 'md:col-span-3 md:row-span-1'
     },
 ];
 
 const Services = () => {
     return (
-        <section id="services" className="py-24 bg-teal-950 relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-800 to-transparent" />
+        <section id="services" className="py-24 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div
+                className="absolute inset-0 opacity-[0.02]"
+                style={{
+                    backgroundImage: `linear-gradient(rgba(148, 163, 184, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.3) 1px, transparent 1px)`,
+                    backgroundSize: '48px 48px'
+                }}
+            />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-block px-4 py-1.5 rounded-full bg-emerald-900/30 border border-emerald-800 text-emerald-400 text-sm font-semibold mb-4"
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-16"
+                >
+                    <h2
+                        className="text-4xl md:text-5xl font-bold mb-4"
+                        style={{
+                            fontFamily: 'Inter, system-ui, sans-serif',
+                            letterSpacing: '-0.03em',
+                            color: '#f1f5f9'
+                        }}
                     >
-                        Our Services
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                        Technical Capabilities
+                    </h2>
+                    <p
+                        className="text-lg max-w-2xl"
+                        style={{
+                            fontFamily: 'Inter, system-ui, sans-serif',
+                            color: '#cbd5e1',
+                            letterSpacing: '-0.01em'
+                        }}
                     >
-                        Full-Stack AI Development Services
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-lg text-teal-100/70"
-                    >
-                        From strategy to deployment, we handle every aspect of your AI project. Fast, secure, and built to scale.
-                    </motion.p>
-                </div>
+                        End-to-end development across web, mobile, AI, and cloud platforms
+                    </p>
+                </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                {/* Bento Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-fr">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className={`group relative p-8 rounded-3xl bg-teal-900/30 border border-teal-800 ${service.border} hover:bg-teal-900/50 transition-all duration-300`}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className={`group ${service.gridClass}`}
                         >
-                            <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`} />
+                            <Link
+                                to={service.link}
+                                className="block h-full p-8 rounded-2xl transition-all duration-300 relative overflow-hidden"
+                                style={{
+                                    background: 'rgba(15, 23, 42, 0.4)',
+                                    backdropFilter: 'blur(12px)',
+                                    border: '1px solid rgba(99, 102, 241, 0.1)',
+                                }}
+                            >
+                                {/* Hover Gradient */}
+                                <div
+                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                    style={{
+                                        background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%)'
+                                    }}
+                                />
 
-                            <div className="relative z-10">
-                                <div className="w-14 h-14 bg-teal-950 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-teal-800 group-hover:border-teal-700">
-                                    {service.icon}
+                                <div className="relative z-10 h-full flex flex-col">
+                                    {/* Icon */}
+                                    <div
+                                        className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                                        style={{
+                                            background: 'rgba(99, 102, 241, 0.1)',
+                                            border: '1px solid rgba(99, 102, 241, 0.2)'
+                                        }}
+                                    >
+                                        <service.icon className="w-6 h-6" style={{ color: '#818cf8' }} />
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3
+                                        className="text-2xl font-bold mb-3"
+                                        style={{
+                                            fontFamily: 'Inter, system-ui, sans-serif',
+                                            letterSpacing: '-0.02em',
+                                            color: '#f1f5f9'
+                                        }}
+                                    >
+                                        {service.title}
+                                    </h3>
+
+                                    {/* Description */}
+                                    <p
+                                        className="text-sm mb-6 flex-grow"
+                                        style={{
+                                            fontFamily: 'Inter, system-ui, sans-serif',
+                                            color: '#94a3b8',
+                                            lineHeight: '1.6'
+                                        }}
+                                    >
+                                        {service.description}
+                                    </p>
+
+                                    {/* Features */}
+                                    <ul className="space-y-2 mb-6">
+                                        {service.features.map((feature, idx) => (
+                                            <li
+                                                key={idx}
+                                                className="flex items-center text-xs"
+                                                style={{
+                                                    fontFamily: 'Inter, system-ui, sans-serif',
+                                                    color: '#cbd5e1'
+                                                }}
+                                            >
+                                                <div
+                                                    className="w-1 h-1 rounded-full mr-2"
+                                                    style={{ background: '#6366f1' }}
+                                                />
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    {/* Learn More Link */}
+                                    <div
+                                        className="flex items-center gap-1 text-sm font-medium group/link"
+                                        style={{
+                                            fontFamily: 'Inter, system-ui, sans-serif',
+                                            color: '#818cf8'
+                                        }}
+                                    >
+                                        Learn more
+                                        <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                                    </div>
                                 </div>
-
-                                <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                                <p className="text-teal-100/70 mb-6 leading-relaxed">{service.description}</p>
-
-                                <ul className="space-y-3 mb-8">
-                                    {service.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center text-sm text-teal-200">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-3" />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <Link to={service.link} className="inline-flex items-center text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group/link">
-                                    Learn more <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
-                                </Link>
-                            </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
