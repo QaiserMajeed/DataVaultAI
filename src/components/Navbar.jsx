@@ -99,12 +99,12 @@ const Navbar = () => {
 
                         {/* Services Dropdown */}
                         <div
-                            className="relative group"
+                            className="relative"
                             onMouseEnter={() => setIsServicesOpen(true)}
                             onMouseLeave={() => setIsServicesOpen(false)}
                         >
                             <button
-                                className="flex items-center gap-1 relative"
+                                className="flex items-center gap-1 relative group"
                                 style={{
                                     fontSize: '14px',
                                     fontWeight: '500',
@@ -126,28 +126,32 @@ const Navbar = () => {
 
                             {isServicesOpen && (
                                 <div
-                                    className="absolute top-full left-0 mt-2 w-56 py-2 rounded-xl shadow-xl border"
-                                    style={{
-                                        background: 'rgba(4, 20, 32, 0.95)',
-                                        backdropFilter: 'blur(20px)',
-                                        borderColor: 'rgba(0, 217, 255, 0.2)'
-                                    }}
+                                    className="absolute top-full left-0 pt-2 w-56"
                                 >
-                                    {serviceLinks.map((link) => (
-                                        <Link
-                                            key={link.name}
-                                            to={link.href}
-                                            className="block px-4 py-2.5 transition-colors duration-200 hover:bg-teal-900/50"
-                                            style={{
-                                                fontSize: '14px',
-                                                fontWeight: '500',
-                                                color: 'rgba(255, 255, 255, 0.9)',
-                                                fontFamily: 'var(--font-body)'
-                                            }}
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    ))}
+                                    <div
+                                        className="py-2 rounded-xl shadow-xl border"
+                                        style={{
+                                            background: 'rgba(4, 20, 32, 0.95)',
+                                            backdropFilter: 'blur(20px)',
+                                            borderColor: 'rgba(0, 217, 255, 0.2)'
+                                        }}
+                                    >
+                                        {serviceLinks.map((link) => (
+                                            <Link
+                                                key={link.name}
+                                                to={link.href}
+                                                className="block px-4 py-2.5 transition-colors duration-200 hover:bg-teal-900/50"
+                                                style={{
+                                                    fontSize: '14px',
+                                                    fontWeight: '500',
+                                                    color: 'rgba(255, 255, 255, 0.9)',
+                                                    fontFamily: 'var(--font-body)'
+                                                }}
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             )}
                         </div>
