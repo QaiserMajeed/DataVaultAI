@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Server, Lock, Zap, Globe, ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
+import { webHostingServiceSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const WebHosting = () => {
@@ -77,6 +79,13 @@ const WebHosting = () => {
             background: 'linear-gradient(180deg, #041420 0%, #082840 50%, #0a3d5c 100%)',
             fontFamily: 'var(--font-body)'
         }}>
+            <SEO
+                title="Cloud Infrastructure & Web Hosting Services"
+                description="Secure, scalable cloud infrastructure on AWS, Azure, GCP with 99.9% uptime, automated deployments, zero-downtime releases, and 24/7 monitoring. Enterprise web hosting solutions."
+                keywords="cloud hosting, web hosting, AWS hosting, Azure cloud, Google Cloud, Kubernetes, Docker, cloud infrastructure, managed hosting, VPS hosting, dedicated servers"
+                canonical="https://datavault.ai/services/web-hosting"
+                structuredData={webHostingServiceSchema}
+            />
             {/* Background Effects */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div

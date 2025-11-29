@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -10,11 +11,12 @@ import WebHosting from './pages/WebHosting';
 
 function App() {
   return (
-    <Router>
-      <div className="relative min-h-screen text-slate-50" style={{
-        background: 'linear-gradient(180deg, #041420 0%, #082840 50%, #0a3d5c 100%)',
-        fontFamily: 'var(--font-body)'
-      }}>
+    <HelmetProvider>
+      <Router>
+        <div className="relative min-h-screen text-slate-50" style={{
+          background: 'linear-gradient(180deg, #041420 0%, #082840 50%, #0a3d5c 100%)',
+          fontFamily: 'var(--font-body)'
+        }}>
         {/* Atmospheric background layers */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
           {/* Animated mesh gradients */}
@@ -65,7 +67,8 @@ function App() {
           <Footer />
         </div>
       </div>
-    </Router>
+      </Router>
+    </HelmetProvider>
   );
 }
 

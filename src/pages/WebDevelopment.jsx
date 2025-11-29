@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Zap, Shield, Smartphone, ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
+import { webDevServiceSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const WebDevelopment = () => {
@@ -54,6 +56,13 @@ const WebDevelopment = () => {
             background: 'linear-gradient(180deg, #041420 0%, #082840 50%, #0a3d5c 100%)',
             fontFamily: 'var(--font-body)'
         }}>
+            <SEO
+                title="Web Development Services"
+                description="Enterprise web applications built with React, Next.js, Node.js, and modern frameworks. Scalable architecture designed for high-traffic production environments with 99.9% uptime guarantee."
+                keywords="web development, React development, Next.js, Node.js, TypeScript, custom web applications, enterprise web apps, REST API, GraphQL, web development services"
+                canonical="https://datavault.ai/services/web-development"
+                structuredData={webDevServiceSchema}
+            />
             {/* Background Effects */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div

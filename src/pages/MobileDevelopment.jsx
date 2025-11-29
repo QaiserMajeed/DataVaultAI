@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Tablet, Zap, Users, ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
+import { mobileDevServiceSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const MobileDevelopment = () => {
@@ -54,6 +56,13 @@ const MobileDevelopment = () => {
             background: 'linear-gradient(180deg, #041420 0%, #082840 50%, #0a3d5c 100%)',
             fontFamily: 'var(--font-body)'
         }}>
+            <SEO
+                title="Mobile App Development Services"
+                description="Native mobile applications for iOS and Android using React Native, Swift, and Kotlin. Build high-performance cross-platform apps with offline-first architecture and intuitive user experience."
+                keywords="mobile app development, React Native, iOS development, Android development, Swift, Kotlin, Flutter, cross-platform apps, native mobile apps, mobile development services"
+                canonical="https://datavault.ai/services/mobile-development"
+                structuredData={mobileDevServiceSchema}
+            />
             {/* Background Effects */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div
