@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Bot, Sparkles, BarChart3, ArrowRight, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
+import { aiDevServiceSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const AIDevelopment = () => {
@@ -81,6 +83,13 @@ const AIDevelopment = () => {
             background: 'linear-gradient(180deg, #041420 0%, #082840 50%, #0a3d5c 100%)',
             fontFamily: 'var(--font-body)'
         }}>
+            <SEO
+                title="AI & Machine Learning Development Services"
+                description="Production-ready AI solutions with LLM integration, computer vision, NLP, and custom ML models. GPT-4, Claude, TensorFlow, PyTorch expertise. Reduce costs by 60% with AI automation."
+                keywords="AI development, machine learning, LLM integration, GPT-4, Claude AI, TensorFlow, PyTorch, computer vision, NLP, chatbot development, predictive analytics, AI services"
+                canonical="https://datavault.ai/services/ai-development"
+                structuredData={aiDevServiceSchema}
+            />
             {/* Background Effects */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div
