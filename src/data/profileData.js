@@ -163,10 +163,6 @@ export const clientReviews = [
         content: 'Hafiz delivered on all tasks and was always easy to reach for requests or modifications.',
         rating: 5.0,
         date: 'November 2024',
-        duration: 'Oct 24, 2025 - Nov 3, 2025',
-        amount: '$135.00',
-        hourlyRate: '$27.00/hr',
-        hours: 5,
         image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80'
     },
     {
@@ -177,9 +173,6 @@ export const clientReviews = [
         content: 'Hafiz delivered great work - in very short time he was able to finish the work, and small modifications were incorporated quickly when requested. Will work with Hafiz again! Thanks!',
         rating: 5.0,
         date: 'October 2024',
-        duration: 'Oct 20, 2025 - Oct 24, 2025',
-        amount: '$160.00',
-        type: 'Fixed price',
         image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80'
     },
     {
@@ -190,9 +183,6 @@ export const clientReviews = [
         content: 'Hafiz took a great shot at a very tough project and did an admirable job. This was a very complex scraping job and Hafiz did well. I will definitely use his services again.',
         rating: 5.0,
         date: 'September 2024',
-        duration: 'Aug 16, 2025 - Aug 29, 2025',
-        amount: '$250.00',
-        type: 'Fixed price',
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80'
     },
     {
@@ -203,10 +193,6 @@ export const clientReviews = [
         content: 'Wonderful to work with. Very thorough and efficient work.',
         rating: 5.0,
         date: 'August 2024',
-        duration: 'Aug 2, 2025 - Aug 13, 2025',
-        amount: '$1,150.00',
-        hourlyRate: '$25.00/hr',
-        hours: 40,
         image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80'
     },
     {
@@ -217,9 +203,6 @@ export const clientReviews = [
         content: 'Great work, thank you!',
         rating: 5.0,
         date: 'July 2024',
-        duration: 'Jul 24, 2025 - Jul 24, 2025',
-        amount: '$10.00',
-        type: 'Fixed price',
         image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80'
     },
     {
@@ -230,9 +213,6 @@ export const clientReviews = [
         content: 'Wonderful working with him. Qaiser was very professional, attentive to details and showed will and capacity to perform.',
         rating: 5.0,
         date: 'November 2019',
-        duration: 'Nov 26, 2019 - Nov 28, 2019',
-        amount: '$230.00',
-        type: 'Fixed price',
         image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&q=80'
     },
     {
@@ -243,9 +223,6 @@ export const clientReviews = [
         content: 'Outstanding developer with deep knowledge in both frontend and backend. Delivered our project on time with excellent code quality.',
         rating: 5.0,
         date: 'October 2024',
-        duration: 'Sep 2024 - Oct 2024',
-        amount: '$3,500.00',
-        type: 'Contract',
         image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&q=80'
     },
     {
@@ -256,10 +233,6 @@ export const clientReviews = [
         content: 'Perfect implementation of our payment system. The checkout flow is smooth and the subscription management works flawlessly.',
         rating: 5.0,
         date: 'September 2024',
-        duration: 'Aug 2024 - Sep 2024',
-        amount: '$2,200.00',
-        hourlyRate: '$27.00/hr',
-        hours: 80,
         image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&q=80'
     },
     {
@@ -270,9 +243,6 @@ export const clientReviews = [
         content: 'Excellent work on complex data extraction project. The automation saves us countless hours every week.',
         rating: 5.0,
         date: 'August 2024',
-        duration: 'Jul 2024 - Aug 2024',
-        amount: '$1,800.00',
-        type: 'Fixed price',
         image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&q=80'
     }
 ];

@@ -1,39 +1,44 @@
 import React from 'react';
-import { Server, Monitor, Brain, Lightbulb, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Server, Smartphone, Brain, Globe, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
     {
         icon: <Server className="w-8 h-8 text-emerald-400" />,
-        title: 'AI Backend Development',
-        description: 'Build intelligent systems that automate workflows, process data at scale, and deliver instant insights. From chatbots to recommendation engines, we create backends that work hard for your business.',
-        features: ['Custom LLM Integration', 'RAG Pipelines', 'FastAPI/Node.js'],
+        title: 'Web Development',
+        description: 'Build powerful, scalable web applications with modern frameworks. From custom CMS to enterprise solutions, we deliver high-performance applications that drive business growth.',
+        features: ['React & Next.js', 'Node.js Backend', 'API Development'],
         gradient: 'from-emerald-500/20 to-teal-500/20',
         border: 'group-hover:border-emerald-500/50',
+        link: '/services/web-development'
     },
     {
-        icon: <Monitor className="w-8 h-8 text-teal-400" />,
-        title: 'AI Frontend Development',
-        description: 'Create intuitive interfaces that make AI accessible to your users. Fast, beautiful, and easy to use - we build frontends that turn complex AI into simple experiences.',
-        features: ['React & Next.js', 'Real-time Streaming', 'Accessible Design'],
+        icon: <Smartphone className="w-8 h-8 text-teal-400" />,
+        title: 'Mobile Development',
+        description: 'Create exceptional mobile experiences for iOS and Android. Native or cross-platform, we build apps that users love with seamless performance and beautiful design.',
+        features: ['React Native', 'iOS & Android', 'Cross-Platform'],
         gradient: 'from-teal-500/20 to-cyan-500/20',
         border: 'group-hover:border-teal-500/50',
+        link: '/services/mobile-development'
     },
     {
         icon: <Brain className="w-8 h-8 text-coral-400" />,
-        title: 'ML Model Development',
-        description: 'Train custom models that solve your specific challenges. Whether detecting fraud, predicting customer behavior, or analyzing images - we build AI that delivers measurable ROI.',
-        features: ['Model Training', 'Computer Vision', 'NLP Solutions'],
+        title: 'AI Development',
+        description: 'Transform your business with intelligent automation. From chatbots to custom ML models, we build AI solutions that deliver measurable ROI and competitive advantage.',
+        features: ['LLM Integration', 'Machine Learning', 'AI Automation'],
         gradient: 'from-coral-500/20 to-orange-500/20',
         border: 'group-hover:border-coral-500/50',
+        link: '/services/ai-development'
     },
     {
-        icon: <Lightbulb className="w-8 h-8 text-yellow-400" />,
-        title: 'AI Consulting & Strategy',
-        description: 'Not sure where to start? We help you identify high-impact AI opportunities, prioritize initiatives, and create roadmaps that deliver value fast.',
-        features: ['Feasibility Assessment', 'Solution Architecture', 'Tech Stack Selection'],
-        gradient: 'from-yellow-500/20 to-amber-500/20',
-        border: 'group-hover:border-yellow-500/50',
+        icon: <Globe className="w-8 h-8 text-blue-400" />,
+        title: 'Web Hosting',
+        description: 'Reliable, fast, and secure hosting solutions. From shared hosting to enterprise cloud deployments, we ensure your website is always available and performing at its best.',
+        features: ['Cloud Infrastructure', '99.9% Uptime', 'DDoS Protection'],
+        gradient: 'from-blue-500/20 to-cyan-500/20',
+        border: 'group-hover:border-blue-500/50',
+        link: '/services/web-hosting'
     },
 ];
 
@@ -102,9 +107,9 @@ const Services = () => {
                                     ))}
                                 </ul>
 
-                                <a href="#contact" className="inline-flex items-center text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group/link">
+                                <Link to={service.link} className="inline-flex items-center text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group/link">
                                     Learn more <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
                     ))}
