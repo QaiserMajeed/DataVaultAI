@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { portfolioProjects } from '../data/profileData';
 
@@ -9,120 +8,141 @@ const Portfolio = () => {
     const [activeId, setActiveId] = useState(1);
 
     return (
-        <section id="portfolio" className="py-24 bg-teal-950 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="portfolio" className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
+            <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">
+                {/* Section Header */}
                 <div className="mb-16">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-block px-4 py-1.5 rounded-full bg-emerald-900/30 border border-emerald-800 text-emerald-400 text-sm font-semibold mb-4"
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="w-2 h-2 border-2 border-[var(--foreground)]"></div>
+                        <div className="h-px w-24 bg-[var(--foreground)]"></div>
+                    </div>
+                    <h2
+                        className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tighter"
+                        style={{ fontFamily: 'var(--font-display)' }}
                     >
-                        Our Work
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6"
-                    >
-                        Real AI Solutions, Real Results
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-lg text-teal-100/70"
+                        Real Solutions,
+                        <br />
+                        <span className="italic">Real Results</span>
+                    </h2>
+                    <p
+                        className="text-lg md:text-xl max-w-2xl leading-relaxed"
+                        style={{ fontFamily: 'var(--font-body)' }}
                     >
                         See how we've helped businesses like yours leverage AI to increase efficiency, reduce costs, and drive growth.
-                    </motion.p>
+                    </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-1">
                     {/* Project List */}
-                    <div className="space-y-6">
+                    <div className="space-y-1">
                         {projects.map((project) => (
-                            <motion.div
+                            <div
                                 key={project.id}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
                                 onClick={() => setActiveId(project.id)}
-                                className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeId === project.id
-                                        ? 'bg-teal-900 border-emerald-500/50 shadow-lg shadow-emerald-900/20'
-                                        : 'bg-transparent border-teal-800 hover:bg-teal-900/30'
-                                    }`}
+                                className={`p-8 cursor-pointer transition-all duration-100 border-2 focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3 ${
+                                    activeId === project.id
+                                        ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)]'
+                                        : 'bg-[var(--background)] text-[var(--foreground)] border-[var(--border-light)] hover:border-[var(--foreground)]'
+                                }`}
+                                tabIndex={0}
+                                role="button"
+                                onKeyDown={(e) => e.key === 'Enter' && setActiveId(project.id)}
                             >
-                                <div className="flex justify-between items-start mb-2">
-                                    <h3 className={`text-xl font-bold ${activeId === project.id ? 'text-white' : 'text-teal-200/70'}`}>
+                                <div className="flex justify-between items-start mb-4">
+                                    <h3
+                                        className="text-2xl font-bold tracking-tight"
+                                        style={{ fontFamily: 'var(--font-display)' }}
+                                    >
                                         {project.title}
                                     </h3>
-                                    {activeId === project.id && <ArrowRight className="text-emerald-500" />}
+                                    {activeId === project.id && (
+                                        <ArrowRight className="w-6 h-6" strokeWidth={2} />
+                                    )}
                                 </div>
-                                <p className="text-sm text-teal-400 mb-3">{project.category}</p>
+                                <p
+                                    className="text-sm uppercase tracking-wider mb-4"
+                                    style={{ fontFamily: 'var(--font-mono)' }}
+                                >
+                                    {project.category}
+                                </p>
                                 {activeId === project.id && (
-                                    <motion.p
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: 'auto' }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                        className="text-sm text-teal-100/70 mb-4 leading-relaxed"
+                                    <p
+                                        className="text-sm leading-relaxed mb-6"
+                                        style={{ fontFamily: 'var(--font-body)' }}
                                     >
                                         {project.description}
-                                    </motion.p>
+                                    </p>
                                 )}
-                                <div className="flex gap-2 flex-wrap mt-4">
+                                <div className="flex gap-2 flex-wrap">
                                     {project.technologies.map((tech) => (
-                                        <span key={tech} className="px-2 py-1 text-xs rounded-md bg-teal-950 text-teal-200 border border-teal-800">
+                                        <span
+                                            key={tech}
+                                            className={`px-3 py-1 text-xs uppercase tracking-wider border ${
+                                                activeId === project.id
+                                                    ? 'border-[var(--background)]'
+                                                    : 'border-[var(--foreground)]'
+                                            }`}
+                                            style={{ fontFamily: 'var(--font-mono)' }}
+                                        >
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
 
                     {/* Project Preview */}
-                    <div className="relative h-[500px] rounded-3xl overflow-hidden border border-teal-800 bg-teal-900">
-                        <AnimatePresence mode="wait">
-                            {projects.map((project) => (
+                    <div className="relative min-h-[600px] border-2 border-[var(--foreground)] overflow-hidden">
+                        {projects.map(
+                            (project) =>
                                 project.id === activeId && (
-                                    <motion.div
-                                        key={project.id}
-                                        initial={{ opacity: 0, scale: 0.95 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ duration: 0.4 }}
-                                        className="absolute inset-0"
-                                    >
+                                    <div key={project.id} className="absolute inset-0">
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="w-full h-full object-cover opacity-60"
+                                            className="w-full h-full object-cover grayscale"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-teal-950 via-teal-950/50 to-transparent" />
+                                        <div className="absolute inset-0 bg-[var(--foreground)] opacity-50" />
 
-                                        <div className="absolute bottom-0 left-0 right-0 p-8">
-                                            <div className="grid grid-cols-2 gap-4 mb-8">
+                                        <div className="absolute bottom-0 left-0 right-0 p-8 bg-[var(--foreground)] text-[var(--background)] border-t-2 border-[var(--background)]">
+                                            <div className="grid grid-cols-2 gap-1 mb-8">
                                                 {Object.entries(project.stats).map(([key, value]) => (
-                                                    <div key={key} className="bg-teal-950/80 backdrop-blur-md p-4 rounded-xl border border-teal-800">
-                                                        <div className="text-2xl font-bold text-white">{value}</div>
-                                                        <div className="text-xs text-teal-400 uppercase tracking-wider">{key}</div>
+                                                    <div
+                                                        key={key}
+                                                        className="p-4 border-2 border-[var(--background)] text-center"
+                                                    >
+                                                        <div
+                                                            className="text-3xl font-bold mb-2"
+                                                            style={{ fontFamily: 'var(--font-display)' }}
+                                                        >
+                                                            {value}
+                                                        </div>
+                                                        <div
+                                                            className="text-xs uppercase tracking-widest"
+                                                            style={{ fontFamily: 'var(--font-mono)' }}
+                                                        >
+                                                            {key}
+                                                        </div>
                                                     </div>
                                                 ))}
                                             </div>
-                                            <button className="flex items-center gap-2 text-white font-semibold hover:text-emerald-400 transition-colors">
-                                                View Case Study <ExternalLink className="w-4 h-4" />
+                                            <button
+                                                className="flex items-center gap-2 uppercase tracking-widest text-sm font-semibold transition-all duration-100 border-b-2 border-[var(--background)] hover:border-transparent focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"
+                                                style={{ fontFamily: 'var(--font-mono)' }}
+                                            >
+                                                View Case Study <ExternalLink className="w-4 h-4" strokeWidth={2} />
                                             </button>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 )
-                            ))}
-                        </AnimatePresence>
+                        )}
                     </div>
                 </div>
             </div>
+
+            {/* Thick Section Divider */}
+            <div className="absolute bottom-0 left-0 right-0 h-2 bg-[var(--foreground)]"></div>
         </section>
     );
 };

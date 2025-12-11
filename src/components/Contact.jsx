@@ -1,84 +1,89 @@
 import React from 'react';
 import { Mail, ArrowRight, Phone } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-24 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-emerald-600 to-cyan-600">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-            </div>
+        <section id="contact" className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-[var(--foreground)] text-[var(--background)] texture-radial-inverted">
+            <div className="max-w-4xl mx-auto px-6 md:px-8 lg:px-12 relative z-10 text-center">
+                {/* Section Header - Inverted */}
+                <div className="flex items-center justify-center gap-4 mb-8">
+                    <div className="w-2 h-2 border-2 border-[var(--background)]"></div>
+                    <div className="h-px w-24 bg-[var(--background)]"></div>
+                </div>
 
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-4xl md:text-6xl font-bold text-white mb-8"
+                <h2
+                    className="text-5xl md:text-6xl lg:text-8xl font-bold mb-8 tracking-tighter"
+                    style={{ fontFamily: 'var(--font-display)' }}
                 >
-                    Ready to Build Your AI Solution?
-                </motion.h2>
+                    Ready to Build
+                    <br />
+                    Your AI <span className="italic">Solution?</span>
+                </h2>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="text-xl text-teal-50 mb-12 leading-relaxed"
+                <p
+                    className="text-xl md:text-2xl mb-16 leading-relaxed"
+                    style={{ fontFamily: 'var(--font-body)' }}
                 >
                     Let's discuss your project and create a custom AI solution that drives real business value.
-                </motion.p>
+                </p>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
-                >
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                     <a
                         href="mailto:hello@datavaultai.com?subject=AI Project Consultation Request"
-                        className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-teal-700 bg-white hover:bg-teal-50 rounded-full shadow-2xl transition-all hover:scale-105 group"
+                        className="group inline-flex items-center gap-3 px-8 py-4 bg-[var(--background)] text-[var(--foreground)] uppercase tracking-widest text-sm font-semibold transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] border-2 border-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"
+                        style={{ fontFamily: 'var(--font-mono)' }}
                     >
                         Get Free Consultation
-                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight
+                            className="w-4 h-4 transition-transform duration-100 group-hover:translate-x-1"
+                            strokeWidth={2}
+                        />
                     </a>
                     <a
                         href="mailto:hello@datavaultai.com?subject=Request Project Quote"
-                        className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full border-2 border-white transition-all"
+                        className="inline-flex items-center px-8 py-4 bg-[var(--foreground)] text-[var(--background)] border-2 border-[var(--background)] uppercase tracking-widest text-sm font-semibold transition-all duration-100 hover:bg-[var(--background)] hover:text-[var(--foreground)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"
+                        style={{ fontFamily: 'var(--font-mono)' }}
                     >
                         Request a Quote
                     </a>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
-                >
+                {/* Contact Info */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-12 border-t-2 border-b-2 border-[var(--background)] py-8">
                     <a
                         href="tel:+447440189478"
-                        className="inline-flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/30 transition-all hover:scale-105"
+                        className="inline-flex items-center gap-3 transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"
                     >
-                        <Phone className="w-5 h-5" />
-                        <span>+44 07440 189478</span>
+                        <Phone className="w-5 h-5" strokeWidth={2} />
+                        <span
+                            className="font-medium tracking-wider"
+                            style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                            +44 07440 189478
+                        </span>
                     </a>
                     <a
                         href="mailto:hello@datavaultai.com"
-                        className="inline-flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/30 transition-all hover:scale-105"
+                        className="inline-flex items-center gap-3 transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"
                     >
-                        <Mail className="w-5 h-5" />
-                        <span>hello@datavaultai.com</span>
+                        <Mail className="w-5 h-5" strokeWidth={2} />
+                        <span
+                            className="font-medium tracking-wider"
+                            style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                            hello@datavaultai.com
+                        </span>
                     </a>
-                </motion.div>
+                </div>
 
-                <div className="mt-6 flex items-center justify-center gap-8 text-teal-100 text-sm font-medium">
+                {/* Availability */}
+                <div className="flex items-center justify-center gap-6 text-sm uppercase tracking-widest" style={{ fontFamily: 'var(--font-mono)' }}>
                     <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" />
-                        Available for new projects
+                        <div className="w-2 h-2 bg-[var(--background)] border border-[var(--background)]" />
+                        Available for New Projects
                     </div>
+                    <span>•</span>
                     <div>Response within 24h</div>
                 </div>
             </div>

@@ -1,25 +1,22 @@
 @import "tailwindcss";
 
 :root {
-    /* Deep Ocean Theme - Distinctive & Sophisticated */
-    --color-deep-ocean: #041420;
-    --color-ocean-dark: #082840;
-    --color-ocean-mid: #0a3d5c;
-    --color-ocean-light: #0d5278;
+    /* Minimalist Monochrome - Pure Black & White Only */
+    --background: #FFFFFF;
+    --foreground: #000000;
+    --muted: #F5F5F5;
+    --muted-foreground: #525252;
+    --accent: #000000;
+    --accent-foreground: #FFFFFF;
+    --border: #000000;
+    --border-light: #E5E5E5;
+    --card: #FFFFFF;
+    --card-foreground: #000000;
+    --ring: #000000;
 
-    --color-aqua-bright: #00d9ff;
-    --color-aqua-glow: #00f0ff;
-    --color-cyan-electric: #00ffcc;
-
-    --color-coral-400: #ff7f50;
-    --color-coral-500: #ff6b35;
-    --color-coral-600: #e85d2a;
-    --color-ember: #ff4d6d;
-    --color-sunset: #ff8c42;
-
-    /* Typography */
-    --font-display: 'Fraunces', serif;
-    --font-body: 'DM Sans', sans-serif;
+    /* Typography - Elegant Serif System */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Serif 4', Georgia, serif;
     --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -29,116 +26,196 @@
 
 body {
     font-family: var(--font-body);
+    background: var(--background);
+    color: var(--foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Sophisticated scroll behavior */
+/* Sharp, instant scroll behavior */
 html {
     scroll-behavior: smooth;
 }
 
-/* Custom selection color */
+/* Pure black selection */
 ::selection {
-    background: var(--color-aqua-bright);
-    color: var(--color-deep-ocean);
+    background: var(--foreground);
+    color: var(--background);
 }
 
-/* Animated gradient mesh background */
-@keyframes mesh-shift {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-        transform: translate(-20px, 20px) scale(0.9);
-    }
-}
-
-@keyframes mesh-shift-alt {
-    0%, 100% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-    50% {
-        transform: translate(-40px, 40px) scale(1.2) rotate(5deg);
-    }
-}
-
-@keyframes float-slow {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes pulse-glow {
-    0%, 100% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.6;
-        transform: scale(1.05);
-    }
-}
-
-/* Premium fade-in animation */
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fade-in-scale {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Stagger delays for orchestrated page load */
-.animate-in-1 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
-.animate-in-2 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
-.animate-in-3 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
-.animate-in-4 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
-.animate-in-5 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
-
-/* Sophisticated hover effects */
-.hover-lift {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hover-lift:hover {
-    transform: translateY(-4px);
-}
-
-/* Custom scrollbar for depth */
+/* Custom scrollbar - monochrome */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--color-deep-ocean);
+    background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--color-ocean-mid);
-    border-radius: 5px;
+    background: var(--foreground);
+    border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-ocean-light);
+    background: var(--muted-foreground);
+}
+
+/* Minimal, instant transitions only */
+.transition-instant {
+    transition: all 100ms linear;
+}
+
+.transition-none {
+    transition: none;
+}
+
+/* Focus states for accessibility - REQUIRED */
+.focus-ring {
+    outline: 3px solid var(--foreground);
+    outline-offset: 3px;
+}
+
+/* Texture patterns - CRITICAL for depth */
+.texture-horizontal-lines {
+    position: relative;
+}
+
+.texture-horizontal-lines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        var(--foreground) 1px,
+        var(--foreground) 2px
+    );
+    background-size: 100% 4px;
+    opacity: 0.015;
+    pointer-events: none;
+}
+
+.texture-grid {
+    position: relative;
+}
+
+.texture-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.015;
+    pointer-events: none;
+}
+
+.texture-diagonal-lines {
+    position: relative;
+}
+
+.texture-diagonal-lines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(0, 0, 0, 0.03) 40px,
+        rgba(0, 0, 0, 0.03) 42px
+    );
+    opacity: 0.01;
+    pointer-events: none;
+}
+
+.texture-noise {
+    position: relative;
+}
+
+.texture-noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none;
+}
+
+/* Inverted section textures (for black backgrounds) */
+.texture-vertical-lines-inverted {
+    position: relative;
+}
+
+.texture-vertical-lines-inverted::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 1px,
+        #fff 1px,
+        #fff 2px
+    );
+    background-size: 4px 100%;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.texture-radial-inverted {
+    position: relative;
+}
+
+.texture-radial-inverted::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        circle at top center,
+        #ffffff,
+        transparent 70%
+    );
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Remove ALL existing animations */
+@keyframes mesh-shift,
+@keyframes mesh-shift-alt,
+@keyframes float-slow,
+@keyframes pulse-glow,
+@keyframes fade-in-up,
+@keyframes fade-in-scale {
+    /* Animations removed - Minimalist Monochrome uses instant transitions */
+}
+
+.animate-in-1,
+.animate-in-2,
+.animate-in-3,
+.animate-in-4,
+.animate-in-5,
+.hover-lift {
+    /* Animation classes removed */
+}
+
+/* Sharp hover effects - instant state changes */
+.hover-invert {
+    transition: background-color 100ms linear, color 100ms linear, border-color 100ms linear;
+}
+
+.hover-invert:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.hover-border-thicken {
+    transition: border-width 100ms linear;
+}
+
+.hover-border-thicken:hover {
+    border-width: 4px;
 }

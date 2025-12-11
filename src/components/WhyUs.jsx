@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Clock, Shield, TrendingUp, Zap } from 'lucide-react';
 
 const WhyUs = () => {
@@ -31,106 +30,77 @@ const WhyUs = () => {
     ];
 
     return (
-        <section className="py-24 relative overflow-hidden">
-            {/* Background accent */}
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%)'
-                }}
-            />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
+        <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-[var(--foreground)] text-[var(--background)] texture-vertical-lines-inverted">
+            <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 relative z-10">
+                {/* Section Header - Inverted */}
+                <div className="text-center mb-16">
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                        <div className="w-2 h-2 border-2 border-[var(--background)]"></div>
+                        <div className="h-px w-24 bg-[var(--background)]"></div>
+                    </div>
                     <h2
-                        className="text-4xl md:text-5xl font-bold mb-4"
-                        style={{
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            letterSpacing: '-0.03em',
-                            color: '#f1f5f9'
-                        }}
+                        className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tighter"
+                        style={{ fontFamily: 'var(--font-display)' }}
                     >
-                        Performance That Matters
+                        Performance
+                        <br />
+                        That <span className="italic">Matters</span>
                     </h2>
                     <p
-                        className="text-lg max-w-2xl mx-auto"
-                        style={{
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            color: '#cbd5e1',
-                            letterSpacing: '-0.01em'
-                        }}
+                        className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-[var(--background)]"
+                        style={{ fontFamily: 'var(--font-body)' }}
                     >
                         Metrics-driven results you can measure and trust
                     </p>
-                </motion.div>
+                </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {metrics.map((metric, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="p-8 rounded-2xl group hover:scale-[1.02] transition-all duration-300"
-                            style={{
-                                background: 'rgba(15, 23, 42, 0.4)',
-                                backdropFilter: 'blur(12px)',
-                                border: '1px solid rgba(99, 102, 241, 0.1)',
-                                boxShadow: '0 4px 24px rgba(0, 0, 0, 0.1)'
-                            }}
+                {/* Stats Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-1">
+                    {metrics.map((metric) => (
+                        <div
+                            key={metric.label}
+                            className="p-8 border-2 border-[var(--background)] text-center group transition-all duration-100 hover:bg-[var(--background)] hover:text-[var(--foreground)]"
                         >
-                            <div
-                                className="w-12 h-12 rounded-lg flex items-center justify-center mb-6"
-                                style={{
-                                    background: 'rgba(99, 102, 241, 0.1)',
-                                    border: '1px solid rgba(99, 102, 241, 0.2)'
-                                }}
-                            >
-                                <metric.icon className="w-6 h-6" style={{ color: '#818cf8' }} />
+                            {/* Icon */}
+                            <div className="flex justify-center mb-6">
+                                <div className="w-16 h-16 border-2 border-[var(--background)] flex items-center justify-center group-hover:bg-[var(--foreground)] transition-colors duration-100">
+                                    <metric.icon
+                                        className="w-8 h-8 group-hover:text-[var(--background)] transition-colors duration-100"
+                                        strokeWidth={1.5}
+                                    />
+                                </div>
                             </div>
 
+                            {/* Value */}
                             <div
-                                className="text-4xl font-bold mb-2"
-                                style={{
-                                    fontFamily: 'Inter, system-ui, sans-serif',
-                                    color: '#f1f5f9',
-                                    letterSpacing: '-0.03em'
-                                }}
+                                className="text-6xl md:text-7xl font-bold mb-4 tracking-tighter"
+                                style={{ fontFamily: 'var(--font-display)' }}
                             >
                                 {metric.value}
                             </div>
 
+                            {/* Label */}
                             <div
-                                className="text-sm font-semibold mb-2"
-                                style={{
-                                    fontFamily: 'Inter, system-ui, sans-serif',
-                                    color: '#e2e8f0',
-                                    letterSpacing: '-0.01em'
-                                }}
+                                className="text-sm font-semibold mb-2 uppercase tracking-widest"
+                                style={{ fontFamily: 'var(--font-mono)' }}
                             >
                                 {metric.label}
                             </div>
 
+                            {/* Description */}
                             <p
-                                className="text-sm"
-                                style={{
-                                    fontFamily: 'Inter, system-ui, sans-serif',
-                                    color: '#94a3b8',
-                                    lineHeight: '1.6'
-                                }}
+                                className="text-sm leading-relaxed"
+                                style={{ fontFamily: 'var(--font-body)' }}
                             >
                                 {metric.description}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
+
+            {/* Thick Section Divider - White on Black */}
+            <div className="absolute bottom-0 left-0 right-0 h-2 bg-[var(--background)]"></div>
         </section>
     );
 };
