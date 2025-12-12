@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
     {
@@ -45,101 +44,86 @@ const FAQ = () => {
     };
 
     return (
-        <section id="faq" className="py-24 bg-teal-950 relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-800 to-transparent" />
-
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <section id="faq" className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
+            <div className="max-w-4xl mx-auto px-6 md:px-8 lg:px-12 relative z-10">
+                {/* Section Header */}
                 <div className="text-center mb-16">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-block px-4 py-1.5 rounded-full bg-emerald-900/30 border border-emerald-800 text-emerald-400 text-sm font-semibold mb-4"
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                        <div className="w-2 h-2 border-2 border-[var(--foreground)]"></div>
+                        <div className="h-px w-24 bg-[var(--foreground)]"></div>
+                    </div>
+                    <h2
+                        className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tighter"
+                        style={{ fontFamily: 'var(--font-display)' }}
                     >
-                        Frequently Asked Questions
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6"
-                    >
-                        Everything You Need to Know
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-lg text-teal-100/70"
+                        Everything
+                        <br />
+                        You Need to <span className="italic">Know</span>
+                    </h2>
+                    <p
+                        className="text-lg md:text-xl leading-relaxed"
+                        style={{ fontFamily: 'var(--font-body)' }}
                     >
                         Have questions about custom AI development? We've got answers.
-                    </motion.p>
+                    </p>
                 </div>
 
-                <div className="space-y-4">
+                {/* FAQ Accordion */}
+                <div className="space-y-1">
                     {faqs.map((faq, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
-                            className="bg-teal-900/30 border border-teal-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-colors duration-300"
+                            className="border-2 border-[var(--border-light)] overflow-hidden transition-all duration-100 hover:border-[var(--foreground)]"
                         >
                             <button
                                 onClick={() => toggleFAQ(index)}
-                                className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
+                                className="w-full flex items-center justify-between p-6 text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-[-3px] group"
                             >
-                                <span className="text-lg font-semibold text-white pr-8 group-hover:text-emerald-400 transition-colors">
+                                <span
+                                    className="text-lg md:text-xl font-bold pr-8 tracking-tight"
+                                    style={{ fontFamily: 'var(--font-display)' }}
+                                >
                                     {faq.question}
                                 </span>
                                 <ChevronDown
-                                    className={`w-5 h-5 text-emerald-400 flex-shrink-0 transition-transform duration-300 ${
+                                    className={`w-5 h-5 flex-shrink-0 transition-transform duration-100 ${
                                         openIndex === index ? 'rotate-180' : ''
                                     }`}
+                                    strokeWidth={2}
                                 />
                             </button>
-                            <AnimatePresence>
-                                {openIndex === index && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: 'auto', opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="overflow-hidden"
-                                    >
-                                        <div className="px-6 pb-6 text-teal-100/70 leading-relaxed">
-                                            {faq.answer}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.div>
+                            {openIndex === index && (
+                                <div
+                                    className="px-6 pb-6 leading-relaxed border-t-2 border-[var(--border-light)] pt-6"
+                                    style={{ fontFamily: 'var(--font-body)' }}
+                                >
+                                    {faq.answer}
+                                </div>
+                            )}
+                        </div>
                     ))}
                 </div>
 
                 {/* CTA after FAQ */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="text-center mt-16"
-                >
-                    <p className="text-teal-100/70 mb-6">
+                <div className="text-center mt-16">
+                    <p
+                        className="mb-8 text-lg"
+                        style={{ fontFamily: 'var(--font-body)' }}
+                    >
                         Still have questions? We're here to help.
                     </p>
                     <a
                         href="#contact"
-                        className="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-teal-950 hover:from-emerald-400 hover:to-teal-400 transition-all duration-300 shadow-lg hover:shadow-emerald-500/50"
+                        className="inline-flex items-center px-8 py-4 bg-[var(--foreground)] text-[var(--background)] uppercase tracking-widest text-sm font-semibold transition-all duration-100 hover:bg-[var(--background)] hover:text-[var(--foreground)] border-2 border-[var(--foreground)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                        style={{ fontFamily: 'var(--font-mono)' }}
                     >
                         Book Free Consultation
                     </a>
-                </motion.div>
+                </div>
             </div>
+
+            {/* Thick Section Divider */}
+            <div className="absolute bottom-0 left-0 right-0 h-2 bg-[var(--foreground)]"></div>
         </section>
     );
 };

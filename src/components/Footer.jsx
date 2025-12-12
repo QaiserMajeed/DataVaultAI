@@ -1,62 +1,160 @@
 import React from 'react';
 import { Github, Twitter, Linkedin, Phone, Mail } from 'lucide-react';
-import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-teal-950 text-teal-200/60 py-12 border-t border-teal-900">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <footer className="bg-[var(--background)] text-[var(--foreground)] py-12 border-t-2 border-[var(--foreground)]">
+            <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">
+                <div className="grid md:grid-cols-4 gap-12 mb-12">
+                    {/* Brand */}
                     <div className="col-span-2">
-                        <div className="flex items-center gap-2 mb-4 text-white">
-                            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold shadow-lg bg-white/5 border border-white/10 p-1">
-                                <Logo className="w-full h-full" />
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center">
+                                <span
+                                    className="font-bold text-sm"
+                                    style={{ fontFamily: 'var(--font-mono)' }}
+                                >
+                                    DV
+                                </span>
                             </div>
-                            <span className="text-xl font-bold">DataVault AI</span>
+                            <span
+                                className="text-xl font-bold tracking-tight"
+                                style={{ fontFamily: 'var(--font-display)' }}
+                            >
+                                DataVault AI
+                            </span>
                         </div>
-                        <p className="text-sm mb-6 max-w-md">
+                        <p
+                            className="text-sm mb-8 max-w-md leading-relaxed"
+                            style={{ fontFamily: 'var(--font-body)' }}
+                        >
                             Custom FullStack AI development services for enterprise clients. Expert team delivering production-ready AI solutions.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
-                            <a href="#" className="hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-                            <a href="#" className="hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
+                            <a
+                                href="#"
+                                className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                aria-label="Github"
+                            >
+                                <Github className="w-5 h-5" strokeWidth={2} />
+                            </a>
+                            <a
+                                href="#"
+                                className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                aria-label="Twitter"
+                            >
+                                <Twitter className="w-5 h-5" strokeWidth={2} />
+                            </a>
+                            <a
+                                href="#"
+                                className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin className="w-5 h-5" strokeWidth={2} />
+                            </a>
                         </div>
                     </div>
 
+                    {/* Services */}
                     <div>
-                        <h4 className="text-white font-bold mb-4">Services</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><a href="#services" className="hover:text-white transition-colors">AI Backend</a></li>
-                            <li><a href="#services" className="hover:text-white transition-colors">AI Frontend</a></li>
-                            <li><a href="#services" className="hover:text-white transition-colors">ML Development</a></li>
-                            <li><a href="#services" className="hover:text-white transition-colors">Consulting</a></li>
+                        <h4
+                            className="font-bold mb-4 uppercase tracking-widest text-sm"
+                            style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                            Services
+                        </h4>
+                        <ul className="space-y-3 text-sm" style={{ fontFamily: 'var(--font-body)' }}>
+                            <li>
+                                <Link
+                                    to="/services/web-development"
+                                    className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    Web Development
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/services/mobile-development"
+                                    className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    Mobile Development
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/services/ai-development"
+                                    className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    AI Development
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/services/web-hosting"
+                                    className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    Cloud Hosting
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
+                    {/* Contact */}
                     <div>
-                        <h4 className="text-white font-bold mb-4">Contact</h4>
-                        <ul className="space-y-3 text-sm">
+                        <h4
+                            className="font-bold mb-4 uppercase tracking-widest text-sm"
+                            style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                            Contact
+                        </h4>
+                        <ul className="space-y-3 text-sm" style={{ fontFamily: 'var(--font-body)' }}>
                             <li>
-                                <a href="tel:+447440189478" className="hover:text-white transition-colors flex items-center gap-2">
-                                    <Phone className="w-4 h-4" />
+                                <a
+                                    href="tel:+447440189478"
+                                    className="flex items-center gap-2 transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    <Phone className="w-4 h-4" strokeWidth={2} />
                                     <span>+44 07440 189478</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:hello@datavaultai.com" className="hover:text-white transition-colors flex items-center gap-2">
-                                    <Mail className="w-4 h-4" />
+                                <a
+                                    href="mailto:hello@datavaultai.com"
+                                    className="flex items-center gap-2 transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    <Mail className="w-4 h-4" strokeWidth={2} />
                                     <span>hello@datavaultai.com</span>
                                 </a>
                             </li>
-                            <li><a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
-                            <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
+                            <li>
+                                <a
+                                    href="#portfolio"
+                                    className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#testimonials"
+                                    className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    Testimonials
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="pt-8 border-t border-teal-900 text-center text-sm">
-                    <p>&copy; {new Date().getFullYear()} DataVault AI. All rights reserved.</p>
+                {/* Copyright */}
+                <div className="pt-8 border-t-2 border-[var(--foreground)] text-center">
+                    <p
+                        className="text-xs uppercase tracking-widest"
+                        style={{ fontFamily: 'var(--font-mono)' }}
+                    >
+                        &copy; {new Date().getFullYear()} DataVault AI. All rights reserved.
+                    </p>
                 </div>
             </div>
         </footer>

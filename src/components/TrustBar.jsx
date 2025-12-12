@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Cloud, Shield, Database, Cpu, Lock, Zap } from 'lucide-react';
 
 const TrustBar = () => {
@@ -13,56 +12,34 @@ const TrustBar = () => {
     ];
 
     return (
-        <section className="py-16 border-y" style={{ borderColor: 'rgba(148, 163, 184, 0.1)' }}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
-                >
+        <section className="py-16 border-t-2 border-b-2 border-[var(--foreground)]">
+            <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">
+                <div className="text-center mb-12">
                     <p
-                        className="text-sm font-medium uppercase tracking-wider mb-2"
-                        style={{
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            letterSpacing: '0.1em',
-                            color: '#94a3b8'
-                        }}
+                        className="text-xs uppercase tracking-widest font-medium"
+                        style={{ fontFamily: 'var(--font-mono)' }}
                     >
                         TRUSTED INFRASTRUCTURE
                     </p>
-                </motion.div>
+                </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-                    {technologies.map((tech, index) => (
-                        <motion.div
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1">
+                    {technologies.map((tech) => (
+                        <div
                             key={tech.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 group"
-                            style={{
-                                background: 'rgba(15, 23, 42, 0.3)',
-                                border: '1px solid rgba(148, 163, 184, 0.1)'
-                            }}
+                            className="flex flex-col items-center justify-center p-8 border border-[var(--border-light)] transition-all duration-100 hover:border-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)] group"
                         >
                             <tech.icon
-                                className="w-8 h-8 mb-3 transition-all duration-300"
-                                style={{ color: '#64748b' }}
+                                className="w-8 h-8 mb-3 transition-colors duration-100"
+                                strokeWidth={1.5}
                             />
                             <span
-                                className="text-xs font-medium"
-                                style={{
-                                    fontFamily: 'Inter, system-ui, sans-serif',
-                                    color: '#94a3b8',
-                                    letterSpacing: '-0.01em'
-                                }}
+                                className="text-xs font-medium uppercase tracking-wider"
+                                style={{ fontFamily: 'var(--font-mono)' }}
                             >
                                 {tech.name}
                             </span>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

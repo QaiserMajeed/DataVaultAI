@@ -1,159 +1,77 @@
 import React from 'react';
-import { ArrowRight, Zap } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-            {/* Animated Mesh Gradient Background */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div
-                    className="absolute w-full h-full"
-                    style={{
-                        background: 'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.15) 0%, transparent 50%)',
-                        animation: 'mesh-move 20s ease-in-out infinite'
-                    }}
-                />
-                {/* Subtle grid overlay */}
-                <div
-                    className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                        backgroundImage: `linear-gradient(rgba(148, 163, 184, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.3) 1px, transparent 1px)`,
-                        backgroundSize: '64px 64px'
-                    }}
-                />
-            </div>
-
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-                {/* Premium Badge */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
-                    style={{
-                        background: 'rgba(15, 23, 42, 0.6)',
-                        backdropFilter: 'blur(12px)',
-                        border: '1px solid rgba(99, 102, 241, 0.2)',
-                        boxShadow: '0 4px 24px rgba(99, 102, 241, 0.1)'
-                    }}
-                >
-                    <Zap className="w-4 h-4 text-indigo-400" />
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-24 md:py-32 lg:py-40">
+                {/* Premium Label - Monospace Typography */}
+                <div className="mb-8">
                     <span
-                        className="text-sm font-semibold"
-                        style={{
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            letterSpacing: '-0.01em',
-                            color: '#a5b4fc'
-                        }}
+                        className="text-xs uppercase tracking-widest font-medium border-2 border-[var(--foreground)] px-4 py-2 inline-block"
+                        style={{ fontFamily: 'var(--font-mono)' }}
                     >
                         ENTERPRISE-GRADE INFRASTRUCTURE
                     </span>
-                </motion.div>
+                </div>
 
-                {/* Power Headline */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6"
-                    style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
-                        letterSpacing: '-0.04em',
-                        lineHeight: '1.05',
-                        color: '#f1f5f9'
-                    }}
+                {/* Oversized Hero Typography - Editorial Scale */}
+                <h1
+                    className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 tracking-tighter leading-none"
+                    style={{ fontFamily: 'var(--font-display)' }}
                 >
-                    Engineering Excellence
+                    Engineering
                     <br />
-                    <span
-                        style={{
-                            background: 'linear-gradient(135deg, #6366f1 0%, #14b8a6 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text'
-                        }}
-                    >
-                        Measurable Results
-                    </span>
-                </motion.h1>
+                    Excellence.
+                    <br />
+                    <span className="italic">Measurable</span>
+                    <br />
+                    Results.
+                </h1>
 
-                {/* ROI-Focused Subheadline */}
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-lg md:text-xl max-w-2xl mx-auto mb-12"
-                    style={{
-                        fontFamily: 'Inter, system-ui, sans-serif',
-                        color: '#cbd5e1',
-                        lineHeight: '1.6',
-                        fontWeight: '400',
-                        letterSpacing: '-0.01em'
-                    }}
+                {/* Decorative Rule with Square - Architectural Detail */}
+                <div className="flex items-center gap-4 mb-12">
+                    <div className="w-3 h-3 border-2 border-[var(--foreground)]"></div>
+                    <div className="h-1 w-32 bg-[var(--foreground)]"></div>
+                </div>
+
+                {/* ROI-Focused Subheadline - Elegant Serif */}
+                <p
+                    className="text-lg md:text-xl lg:text-2xl max-w-3xl mb-16 leading-relaxed"
+                    style={{ fontFamily: 'var(--font-body)' }}
                 >
                     Deploy production-ready infrastructure that scales with precision.
-                    <strong style={{ color: '#e2e8f0', fontWeight: '600' }}> Reduce operational overhead by 60%</strong> while maintaining 99.9% uptime.
-                </motion.p>
+                    <strong className="font-semibold"> Reduce operational overhead by 60%</strong> while maintaining 99.9% uptime.
+                </p>
 
-                {/* Dual CTAs */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
-                >
-                    {/* Primary CTA */}
+                {/* Dual CTAs - Sharp & Inverted */}
+                <div className="flex flex-col sm:flex-row items-start gap-4">
+                    {/* Primary CTA - Black Button */}
                     <a
                         href="#contact"
-                        className="group relative px-8 py-4 font-semibold rounded-lg overflow-hidden transition-all duration-300"
-                        style={{
-                            background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
-                            color: '#ffffff',
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            fontSize: '0.95rem',
-                            letterSpacing: '-0.01em',
-                            boxShadow: '0 8px 24px rgba(99, 102, 241, 0.35)'
-                        }}
+                        className="group inline-flex items-center gap-3 px-8 py-4 bg-[var(--foreground)] text-[var(--background)] uppercase tracking-widest text-sm font-semibold transition-all duration-100 hover:bg-[var(--background)] hover:text-[var(--foreground)] border-2 border-[var(--foreground)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                        style={{ fontFamily: 'var(--font-mono)' }}
                     >
-                        <span className="relative z-10 flex items-center gap-2">
-                            Schedule Technical Consultation
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </span>
+                        Schedule Consultation
+                        <ArrowRight
+                            className="w-4 h-4 transition-transform duration-100 group-hover:translate-x-1"
+                            strokeWidth={2}
+                        />
                     </a>
 
-                    {/* Secondary CTA */}
+                    {/* Secondary CTA - Outline Button */}
                     <a
                         href="#portfolio"
-                        className="px-8 py-4 font-semibold rounded-lg transition-all duration-300"
-                        style={{
-                            background: 'rgba(15, 23, 42, 0.6)',
-                            backdropFilter: 'blur(12px)',
-                            border: '1px solid rgba(148, 163, 184, 0.2)',
-                            color: '#e2e8f0',
-                            fontFamily: 'Inter, system-ui, sans-serif',
-                            fontSize: '0.95rem',
-                            letterSpacing: '-0.01em'
-                        }}
+                        className="inline-flex items-center px-8 py-4 bg-[var(--background)] text-[var(--foreground)] border-2 border-[var(--foreground)] uppercase tracking-widest text-sm font-semibold transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                        style={{ fontFamily: 'var(--font-mono)' }}
                     >
                         View Case Studies
                     </a>
-                </motion.div>
+                </div>
             </div>
 
-            <style>{`
-                @keyframes mesh-move {
-                    0%, 100% {
-                        transform: translate(0, 0) scale(1);
-                    }
-                    33% {
-                        transform: translate(30px, -50px) scale(1.1);
-                    }
-                    66% {
-                        transform: translate(-20px, 20px) scale(0.95);
-                    }
-                }
-            `}</style>
+            {/* Thick Section Divider - Architectural Element */}
+            <div className="absolute bottom-0 left-0 right-0 h-2 bg-[var(--foreground)]"></div>
         </section>
     );
 };

@@ -1,299 +1,46 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Brain, Bot, Sparkles, BarChart3, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Brain, Cpu, TrendingUp, Lock, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
-import { aiDevServiceSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const AIDevelopment = () => {
     const features = [
-        {
-            icon: <Brain className="w-6 h-6 text-emerald-400" />,
-            title: 'Custom AI Solutions',
-            description: 'Tailored AI models and systems designed specifically for your business needs, from chatbots to predictive analytics.'
-        },
-        {
-            icon: <Bot className="w-6 h-6 text-cyan-400" />,
-            title: 'LLM Integration',
-            description: 'Seamlessly integrate GPT-4, Claude, or other large language models into your applications with custom prompts and workflows.'
-        },
-        {
-            icon: <Sparkles className="w-6 h-6 text-teal-400" />,
-            title: 'Machine Learning Models',
-            description: 'Train and deploy custom ML models for classification, prediction, recommendation, and computer vision tasks.'
-        },
-        {
-            icon: <BarChart3 className="w-6 h-6 text-blue-400" />,
-            title: 'Data Analytics & Insights',
-            description: 'Transform raw data into actionable insights with advanced analytics, visualization, and AI-powered reporting.'
-        }
+        { icon: Brain, title: 'LLM Integration', description: 'Custom AI solutions powered by GPT-4, Claude, and other state-of-the-art language models.' },
+        { icon: Cpu, title: 'Machine Learning', description: 'Custom ML models trained on your data for predictions, classifications, and recommendations.' },
+        { icon: TrendingUp, title: 'Business Intelligence', description: 'AI-driven analytics and insights that help you make data-informed decisions.' },
+        { icon: Lock, title: 'Secure & Compliant', description: 'Enterprise-grade security with data privacy, encryption, and regulatory compliance.' }
     ];
 
-    const technologies = [
-        { name: 'OpenAI GPT-4', category: 'LLM' },
-        { name: 'Anthropic Claude', category: 'LLM' },
-        { name: 'TensorFlow', category: 'ML Framework' },
-        { name: 'PyTorch', category: 'ML Framework' },
-        { name: 'LangChain', category: 'AI Framework' },
-        { name: 'Pinecone', category: 'Vector DB' },
-        { name: 'FastAPI', category: 'Backend' },
-        { name: 'Hugging Face', category: 'Models' }
-    ];
-
-    const useCases = [
-        {
-            title: 'Intelligent Chatbots',
-            description: 'Customer support bots that understand context and provide accurate responses 24/7.'
-        },
-        {
-            title: 'Document Analysis',
-            description: 'Automatically extract insights, summarize content, and process large document volumes.'
-        },
-        {
-            title: 'Predictive Analytics',
-            description: 'Forecast trends, predict customer behavior, and make data-driven decisions.'
-        },
-        {
-            title: 'Content Generation',
-            description: 'Automate content creation for marketing, documentation, and personalized communications.'
-        },
-        {
-            title: 'Computer Vision',
-            description: 'Image recognition, object detection, and visual quality control systems.'
-        },
-        {
-            title: 'Recommendation Systems',
-            description: 'Personalized product, content, and service recommendations that drive engagement.'
-        }
-    ];
-
-    const benefits = [
-        'Reduce operational costs by up to 60% with automation',
-        'Process data 100x faster than manual methods',
-        'Scale AI capabilities as your business grows',
-        'Secure and compliant AI implementations',
-        'Real-time insights and decision support',
-        'Custom training on your proprietary data',
-        'Continuous model monitoring and improvement',
-        'Full documentation and knowledge transfer'
-    ];
+    const technologies = ['OpenAI GPT-4', 'Anthropic Claude', 'LangChain', 'TensorFlow', 'PyTorch', 'Vector Databases', 'FastAPI', 'Python'];
+    const benefits = ['Custom LLM integration and fine-tuning', 'Computer vision and image recognition', 'Natural language processing', 'Predictive analytics and forecasting', 'Automated data processing pipelines', 'Model training and deployment', 'Continuous monitoring and optimization'];
 
     return (
-        <div className="relative min-h-screen text-slate-50" style={{
-            background: 'linear-gradient(180deg, #041420 0%, #082840 50%, #0a3d5c 100%)',
-            fontFamily: 'var(--font-body)'
-        }}>
+        <main>
             <SEO
-                title="AI & Machine Learning Development Services"
-                description="Production-ready AI solutions with LLM integration, computer vision, NLP, and custom ML models. GPT-4, Claude, TensorFlow, PyTorch expertise. Reduce costs by 60% with AI automation."
-                keywords="AI development, machine learning, LLM integration, GPT-4, Claude AI, TensorFlow, PyTorch, computer vision, NLP, chatbot development, predictive analytics, AI services"
+                title="AI Development Services | Machine Learning & LLM Integration"
+                description="Custom AI and machine learning solutions. GPT-4, Claude, and custom ML model development."
+                keywords="AI development, machine learning, GPT-4, Claude, LLM, NLP, computer vision"
                 canonical="https://datavault.ai/services/ai-development"
-                structuredData={aiDevServiceSchema}
             />
-            {/* Background Effects */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-20 blur-3xl"
-                    style={{
-                        background: 'radial-gradient(circle, #00d9ff 0%, transparent 70%)',
-                        animation: 'mesh-shift 20s ease-in-out infinite'
-                    }}
-                />
-                <div
-                    className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl"
-                    style={{
-                        background: 'radial-gradient(circle, #ff6b35 0%, transparent 70%)',
-                        animation: 'mesh-shift-alt 25s ease-in-out infinite'
-                    }}
-                />
-            </div>
-
-            <div className="relative z-10">
-                {/* Hero Section */}
-                <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-7xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-center max-w-4xl mx-auto"
-                        >
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-900/30 border border-emerald-800 text-emerald-400 text-sm font-semibold mb-6">
-                                AI Development Services
-                            </span>
-                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                                Transform Your Business with AI
-                            </h1>
-                            <p className="text-xl text-teal-100/70 mb-8 leading-relaxed">
-                                Build intelligent systems that automate workflows, unlock insights from data, and deliver exceptional
-                                customer experiences. From chatbots to custom ML models, we make AI work for your business.
-                            </p>
-                            <a
-                                href="#contact"
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300"
-                                style={{
-                                    background: 'linear-gradient(135deg, #00d9ff 0%, #00ffcc 100%)',
-                                    color: '#041420',
-                                    boxShadow: '0 4px 20px rgba(0, 217, 255, 0.3)'
-                                }}
-                            >
-                                Start AI Integration
-                                <ArrowRight className="w-5 h-5" />
-                            </a>
-                        </motion.div>
-                    </div>
-                </section>
-
-                {/* Features Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-950/50">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                Comprehensive AI Solutions
-                            </h2>
-                            <p className="text-lg text-teal-100/70 max-w-3xl mx-auto">
-                                From strategy to deployment, we deliver AI solutions that drive real business value.
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {features.map((feature, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="p-8 rounded-2xl bg-teal-900/30 border border-teal-800 hover:border-emerald-500/50 transition-all duration-300"
-                                >
-                                    <div className="w-12 h-12 bg-teal-950 rounded-xl flex items-center justify-center mb-6 border border-teal-800">
-                                        {feature.icon}
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                                    <p className="text-teal-100/70 leading-relaxed">{feature.description}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Use Cases Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                AI Use Cases We Specialize In
-                            </h2>
-                            <p className="text-lg text-teal-100/70 max-w-3xl mx-auto">
-                                Proven AI solutions that solve real business challenges.
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {useCases.map((useCase, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="p-6 rounded-xl bg-teal-900/30 border border-teal-800 hover:border-emerald-500/50 transition-all duration-300"
-                                >
-                                    <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
-                                    <p className="text-teal-100/70 text-sm leading-relaxed">{useCase.description}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Technologies Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-950/50">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                AI Technologies & Frameworks
-                            </h2>
-                            <p className="text-lg text-teal-100/70 max-w-3xl mx-auto">
-                                We work with the latest and most powerful AI tools and platforms.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                            {technologies.map((tech, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.05 }}
-                                    className="p-6 rounded-xl bg-teal-900/30 border border-teal-800 hover:border-emerald-500/50 transition-all duration-300 text-center"
-                                >
-                                    <div className="text-lg font-bold text-white mb-2">{tech.name}</div>
-                                    <div className="text-sm text-teal-400">{tech.category}</div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Benefits Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                Why Partner With Us
-                            </h2>
-                            <p className="text-lg text-teal-100/70 max-w-3xl mx-auto">
-                                We deliver AI solutions that provide measurable business impact.
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                            {benefits.map((benefit, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.05 }}
-                                    className="flex items-start gap-4 p-4 rounded-xl bg-teal-900/20 border border-teal-800/50"
-                                >
-                                    <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
-                                    <span className="text-teal-100/90">{benefit}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* CTA Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8 bg-teal-950/50">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Harness the Power of AI?
-                        </h2>
-                        <p className="text-xl text-teal-100/70 mb-8">
-                            Let's discuss how AI can transform your business operations and drive growth.
-                        </p>
-                        <a
-                            href="#contact"
-                            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300"
-                            style={{
-                                background: 'linear-gradient(135deg, #00d9ff 0%, #00ffcc 100%)',
-                                color: '#041420',
-                                boxShadow: '0 4px 20px rgba(0, 217, 255, 0.3)'
-                            }}
-                        >
-                            Get Started with AI
-                            <ArrowRight className="w-5 h-5" />
-                        </a>
-                    </div>
-                </section>
-
-                {/* Contact Section */}
-                <Contact />
-            </div>
-        </div>
+            <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">
+                <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">
+                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 tracking-tighter leading-none" style={{ fontFamily: 'var(--font-display)' }}>AI<br />Development</h1>
+                    <div className="flex items-center gap-4 mb-12"><div className="w-3 h-3 border-2 border-[var(--foreground)]"></div><div className="h-1 w-32 bg-[var(--foreground)]"></div></div>
+                    <p className="text-xl md:text-2xl max-w-3xl mb-16 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>Production-ready AI systems with LLM integration, custom ML models, and continuous monitoring and optimization.</p>
+                    <a href="#contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--foreground)] text-[var(--background)] uppercase tracking-widest text-sm font-semibold transition-all duration-100 hover:bg-[var(--background)] hover:text-[var(--foreground)] border-2 border-[var(--foreground)]" style={{ fontFamily: 'var(--font-mono)' }}>Get Started <ArrowRight className="w-4 h-4" strokeWidth={2} /></a>
+                </div>
+            </section>
+            <section className="py-24 md:py-32 border-t-2 border-[var(--foreground)]">
+                <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12"><div className="grid md:grid-cols-2 gap-1">{features.map((feature) => (<div key={feature.title} className="p-8 border-2 border-[var(--border-light)] transition-all duration-100 hover:border-[var(--foreground)]"><div className="w-12 h-12 border-2 border-[var(--foreground)] flex items-center justify-center mb-6"><feature.icon className="w-6 h-6" strokeWidth={1.5} /></div><h3 className="text-2xl font-bold mb-4 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>{feature.title}</h3><p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>{feature.description}</p></div>))}</div></div>
+            </section>
+            <section className="py-24 md:py-32 border-t-2 border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)]">
+                <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12"><h2 className="text-4xl md:text-5xl font-bold mb-12 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>Technologies</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-1">{technologies.map((tech) => (<div key={tech} className="p-6 border-2 border-[var(--background)] text-center uppercase tracking-wider text-sm font-semibold" style={{ fontFamily: 'var(--font-mono)' }}>{tech}</div>))}</div></div>
+            </section>
+            <section className="py-24 md:py-32 border-t-2 border-[var(--foreground)]">
+                <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12"><h2 className="text-4xl md:text-5xl font-bold mb-12 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>What You Get</h2><div className="space-y-1">{benefits.map((benefit) => (<div key={benefit} className="p-6 border-2 border-[var(--border-light)] flex items-start gap-4 transition-all duration-100 hover:border-[var(--foreground)]"><div className="w-6 h-px bg-[var(--foreground)] mt-3 flex-shrink-0"></div><p className="text-lg" style={{ fontFamily: 'var(--font-body)' }}>{benefit}</p></div>))}</div></div>
+            </section>
+            <Contact />
+        </main>
     );
 };
 
