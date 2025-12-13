@@ -1,6 +1,7 @@
 import React from 'react';
 import { Brain, Cpu, TrendingUp, Lock, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { aiDevServiceSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const AIDevelopment = () => {
@@ -14,6 +15,12 @@ const AIDevelopment = () => {
     const technologies = ['OpenAI GPT-4', 'Anthropic Claude', 'LangChain', 'TensorFlow', 'PyTorch', 'Vector Databases', 'FastAPI', 'Python'];
     const benefits = ['Custom LLM integration and fine-tuning', 'Computer vision and image recognition', 'Natural language processing', 'Predictive analytics and forecasting', 'Automated data processing pipelines', 'Model training and deployment', 'Continuous monitoring and optimization'];
 
+    const breadcrumbs = [
+        { name: 'Home', url: 'https://datavault.ai' },
+        { name: 'Services', url: 'https://datavault.ai/#services' },
+        { name: 'AI Development', url: 'https://datavault.ai/services/ai-development' }
+    ];
+
     return (
         <main>
             <SEO
@@ -21,6 +28,8 @@ const AIDevelopment = () => {
                 description="Custom AI and machine learning solutions. GPT-4, Claude, and custom ML model development."
                 keywords="AI development, machine learning, GPT-4, Claude, LLM, NLP, computer vision"
                 canonical="https://datavault.ai/services/ai-development"
+                structuredData={aiDevServiceSchema}
+                breadcrumbs={breadcrumbs}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">
                 <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">

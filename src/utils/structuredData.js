@@ -238,3 +238,88 @@ export const faqSchema = {
         }
     ]
 };
+
+// Aggregate Rating Schema (for testimonials/reviews)
+export const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DataVault.AI",
+    "image": "https://datavault.ai/logo.png",
+    "@id": "https://datavault.ai",
+    "url": "https://datavault.ai",
+    "telephone": "+447440189478",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "50",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Enterprise Client"
+            },
+            "reviewBody": "Exceptional AI development services. The team delivered a production-ready ML system that exceeded our expectations."
+        }
+    ]
+};
+
+// ItemList Schema (for services page)
+export const servicesListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@type": "Service",
+                "name": "Web Development",
+                "url": "https://datavault.ai/services/web-development",
+                "description": "Enterprise web applications with React, Next.js, and Node.js"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@type": "Service",
+                "name": "Mobile Development",
+                "url": "https://datavault.ai/services/mobile-development",
+                "description": "Native iOS and Android applications"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@type": "Service",
+                "name": "AI Development",
+                "url": "https://datavault.ai/services/ai-development",
+                "description": "LLM integration and custom ML solutions"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+                "@type": "Service",
+                "name": "Cloud Infrastructure",
+                "url": "https://datavault.ai/services/web-hosting",
+                "description": "AWS, Azure, and GCP cloud hosting"
+            }
+        }
+    ]
+};

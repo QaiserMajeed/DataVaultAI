@@ -1,6 +1,12 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import { organizationSchema, websiteSchema, faqSchema } from '../utils/structuredData';
+import {
+    organizationSchema,
+    websiteSchema,
+    faqSchema,
+    aggregateRatingSchema,
+    servicesListSchema
+} from '../utils/structuredData';
 import Hero from '../components/Hero';
 import TrustBar from '../components/TrustBar';
 import Services from '../components/Services';
@@ -14,7 +20,13 @@ import Contact from '../components/Contact';
 const Home = () => {
     const structuredData = {
         "@context": "https://schema.org",
-        "@graph": [organizationSchema, websiteSchema, faqSchema]
+        "@graph": [
+            organizationSchema,
+            websiteSchema,
+            faqSchema,
+            aggregateRatingSchema,
+            servicesListSchema
+        ]
     };
 
     return (

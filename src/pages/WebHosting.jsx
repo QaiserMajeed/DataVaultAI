@@ -1,6 +1,7 @@
 import React from 'react';
 import { Server, Shield, Zap, BarChart, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { webHostingServiceSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const WebHosting = () => {
@@ -14,6 +15,12 @@ const WebHosting = () => {
     const technologies = ['AWS', 'Azure', 'Google Cloud', 'Kubernetes', 'Docker', 'CloudFlare', 'Nginx', 'Terraform'];
     const benefits = ['99.9% uptime guarantee', 'Automated backups and disaster recovery', 'SSL certificates and HTTPS enforcement', 'DDoS protection and web application firewall', 'Performance monitoring and alerting', 'Database replication and caching', 'CI/CD pipeline setup'];
 
+    const breadcrumbs = [
+        { name: 'Home', url: 'https://datavault.ai' },
+        { name: 'Services', url: 'https://datavault.ai/#services' },
+        { name: 'Cloud Infrastructure', url: 'https://datavault.ai/services/web-hosting' }
+    ];
+
     return (
         <main>
             <SEO
@@ -21,6 +28,8 @@ const WebHosting = () => {
                 description="Enterprise cloud hosting with 99.9% uptime. AWS, Azure, and GCP deployment with auto-scaling."
                 keywords="cloud hosting, AWS, Azure, GCP, Kubernetes, Docker, infrastructure"
                 canonical="https://datavault.ai/services/web-hosting"
+                structuredData={webHostingServiceSchema}
+                breadcrumbs={breadcrumbs}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">
                 <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">

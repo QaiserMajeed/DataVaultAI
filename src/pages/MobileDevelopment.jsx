@@ -1,6 +1,7 @@
 import React from 'react';
 import { Smartphone, Zap, Users, Globe, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { mobileDevServiceSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const MobileDevelopment = () => {
@@ -14,6 +15,12 @@ const MobileDevelopment = () => {
     const technologies = ['React Native', 'Swift', 'Kotlin', 'Firebase', 'Redux', 'GraphQL', 'Push Notifications', 'App Store Optimization'];
     const benefits = ['Native iOS and Android applications', 'App Store and Google Play deployment', 'Offline-first architecture', 'Push notifications and real-time updates', 'Biometric authentication integration', 'In-app purchases and subscriptions', 'Analytics and crash reporting'];
 
+    const breadcrumbs = [
+        { name: 'Home', url: 'https://datavault.ai' },
+        { name: 'Services', url: 'https://datavault.ai/#services' },
+        { name: 'Mobile Development', url: 'https://datavault.ai/services/mobile-development' }
+    ];
+
     return (
         <main>
             <SEO
@@ -21,6 +28,8 @@ const MobileDevelopment = () => {
                 description="Native mobile app development for iOS and Android. React Native, Swift, and Kotlin expertise."
                 keywords="mobile development, React Native, iOS, Android, Swift, Kotlin, mobile apps"
                 canonical="https://datavault.ai/services/mobile-development"
+                structuredData={mobileDevServiceSchema}
+                breadcrumbs={breadcrumbs}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">
                 <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">

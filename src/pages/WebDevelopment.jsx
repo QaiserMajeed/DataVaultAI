@@ -15,6 +15,12 @@ const WebDevelopment = () => {
     const technologies = ['React', 'Next.js', 'Node.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'MongoDB', 'REST APIs'];
     const benefits = ['Scalable architecture that grows with your business', 'SEO-optimized for maximum visibility', 'Real-time data synchronization', 'Cloud deployment on AWS, Azure, or GCP', 'Continuous integration and deployment (CI/CD)', 'Comprehensive testing and quality assurance', 'Ongoing maintenance and support'];
 
+    const breadcrumbs = [
+        { name: 'Home', url: 'https://datavault.ai' },
+        { name: 'Services', url: 'https://datavault.ai/#services' },
+        { name: 'Web Development', url: 'https://datavault.ai/services/web-development' }
+    ];
+
     return (
         <main>
             <SEO
@@ -23,6 +29,7 @@ const WebDevelopment = () => {
                 keywords="web development, React, Next.js, Node.js, TypeScript, enterprise web apps"
                 canonical="https://datavault.ai/services/web-development"
                 structuredData={webDevServiceSchema}
+                breadcrumbs={breadcrumbs}
             />
 
             {/* Hero */}
