@@ -1,10 +1,6 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import {
-    organizationSchema,
-    websiteSchema,
-    faqSchema
-} from '../utils/structuredData';
+import { faqSchema } from '../utils/structuredData';
 import Hero from '../components/Hero';
 import TrustBar from '../components/TrustBar';
 import Services from '../components/Services';
@@ -16,11 +12,9 @@ import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 
 const Home = () => {
-    const structuredData = [
-        organizationSchema,
-        websiteSchema,
-        faqSchema
-    ];
+    // Organization + WebSite live in the static index.html JSON-LD graph,
+    // so we only inject the FAQ schema here to avoid duplicates.
+    const structuredData = [faqSchema];
 
     return (
         <main>

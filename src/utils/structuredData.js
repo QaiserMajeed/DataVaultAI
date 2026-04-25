@@ -4,7 +4,7 @@ const ORG_ID = `${BASE_URL}/#organization`;
 // Organization Schema (canonical reference; matches index.html)
 export const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "ProfessionalService"],
+    "@type": "Organization",
     "@id": ORG_ID,
     "name": "DataVault.AI",
     "alternateName": ["DataVault AI", "DataVaultAI"],
@@ -19,7 +19,6 @@ export const organizationSchema = {
     "description": "Enterprise-grade AI, web, mobile, and cloud development. Custom LLM integration, machine learning, React/Next.js, React Native, and AWS/Azure/GCP infrastructure.",
     "email": "hello@datavaultai.com",
     "telephone": "+447440189478",
-    "priceRange": "$$$",
     "address": {
         "@type": "PostalAddress",
         "addressCountry": "GB",
@@ -43,13 +42,6 @@ export const organizationSchema = {
         "email": "hello@datavaultai.com",
         "availableLanguage": ["en", "en-GB", "en-US"],
         "areaServed": "Worldwide"
-    },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1"
     }
 };
 
