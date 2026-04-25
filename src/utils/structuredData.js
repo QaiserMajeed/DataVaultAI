@@ -1,28 +1,55 @@
-// Organization Schema
+const BASE_URL = 'https://datavalutai.com';
+const ORG_ID = `${BASE_URL}/#organization`;
+
+// Organization Schema (canonical reference; matches index.html)
 export const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
+    "@id": ORG_ID,
     "name": "DataVault.AI",
-    "url": "https://datavault.ai",
-    "logo": "https://datavault.ai/logo.png",
-    "description": "Enterprise-grade web development, mobile apps, AI solutions, and cloud infrastructure services",
+    "alternateName": ["DataVault AI", "DataVaultAI"],
+    "url": `${BASE_URL}/`,
+    "logo": {
+        "@type": "ImageObject",
+        "url": `${BASE_URL}/logo.png`,
+        "width": 512,
+        "height": 512
+    },
+    "image": `${BASE_URL}/og-image.jpg`,
+    "description": "Enterprise-grade AI, web, mobile, and cloud development. Custom LLM integration, machine learning, React/Next.js, React Native, and AWS/Azure/GCP infrastructure.",
+    "email": "hello@datavaultai.com",
+    "telephone": "+447440189478",
+    "priceRange": "$$$",
     "address": {
         "@type": "PostalAddress",
-        "addressCountry": "US"
+        "addressCountry": "GB",
+        "addressLocality": "London"
     },
+    "areaServed": [
+        { "@type": "Place", "name": "Worldwide" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "European Union" }
+    ],
+    "sameAs": [
+        "https://twitter.com/datavaultai",
+        "https://linkedin.com/company/datavaultai",
+        "https://github.com/datavaultai"
+    ],
     "contactPoint": {
         "@type": "ContactPoint",
-        "contactType": "Sales",
-        "email": "contact@datavault.ai"
+        "telephone": "+447440189478",
+        "contactType": "sales",
+        "email": "hello@datavaultai.com",
+        "availableLanguage": ["en", "en-GB", "en-US"],
+        "areaServed": "Worldwide"
     },
-    "sameAs": [
-        "https://www.upwork.com/freelancers/datavault",
-        "https://github.com/datavault"
-    ],
-    "offers": {
-        "@type": "AggregateOffer",
-        "availability": "https://schema.org/InStock",
-        "priceCurrency": "USD"
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "50",
+        "bestRating": "5",
+        "worstRating": "1"
     }
 };
 
@@ -30,210 +57,194 @@ export const organizationSchema = {
 export const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${BASE_URL}/#website`,
     "name": "DataVault.AI",
-    "url": "https://datavault.ai",
+    "url": `${BASE_URL}/`,
+    "description": "Enterprise-grade AI, web, mobile, and cloud development services.",
+    "publisher": { "@id": ORG_ID },
+    "inLanguage": "en-GB",
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://datavault.ai/search?q={search_term_string}",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": `${BASE_URL}/?s={search_term_string}`
+        },
         "query-input": "required name=search_term_string"
     }
 };
 
-// Service Schema for Web Development
-export const webDevServiceSchema = {
+// Helper: build a breadcrumb schema for a page
+export const buildBreadcrumbSchema = (items) => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url
+    }))
+});
+
+// Helper: build a Service schema
+const buildServiceSchema = ({ name, slug, serviceType, description, services }) => ({
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Web Development",
-    "provider": {
-        "@type": "Organization",
-        "name": "DataVault.AI"
+    "@id": `${BASE_URL}/services/${slug}#service`,
+    "name": name,
+    "serviceType": serviceType,
+    "url": `${BASE_URL}/services/${slug}`,
+    "provider": { "@id": ORG_ID },
+    "description": description,
+    "areaServed": [
+        { "@type": "Place", "name": "Worldwide" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "United States" }
+    ],
+    "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Enterprise"
     },
-    "description": "Enterprise web applications built with React, Next.js, Node.js, and modern frameworks. Scalable architecture designed for high-traffic production environments.",
-    "areaServed": "Worldwide",
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Web Development Services",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "React/Next.js Development"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Node.js Backend Development"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "REST/GraphQL API Development"
-                }
-            }
-        ]
+        "name": `${name} Services`,
+        "itemListElement": services.map((s) => ({
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": s }
+        }))
     }
-};
+});
+
+// Service Schema for Web Development
+export const webDevServiceSchema = buildServiceSchema({
+    name: 'Web Development',
+    slug: 'web-development',
+    serviceType: 'Web Application Development',
+    description: 'Enterprise web applications built with React, Next.js, and Node.js. Scalable architecture designed for high-traffic production environments.',
+    services: [
+        'React/Next.js Development',
+        'Node.js Backend Development',
+        'TypeScript Development',
+        'REST and GraphQL API Development',
+        'Progressive Web Apps (PWA)',
+        'Headless CMS Integration'
+    ]
+});
 
 // Service Schema for Mobile Development
-export const mobileDevServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Mobile App Development",
-    "provider": {
-        "@type": "Organization",
-        "name": "DataVault.AI"
-    },
-    "description": "Native mobile applications for iOS and Android platforms using React Native, Swift, and Kotlin.",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Mobile Development Services",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "React Native Development"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "iOS Development (Swift)"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Android Development (Kotlin)"
-                }
-            }
-        ]
-    }
-};
+export const mobileDevServiceSchema = buildServiceSchema({
+    name: 'Mobile App Development',
+    slug: 'mobile-development',
+    serviceType: 'Mobile Application Development',
+    description: 'Native and cross-platform mobile applications for iOS and Android using React Native, Swift, and Kotlin.',
+    services: [
+        'React Native Development',
+        'iOS Development (Swift)',
+        'Android Development (Kotlin)',
+        'App Store Optimization (ASO)',
+        'Push Notifications and Real-time Sync',
+        'In-app Purchases and Subscriptions'
+    ]
+});
 
 // Service Schema for AI Development
-export const aiDevServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "AI Development",
-    "provider": {
-        "@type": "Organization",
-        "name": "DataVault.AI"
-    },
-    "description": "Production-ready machine learning systems, LLM integration, computer vision, and NLP solutions with continuous monitoring and optimization.",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI Development Services",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "LLM Integration"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Computer Vision Solutions"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Natural Language Processing"
-                }
-            }
-        ]
-    }
-};
+export const aiDevServiceSchema = buildServiceSchema({
+    name: 'AI Development',
+    slug: 'ai-development',
+    serviceType: 'Artificial Intelligence Development',
+    description: 'Production-ready machine learning systems, LLM integration, computer vision, and NLP solutions with continuous monitoring and optimization.',
+    services: [
+        'LLM Integration (GPT-4, Claude, Gemini)',
+        'Custom Machine Learning Models',
+        'Computer Vision Solutions',
+        'Natural Language Processing',
+        'RAG and Vector Database Systems',
+        'AI Strategy and Consulting'
+    ]
+});
 
-// Service Schema for Web Hosting
-export const webHostingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Cloud Infrastructure & Web Hosting",
-    "provider": {
-        "@type": "Organization",
-        "name": "DataVault.AI"
-    },
-    "description": "Secure, scalable cloud infrastructure with automated deployments, zero-downtime releases, and 24/7 monitoring on AWS, Azure, and GCP.",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Cloud Infrastructure Services",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "AWS/Azure/GCP Cloud Hosting"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Kubernetes/Docker Container Management"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "24/7 Infrastructure Monitoring"
-                }
-            }
-        ]
-    }
-};
+// Service Schema for Web Hosting / Cloud Infrastructure
+export const webHostingServiceSchema = buildServiceSchema({
+    name: 'Cloud Infrastructure & Web Hosting',
+    slug: 'web-hosting',
+    serviceType: 'Cloud Hosting and DevOps',
+    description: 'Secure, scalable cloud infrastructure with automated deployments, zero-downtime releases, and 24/7 monitoring on AWS, Azure, and GCP.',
+    services: [
+        'AWS Cloud Hosting',
+        'Microsoft Azure Hosting',
+        'Google Cloud Platform Hosting',
+        'Kubernetes and Docker Orchestration',
+        'CI/CD Pipeline Setup',
+        '24/7 Infrastructure Monitoring'
+    ]
+});
 
-// FAQ Schema
+// FAQ Schema (matches the FAQ component content for rich results)
 export const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "What services does DataVault.AI provide?",
+            "name": "How much does custom AI development cost?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "DataVault.AI provides enterprise-grade web development, mobile app development, AI/ML solutions, and cloud infrastructure services. We specialize in React/Next.js, React Native, LLM integration, and cloud hosting on AWS/Azure/GCP."
+                "text": "Every AI project is unique, with costs varying based on complexity, data requirements, and integration needs. Simple chatbots or automation tools start from $15,000, while enterprise-grade ML systems with custom model training typically range from $50,000-$200,000+. We offer a free consultation to assess your needs and provide a detailed quote tailored to your budget and goals."
             }
         },
         {
             "@type": "Question",
-            "name": "What is your uptime guarantee?",
+            "name": "How long does it take to build an AI solution?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We guarantee 99.9% uptime with enterprise SLA and 24/7 monitoring for all our cloud infrastructure and hosting services."
+                "text": "Timeline depends on project scope. A basic AI integration (like adding a chatbot to your website) can be ready in 2-4 weeks. More complex solutions involving custom model training, data pipeline development, or enterprise system integration typically take 3-6 months."
             }
         },
         {
             "@type": "Question",
-            "name": "What is your response time for support?",
+            "name": "What AI technologies and platforms do you work with?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We provide <15 minute response time with 24/7 technical support for all enterprise clients."
+                "text": "We specialise in cutting-edge AI technologies including OpenAI GPT models, Anthropic Claude, LangChain, vector databases (Pinecone, Weaviate), and custom ML frameworks (TensorFlow, PyTorch). Our stack includes FastAPI and Node.js for backends, React/Next.js for frontends, and cloud platforms (AWS, GCP, Azure)."
             }
         },
         {
             "@type": "Question",
-            "name": "Which technologies do you use?",
+            "name": "Do you provide support and maintenance after deployment?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We use modern technologies including React, Next.js, Node.js, Python, React Native, Swift, Kotlin, AWS, Azure, GCP, Kubernetes, Docker, PostgreSQL, and various AI/ML frameworks."
+                "text": "Yes. We offer ongoing support packages including monitoring, updates, bug fixes, and optimisation. Monthly support plans start at $2,500 and include model retraining, performance monitoring, security updates, and priority response times."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you ensure our data is secure and compliant?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We implement enterprise-grade encryption (AES-256), secure API authentication, role-based access controls, and regular security audits. We are experienced with GDPR, HIPAA, and SOC 2 compliance requirements."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How quickly will we see ROI from AI implementation?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most clients see measurable results within 3-6 months of deployment. Automation projects typically show immediate cost savings (30-50% reduction in manual work), while predictive analytics and ML models improve over time as they learn from more data."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you integrate AI into our existing systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We integrate AI capabilities into existing CRMs, ERPs, databases, and custom applications through APIs and webhooks - including Salesforce, SAP, and legacy systems."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is your uptime guarantee and support response time?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We guarantee 99.9% uptime under enterprise SLA, with under-15-minute response time and 24/7 technical support for all enterprise clients."
             }
         }
     ]

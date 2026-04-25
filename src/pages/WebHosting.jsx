@@ -1,9 +1,15 @@
 import React from 'react';
 import { Server, Shield, Zap, BarChart, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { webHostingServiceSchema, buildBreadcrumbSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const WebHosting = () => {
+    const breadcrumbs = buildBreadcrumbSchema([
+        { name: 'Home', url: 'https://datavalutai.com/' },
+        { name: 'Services', url: 'https://datavalutai.com/#services' },
+        { name: 'Cloud Infrastructure', url: 'https://datavalutai.com/services/web-hosting' }
+    ]);
     const features = [
         { icon: Server, title: 'Cloud Infrastructure', description: 'Scalable cloud hosting on AWS, Azure, or GCP with automated deployments and zero-downtime releases.' },
         { icon: Shield, title: '99.9% Uptime', description: 'Enterprise SLA with 24/7 monitoring, automatic failover, and disaster recovery.' },
@@ -17,10 +23,11 @@ const WebHosting = () => {
     return (
         <main>
             <SEO
-                title="Cloud Hosting Services | AWS, Azure & GCP Infrastructure"
-                description="Enterprise cloud hosting with 99.9% uptime. AWS, Azure, and GCP deployment with auto-scaling."
-                keywords="cloud hosting, AWS, Azure, GCP, Kubernetes, Docker, infrastructure"
-                canonical="https://datavault.ai/services/web-hosting"
+                title="Cloud Hosting & DevOps Services - AWS, Azure, GCP & Kubernetes"
+                description="Enterprise cloud hosting with 99.9% uptime SLA. AWS, Azure, GCP deployment with auto-scaling, Kubernetes, CI/CD, DDoS protection, and 24/7 monitoring."
+                keywords="cloud hosting, managed cloud, AWS consulting, Azure hosting, GCP hosting, Kubernetes, Docker, DevOps, CI/CD, infrastructure as code, Terraform, CloudFlare, DDoS protection, enterprise hosting"
+                canonical="https://datavalutai.com/services/web-hosting"
+                structuredData={[webHostingServiceSchema, breadcrumbs]}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">
                 <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">

@@ -1,29 +1,54 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
+const BASE_URL = 'https://datavalutai.com';
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
+const DEFAULT_DESCRIPTION = 'Enterprise AI, web, mobile, and cloud development. LLM integration, React/Next.js, React Native, AWS/Azure/GCP. 99.9% uptime, <15min response, 60% cost reduction.';
+
 const SEO = ({
     title,
     description,
     keywords,
     ogType = 'website',
-    ogImage = 'https://datavault.ai/og-image.jpg',
+    ogImage = DEFAULT_OG_IMAGE,
     canonical,
-    structuredData
+    structuredData,
+    noindex = false,
+    locale = 'en_GB',
+    publishedTime,
+    modifiedTime,
+    author = 'DataVault.AI'
 }) => {
-    const baseUrl = 'https://datavault.ai';
-    const fullTitle = title ? `${title} | DataVault.AI` : 'DataVault.AI - Enterprise Web, Mobile & AI Development';
-    const defaultDescription = 'Enterprise-grade web development, mobile apps, AI solutions, and cloud infrastructure. 99.9% uptime, <15min response time, 60% cost reduction. Transform your business with DataVault.AI.';
-    const metaDescription = description || defaultDescription;
-    const canonicalUrl = canonical || baseUrl;
+    const fullTitle = title
+        ? `${title} | DataVault.AI`
+        : 'DataVault.AI - Custom AI, Web, Mobile & Cloud Development for Enterprise';
+    const metaDescription = description || DEFAULT_DESCRIPTION;
+    const canonicalUrl = canonical || `${BASE_URL}/`;
+    const robotsContent = noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
+    const schemas = Array.isArray(structuredData)
+        ? structuredData
+        : structuredData
+            ? [structuredData]
+            : [];
 
     return (
-        <Helmet>
+        <Helmet prioritizeSeoTags>
             {/* Primary Meta Tags */}
+            <html lang="en-GB" />
             <title>{fullTitle}</title>
             <meta name="title" content={fullTitle} />
             <meta name="description" content={metaDescription} />
             {keywords && <meta name="keywords" content={keywords} />}
+            <meta name="author" content={author} />
             <link rel="canonical" href={canonicalUrl} />
+
+            {/* Robots */}
+            <meta name="robots" content={robotsContent} />
+            <meta name="googlebot" content={robotsContent} />
+            <meta name="bingbot" content={robotsContent} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={ogType} />
@@ -31,28 +56,38 @@ const SEO = ({
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={metaDescription} />
             <meta property="og:image" content={ogImage} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            <meta property="og:image:alt" content={fullTitle} />
             <meta property="og:site_name" content="DataVault.AI" />
+            <meta property="og:locale" content={locale} />
+
+            {/* Article-specific (when ogType="article") */}
+            {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+            {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+            {ogType === 'article' && <meta property="article:author" content={author} />}
 
             {/* Twitter */}
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={canonicalUrl} />
-            <meta property="twitter:title" content={fullTitle} />
-            <meta property="twitter:description" content={metaDescription} />
-            <meta property="twitter:image" content={ogImage} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@datavaultai" />
+            <meta name="twitter:creator" content="@datavaultai" />
+            <meta name="twitter:url" content={canonicalUrl} />
+            <meta name="twitter:title" content={fullTitle} />
+            <meta name="twitter:description" content={metaDescription} />
+            <meta name="twitter:image" content={ogImage} />
+            <meta name="twitter:image:alt" content={fullTitle} />
 
-            {/* Additional Meta Tags */}
-            <meta name="robots" content="index, follow" />
+            {/* Additional Meta */}
             <meta name="language" content="English" />
-            <meta name="author" content="DataVault.AI" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="format-detection" content="telephone=yes" />
 
             {/* Structured Data */}
-            {structuredData && (
-                <script type="application/ld+json">
-                    {JSON.stringify(structuredData)}
+            {schemas.map((schema, idx) => (
+                <script key={idx} type="application/ld+json">
+                    {JSON.stringify(schema)}
                 </script>
-            )}
+            ))}
         </Helmet>
     );
 };
