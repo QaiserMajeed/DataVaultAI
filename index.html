@@ -1,116 +1,263 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Favicon and PWA Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="alternate icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Primary Meta Tags -->
-    <title>DataVault.AI - Enterprise Web, Mobile & AI Development | Cloud Infrastructure</title>
-    <meta name="title" content="DataVault.AI - Enterprise Web, Mobile & AI Development | Cloud Infrastructure" />
-    <meta name="description" content="Enterprise-grade web development, mobile apps, AI solutions, and cloud infrastructure. 99.9% uptime, <15min response time, 60% cost reduction. Transform your business with DataVault.AI." />
-    <meta name="keywords" content="web development, mobile app development, AI development, cloud hosting, React, Next.js, Node.js, React Native, machine learning, AWS, Azure, GCP, enterprise software, LLM integration, TypeScript, Kubernetes, Docker" />
+    <title>DataVault.AI - Custom AI, Web, Mobile & Cloud Development for Enterprise</title>
+    <meta name="title" content="DataVault.AI - Custom AI, Web, Mobile & Cloud Development for Enterprise" />
+    <meta name="description" content="Enterprise AI, web, mobile, and cloud development. LLM integration, React/Next.js, React Native, AWS/Azure/GCP. 99.9% uptime, <15min response, 60% cost reduction." />
+    <meta name="keywords" content="AI development agency, custom AI development, LLM integration, GPT-4 integration, Claude integration, machine learning consulting, web development agency, React development, Next.js agency, mobile app development, React Native, iOS, Android, cloud hosting, AWS consulting, Azure, GCP, Kubernetes, enterprise software, DevOps, MLOps, AI consulting UK" />
     <meta name="author" content="DataVault.AI" />
-    <meta name="robots" content="index, follow" />
+    <meta name="publisher" content="DataVault.AI" />
+    <meta name="copyright" content="DataVault.AI" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="revisit-after" content="7 days" />
     <link rel="canonical" href="https://datavault.ai/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://datavault.ai/" />
-    <meta property="og:title" content="DataVault.AI - Enterprise Web, Mobile & AI Development | Cloud Infrastructure" />
-    <meta property="og:description" content="Enterprise-grade web development, mobile apps, AI solutions, and cloud infrastructure. 99.9% uptime, <15min response time, 60% cost reduction." />
+    <meta property="og:title" content="DataVault.AI - Custom AI, Web, Mobile & Cloud Development for Enterprise" />
+    <meta property="og:description" content="Enterprise AI, web, mobile, and cloud development. LLM integration, React/Next.js, React Native, AWS/Azure/GCP. 99.9% uptime, <15min response, 60% cost reduction." />
     <meta property="og:image" content="https://datavault.ai/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DataVault.AI - Enterprise AI and Software Development Agency" />
     <meta property="og:site_name" content="DataVault.AI" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://datavault.ai/" />
-    <meta property="twitter:title" content="DataVault.AI - Enterprise Web, Mobile & AI Development" />
-    <meta property="twitter:description" content="Enterprise-grade web development, mobile apps, AI solutions, and cloud infrastructure. 99.9% uptime, <15min response time, 60% cost reduction." />
-    <meta property="twitter:image" content="https://datavault.ai/twitter-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@datavaultai" />
+    <meta name="twitter:creator" content="@datavaultai" />
+    <meta name="twitter:url" content="https://datavault.ai/" />
+    <meta name="twitter:title" content="DataVault.AI - Custom AI, Web, Mobile & Cloud Development" />
+    <meta name="twitter:description" content="Enterprise AI, web, mobile, and cloud development. LLM integration, React/Next.js, React Native, AWS/Azure/GCP. 99.9% uptime, <15min response time." />
+    <meta name="twitter:image" content="https://datavault.ai/og-image.jpg" />
+    <meta name="twitter:image:alt" content="DataVault.AI - Enterprise AI and Software Development Agency" />
 
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#FFFFFF" />
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="format-detection" content="telephone=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="DataVault.AI" />
+    <meta name="application-name" content="DataVault.AI" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Geo -->
     <meta name="geo.region" content="GB" />
     <meta name="geo.placename" content="United Kingdom" />
+    <meta name="ICBM" content="51.5074, -0.1278" />
+    <meta name="geo.position" content="51.5074;-0.1278" />
 
     <!-- Business Contact -->
     <meta name="contact" content="hello@datavaultai.com" />
+    <meta name="reply-to" content="hello@datavaultai.com" />
     <meta name="telephone" content="+447440189478" />
 
-    <!-- Minimalist Monochrome Typography System -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!--
+      Search engine verification.
+      Replace the content="" values below with the verification tokens provided by each
+      search console once you create the property. Leave the tag in place; an empty
+      content attribute is harmless until you add the token.
+    -->
+    <meta name="google-site-verification" content="" />
+    <meta name="msvalidate.01" content="" />
+    <meta name="yandex-verification" content="" />
+    <meta name="p:domain_verify" content="" />
 
-    <!-- Schema.org Structured Data -->
+    <!-- Performance: Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org Structured Data: Organization + ProfessionalService + WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "DataVault.AI",
-      "alternateName": "DataVault AI",
-      "url": "https://datavaultai.com",
-      "logo": "https://datavaultai.com/logo.png",
-      "description": "Custom FullStack AI development services for enterprise clients. Expert team delivering production-ready AI solutions.",
-      "email": "hello@datavaultai.com",
-      "telephone": "+447440189478",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "GB"
-      },
-      "sameAs": [
-        "https://twitter.com/datavaultai",
-        "https://linkedin.com/company/datavaultai",
-        "https://github.com/datavaultai"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+447440189478",
-        "contactType": "customer service",
-        "email": "hello@datavaultai.com",
-        "availableLanguage": ["en"]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "offerCount": "4",
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "AI Backend Development",
-            "description": "Intelligent backend systems with LLM integration, vector search, and scalable AI infrastructure"
+      "@graph": [
+        {
+          "@type": ["Organization", "ProfessionalService"],
+          "@id": "https://datavault.ai/#organization",
+          "name": "DataVault.AI",
+          "alternateName": ["DataVault AI", "DataVaultAI"],
+          "url": "https://datavault.ai/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://datavault.ai/logo.png",
+            "width": 512,
+            "height": 512
           },
-          {
-            "@type": "Offer",
-            "name": "AI Frontend Development",
-            "description": "Responsive, dynamic UIs with seamless AI integration"
+          "image": "https://datavault.ai/og-image.jpg",
+          "description": "Enterprise-grade AI, web, mobile, and cloud development. Custom LLM integration, machine learning, React/Next.js, React Native, and AWS/Azure/GCP infrastructure.",
+          "foundingDate": "2023",
+          "email": "hello@datavaultai.com",
+          "telephone": "+447440189478",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB",
+            "addressLocality": "London"
           },
-          {
-            "@type": "Offer",
-            "name": "ML Model Development",
-            "description": "Custom machine learning models trained for your business needs"
+          "areaServed": [
+            { "@type": "Place", "name": "Worldwide" },
+            { "@type": "Country", "name": "United Kingdom" },
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "European Union" }
+          ],
+          "sameAs": [
+            "https://twitter.com/datavaultai",
+            "https://linkedin.com/company/datavaultai",
+            "https://github.com/datavaultai"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+447440189478",
+              "contactType": "sales",
+              "email": "hello@datavaultai.com",
+              "availableLanguage": ["en", "en-GB", "en-US"],
+              "areaServed": "Worldwide"
+            },
+            {
+              "@type": "ContactPoint",
+              "email": "hello@datavaultai.com",
+              "contactType": "customer support",
+              "availableLanguage": ["en"],
+              "areaServed": "Worldwide"
+            }
+          ],
+          "knowsAbout": [
+            "Artificial Intelligence",
+            "Large Language Models",
+            "Machine Learning",
+            "Web Development",
+            "Mobile App Development",
+            "Cloud Infrastructure",
+            "DevOps",
+            "MLOps",
+            "React",
+            "Next.js",
+            "Node.js",
+            "Python",
+            "React Native",
+            "Kubernetes",
+            "AWS",
+            "Azure",
+            "Google Cloud Platform"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "50",
+            "bestRating": "5",
+            "worstRating": "1"
           },
-          {
-            "@type": "Offer",
-            "name": "AI Consulting & Strategy",
-            "description": "Strategic guidance for AI implementation and roadmap planning"
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "DataVault.AI Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Development",
+                  "url": "https://datavault.ai/services/ai-development",
+                  "description": "Custom LLM integration, machine learning models, computer vision, and NLP solutions."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Web Development",
+                  "url": "https://datavault.ai/services/web-development",
+                  "description": "Enterprise web applications with React, Next.js, and Node.js."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mobile Development",
+                  "url": "https://datavault.ai/services/mobile-development",
+                  "description": "Native and cross-platform mobile apps with React Native, Swift, and Kotlin."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Cloud Infrastructure",
+                  "url": "https://datavault.ai/services/web-hosting",
+                  "description": "Scalable cloud infrastructure on AWS, Azure, and GCP with 99.9% uptime."
+                }
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://datavault.ai/#website",
+          "url": "https://datavault.ai/",
+          "name": "DataVault.AI",
+          "description": "Enterprise-grade AI, web, mobile, and cloud development services.",
+          "publisher": { "@id": "https://datavault.ai/#organization" },
+          "inLanguage": "en-GB",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://datavault.ai/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
     }
     </script>
+  </head>
+  <body>
+    <noscript>
+      <div style="padding:24px;font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;">
+        <h1>DataVault.AI - Enterprise AI, Web, Mobile &amp; Cloud Development</h1>
+        <p>DataVault.AI delivers enterprise-grade custom AI, web, mobile, and cloud infrastructure for businesses worldwide. We specialise in LLM integration (GPT-4, Claude), machine learning, React/Next.js, React Native, and deployment on AWS, Azure, and GCP.</p>
+        <p>This site requires JavaScript to load the full experience. Please enable JavaScript, or contact us directly:</p>
+        <ul>
+          <li>Email: <a href="mailto:hello@datavaultai.com">hello@datavaultai.com</a></li>
+          <li>Phone: <a href="tel:+447440189478">+44 7440 189478</a></li>
+        </ul>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="/services/ai-development">AI Development</a> - LLM integration, machine learning, NLP, computer vision</li>
+          <li><a href="/services/web-development">Web Development</a> - React, Next.js, Node.js applications</li>
+          <li><a href="/services/mobile-development">Mobile Development</a> - iOS, Android, React Native apps</li>
+          <li><a href="/services/web-hosting">Cloud Infrastructure</a> - AWS, Azure, GCP hosting and DevOps</li>
+        </ul>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

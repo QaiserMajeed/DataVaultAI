@@ -1,9 +1,15 @@
 import React from 'react';
 import { Brain, Cpu, TrendingUp, Lock, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { aiDevServiceSchema, buildBreadcrumbSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const AIDevelopment = () => {
+    const breadcrumbs = buildBreadcrumbSchema([
+        { name: 'Home', url: 'https://datavault.ai/' },
+        { name: 'Services', url: 'https://datavault.ai/#services' },
+        { name: 'AI Development', url: 'https://datavault.ai/services/ai-development' }
+    ]);
     const features = [
         { icon: Brain, title: 'LLM Integration', description: 'Custom AI solutions powered by GPT-4, Claude, and other state-of-the-art language models.' },
         { icon: Cpu, title: 'Machine Learning', description: 'Custom ML models trained on your data for predictions, classifications, and recommendations.' },
@@ -17,10 +23,11 @@ const AIDevelopment = () => {
     return (
         <main>
             <SEO
-                title="AI Development Services | Machine Learning & LLM Integration"
-                description="Custom AI and machine learning solutions. GPT-4, Claude, and custom ML model development."
-                keywords="AI development, machine learning, GPT-4, Claude, LLM, NLP, computer vision"
+                title="AI Development Services - LLM, Machine Learning & Custom AI"
+                description="Custom AI development with GPT-4, Claude, and custom ML models. LLM integration, RAG, computer vision, and NLP solutions for enterprise. Production-ready and secure."
+                keywords="AI development services, custom AI development, LLM integration, GPT-4 development, Claude integration, machine learning consulting, RAG, vector database, computer vision, NLP, AI consulting, MLOps, AI strategy"
                 canonical="https://datavault.ai/services/ai-development"
+                structuredData={[aiDevServiceSchema, breadcrumbs]}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">
                 <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">

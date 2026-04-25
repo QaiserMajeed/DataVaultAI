@@ -1,9 +1,15 @@
 import React from 'react';
 import { Smartphone, Zap, Users, Globe, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { mobileDevServiceSchema, buildBreadcrumbSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const MobileDevelopment = () => {
+    const breadcrumbs = buildBreadcrumbSchema([
+        { name: 'Home', url: 'https://datavault.ai/' },
+        { name: 'Services', url: 'https://datavault.ai/#services' },
+        { name: 'Mobile Development', url: 'https://datavault.ai/services/mobile-development' }
+    ]);
     const features = [
         { icon: Smartphone, title: 'Native Performance', description: 'Build fast, responsive mobile apps for iOS and Android with native performance and user experience.' },
         { icon: Zap, title: 'Cross-Platform', description: 'Write once, deploy everywhere. Reach both iOS and Android users with a single codebase using React Native.' },
@@ -17,10 +23,11 @@ const MobileDevelopment = () => {
     return (
         <main>
             <SEO
-                title="Mobile Development Services | iOS & Android Apps"
-                description="Native mobile app development for iOS and Android. React Native, Swift, and Kotlin expertise."
-                keywords="mobile development, React Native, iOS, Android, Swift, Kotlin, mobile apps"
+                title="Mobile App Development Services - iOS, Android & React Native"
+                description="Custom native and cross-platform mobile app development for iOS and Android. React Native, Swift, and Kotlin expertise with App Store and Google Play deployment."
+                keywords="mobile app development, React Native development, iOS app development, Android app development, Swift, Kotlin, cross-platform apps, App Store optimization, push notifications, in-app purchases"
                 canonical="https://datavault.ai/services/mobile-development"
+                structuredData={[mobileDevServiceSchema, breadcrumbs]}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">
                 <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">

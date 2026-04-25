@@ -1,0 +1,28 @@
+{
+  "name": "DataVault.AI - Enterprise AI & Software Development",
+  "short_name": "DataVault.AI",
+  "description": "Enterprise-grade AI, web, mobile, and cloud development services.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FFFFFF",
+  "theme_color": "#000000",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "developer"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

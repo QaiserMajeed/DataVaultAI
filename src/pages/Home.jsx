@@ -1,6 +1,10 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import { organizationSchema, websiteSchema, faqSchema } from '../utils/structuredData';
+import {
+    organizationSchema,
+    websiteSchema,
+    faqSchema
+} from '../utils/structuredData';
 import Hero from '../components/Hero';
 import TrustBar from '../components/TrustBar';
 import Services from '../components/Services';
@@ -12,18 +16,19 @@ import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 
 const Home = () => {
-    const structuredData = {
-        "@context": "https://schema.org",
-        "@graph": [organizationSchema, websiteSchema, faqSchema]
-    };
+    const structuredData = [
+        organizationSchema,
+        websiteSchema,
+        faqSchema
+    ];
 
     return (
         <main>
             <SEO
-                title="Enterprise Web, Mobile & AI Development"
-                description="Enterprise-grade web development, mobile apps, AI solutions, and cloud infrastructure. 99.9% uptime, <15min response time, 60% cost reduction. Transform your business with DataVault.AI."
-                keywords="web development, mobile app development, AI development, cloud hosting, React, Next.js, Node.js, React Native, machine learning, AWS, Azure, GCP, enterprise software"
-                canonical="https://datavault.ai"
+                title="Custom AI, Web, Mobile & Cloud Development for Enterprise"
+                description="Enterprise AI, web, mobile, and cloud development. LLM integration, React/Next.js, React Native, AWS/Azure/GCP. 99.9% uptime, <15min response, 60% cost reduction."
+                keywords="AI development agency, custom AI development, LLM integration, GPT-4, Claude, machine learning consulting, web development, React, Next.js, mobile app development, React Native, cloud hosting, AWS, Azure, GCP, enterprise software"
+                canonical="https://datavault.ai/"
                 structuredData={structuredData}
             />
             <Hero />

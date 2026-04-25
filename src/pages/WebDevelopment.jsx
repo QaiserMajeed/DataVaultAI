@@ -1,10 +1,15 @@
 import React from 'react';
 import { Code, Zap, Shield, Smartphone, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
-import { webDevServiceSchema } from '../utils/structuredData';
+import { webDevServiceSchema, buildBreadcrumbSchema } from '../utils/structuredData';
 import Contact from '../components/Contact';
 
 const WebDevelopment = () => {
+    const breadcrumbs = buildBreadcrumbSchema([
+        { name: 'Home', url: 'https://datavault.ai/' },
+        { name: 'Services', url: 'https://datavault.ai/#services' },
+        { name: 'Web Development', url: 'https://datavault.ai/services/web-development' }
+    ]);
     const features = [
         { icon: Code, title: 'Custom Web Applications', description: 'Tailored solutions built with modern frameworks like React, Next.js, and Node.js to meet your unique business needs.' },
         { icon: Zap, title: 'High Performance', description: 'Lightning-fast applications optimized for speed, scalability, and exceptional user experience across all devices.' },
@@ -18,11 +23,11 @@ const WebDevelopment = () => {
     return (
         <main>
             <SEO
-                title="Web Development Services | Enterprise Solutions"
-                description="Custom web development with React, Next.js, and Node.js. Scalable, secure, and high-performance applications."
-                keywords="web development, React, Next.js, Node.js, TypeScript, enterprise web apps"
+                title="Enterprise Web Development Services - React, Next.js, Node.js"
+                description="Custom enterprise web development with React, Next.js, TypeScript, and Node.js. Scalable, secure, high-performance web applications with SEO and CI/CD built-in."
+                keywords="web development agency, React development, Next.js development, Node.js, TypeScript, enterprise web apps, custom web application, SaaS development, headless CMS, GraphQL, REST API"
                 canonical="https://datavault.ai/services/web-development"
-                structuredData={webDevServiceSchema}
+                structuredData={[webDevServiceSchema, breadcrumbs]}
             />
 
             {/* Hero */}

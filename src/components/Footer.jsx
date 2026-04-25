@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-[var(--background)] text-[var(--foreground)] py-12 border-t-2 border-[var(--foreground)]">
+        <footer className="bg-[var(--background)] text-[var(--foreground)] py-12 border-t-2 border-[var(--foreground)]" role="contentinfo">
             <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">
                 <div className="grid md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
@@ -33,23 +33,32 @@ const Footer = () => {
                         </p>
                         <div className="flex gap-4">
                             <a
-                                href="#"
+                                href="https://github.com/datavaultai"
+                                target="_blank"
+                                rel="noopener noreferrer me"
                                 className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
-                                aria-label="Github"
+                                aria-label="DataVault.AI on GitHub"
+                                title="DataVault.AI on GitHub"
                             >
                                 <Github className="w-5 h-5" strokeWidth={2} />
                             </a>
                             <a
-                                href="#"
+                                href="https://twitter.com/datavaultai"
+                                target="_blank"
+                                rel="noopener noreferrer me"
                                 className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
-                                aria-label="Twitter"
+                                aria-label="DataVault.AI on Twitter / X"
+                                title="DataVault.AI on Twitter / X"
                             >
                                 <Twitter className="w-5 h-5" strokeWidth={2} />
                             </a>
                             <a
-                                href="#"
+                                href="https://linkedin.com/company/datavaultai"
+                                target="_blank"
+                                rel="noopener noreferrer me"
                                 className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
-                                aria-label="LinkedIn"
+                                aria-label="DataVault.AI on LinkedIn"
+                                title="DataVault.AI on LinkedIn"
                             >
                                 <Linkedin className="w-5 h-5" strokeWidth={2} />
                             </a>
@@ -108,6 +117,7 @@ const Footer = () => {
                         >
                             Contact
                         </h4>
+                        <address className="not-italic">
                         <ul className="space-y-3 text-sm" style={{ fontFamily: 'var(--font-body)' }}>
                             <li>
                                 <a
@@ -144,6 +154,7 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
+                        </address>
                     </div>
                 </div>
 
