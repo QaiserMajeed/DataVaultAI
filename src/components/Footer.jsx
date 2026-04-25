@@ -158,14 +158,34 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Copyright */}
-                <div className="pt-8 border-t-2 border-[var(--foreground)] text-center">
+                {/* Legal */}
+                <div className="pt-8 border-t-2 border-[var(--foreground)] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <p
                         className="text-xs uppercase tracking-widest"
                         style={{ fontFamily: 'var(--font-mono)' }}
                     >
                         &copy; {new Date().getFullYear()} DataVault AI. All rights reserved.
                     </p>
+                    <ul
+                        className="flex flex-wrap gap-6 text-xs uppercase tracking-widest"
+                        style={{ fontFamily: 'var(--font-mono)' }}
+                    >
+                        <li>
+                            <Link to="/blog" className="hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3">
+                                Blog
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/privacy" className="hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3">
+                                Privacy
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/terms" className="hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3">
+                                Terms
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </footer>

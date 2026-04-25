@@ -15,7 +15,7 @@ export const organizationSchema = {
         "width": 512,
         "height": 512
     },
-    "image": `${BASE_URL}/og-image.jpg`,
+    "image": `${BASE_URL}/og-image.svg`,
     "description": "Enterprise-grade AI, web, mobile, and cloud development. Custom LLM integration, machine learning, React/Next.js, React Native, and AWS/Azure/GCP infrastructure.",
     "email": "hello@datavaultai.com",
     "telephone": "+447440189478",
