@@ -6,9 +6,9 @@ import Contact from '../components/Contact';
 
 const WebDevelopment = () => {
     const breadcrumbs = buildBreadcrumbSchema([
-        { name: 'Home', url: 'https://datavault.ai/' },
-        { name: 'Services', url: 'https://datavault.ai/#services' },
-        { name: 'Web Development', url: 'https://datavault.ai/services/web-development' }
+        { name: 'Home', url: 'https://datavalutai.com/' },
+        { name: 'Services', url: 'https://datavalutai.com/#services' },
+        { name: 'Web Development', url: 'https://datavalutai.com/services/web-development' }
     ]);
     const features = [
         { icon: Code, title: 'Custom Web Applications', description: 'Tailored solutions built with modern frameworks like React, Next.js, and Node.js to meet your unique business needs.' },
@@ -26,7 +26,7 @@ const WebDevelopment = () => {
                 title="Enterprise Web Development Services - React, Next.js, Node.js"
                 description="Custom enterprise web development with React, Next.js, TypeScript, and Node.js. Scalable, secure, high-performance web applications with SEO and CI/CD built-in."
                 keywords="web development agency, React development, Next.js development, Node.js, TypeScript, enterprise web apps, custom web application, SaaS development, headless CMS, GraphQL, REST API"
-                canonical="https://datavault.ai/services/web-development"
+                canonical="https://datavalutai.com/services/web-development"
                 structuredData={[webDevServiceSchema, breadcrumbs]}
             />
 

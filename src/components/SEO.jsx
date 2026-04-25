@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const BASE_URL = 'https://datavault.ai';
+const BASE_URL = 'https://datavalutai.com';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 const DEFAULT_DESCRIPTION = 'Enterprise AI, web, mobile, and cloud development. LLM integration, React/Next.js, React Native, AWS/Azure/GCP. 99.9% uptime, <15min response, 60% cost reduction.';
 

@@ -1,4 +1,4 @@
-const BASE_URL = 'https://datavault.ai';
+const BASE_URL = 'https://datavalutai.com';
 const ORG_ID = `${BASE_URL}/#organization`;
 
 // Organization Schema (canonical reference; matches index.html)

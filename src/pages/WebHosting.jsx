@@ -6,9 +6,9 @@ import Contact from '../components/Contact';
 
 const WebHosting = () => {
     const breadcrumbs = buildBreadcrumbSchema([
-        { name: 'Home', url: 'https://datavault.ai/' },
-        { name: 'Services', url: 'https://datavault.ai/#services' },
-        { name: 'Cloud Infrastructure', url: 'https://datavault.ai/services/web-hosting' }
+        { name: 'Home', url: 'https://datavalutai.com/' },
+        { name: 'Services', url: 'https://datavalutai.com/#services' },
+        { name: 'Cloud Infrastructure', url: 'https://datavalutai.com/services/web-hosting' }
     ]);
     const features = [
         { icon: Server, title: 'Cloud Infrastructure', description: 'Scalable cloud hosting on AWS, Azure, or GCP with automated deployments and zero-downtime releases.' },
@@ -26,7 +26,7 @@ const WebHosting = () => {
                 title="Cloud Hosting & DevOps Services - AWS, Azure, GCP & Kubernetes"
                 description="Enterprise cloud hosting with 99.9% uptime SLA. AWS, Azure, GCP deployment with auto-scaling, Kubernetes, CI/CD, DDoS protection, and 24/7 monitoring."
                 keywords="cloud hosting, managed cloud, AWS consulting, Azure hosting, GCP hosting, Kubernetes, Docker, DevOps, CI/CD, infrastructure as code, Terraform, CloudFlare, DDoS protection, enterprise hosting"
-                canonical="https://datavault.ai/services/web-hosting"
+                canonical="https://datavalutai.com/services/web-hosting"
                 structuredData={[webHostingServiceSchema, breadcrumbs]}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">

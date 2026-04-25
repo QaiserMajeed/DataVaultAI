@@ -2,7 +2,7 @@
 Company: DataVault.AI
 Contact: hello@datavaultai.com
 Location: London, United Kingdom
-Site: https://datavault.ai
+Site: https://datavalutai.com
 
 /* SITE */
 Last update: 2026/04/25

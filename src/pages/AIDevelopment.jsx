@@ -6,9 +6,9 @@ import Contact from '../components/Contact';
 
 const AIDevelopment = () => {
     const breadcrumbs = buildBreadcrumbSchema([
-        { name: 'Home', url: 'https://datavault.ai/' },
-        { name: 'Services', url: 'https://datavault.ai/#services' },
-        { name: 'AI Development', url: 'https://datavault.ai/services/ai-development' }
+        { name: 'Home', url: 'https://datavalutai.com/' },
+        { name: 'Services', url: 'https://datavalutai.com/#services' },
+        { name: 'AI Development', url: 'https://datavalutai.com/services/ai-development' }
     ]);
     const features = [
         { icon: Brain, title: 'LLM Integration', description: 'Custom AI solutions powered by GPT-4, Claude, and other state-of-the-art language models.' },
@@ -26,7 +26,7 @@ const AIDevelopment = () => {
                 title="AI Development Services - LLM, Machine Learning & Custom AI"
                 description="Custom AI development with GPT-4, Claude, and custom ML models. LLM integration, RAG, computer vision, and NLP solutions for enterprise. Production-ready and secure."
                 keywords="AI development services, custom AI development, LLM integration, GPT-4 development, Claude integration, machine learning consulting, RAG, vector database, computer vision, NLP, AI consulting, MLOps, AI strategy"
-                canonical="https://datavault.ai/services/ai-development"
+                canonical="https://datavalutai.com/services/ai-development"
                 structuredData={[aiDevServiceSchema, breadcrumbs]}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">

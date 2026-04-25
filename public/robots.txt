@@ -103,4 +103,4 @@ User-agent: PetalBot
 Disallow: /
 
 # Sitemap
-Sitemap: https://datavault.ai/sitemap.xml
+Sitemap: https://datavalutai.com/sitemap.xml

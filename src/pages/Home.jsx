@@ -28,7 +28,7 @@ const Home = () => {
                 title="Custom AI, Web, Mobile & Cloud Development for Enterprise"
                 description="Enterprise AI, web, mobile, and cloud development. LLM integration, React/Next.js, React Native, AWS/Azure/GCP. 99.9% uptime, <15min response, 60% cost reduction."
                 keywords="AI development agency, custom AI development, LLM integration, GPT-4, Claude, machine learning consulting, web development, React, Next.js, mobile app development, React Native, cloud hosting, AWS, Azure, GCP, enterprise software"
-                canonical="https://datavault.ai/"
+                canonical="https://datavalutai.com/"
                 structuredData={structuredData}
             />
             <Hero />

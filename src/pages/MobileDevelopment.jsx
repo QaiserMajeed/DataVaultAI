@@ -6,9 +6,9 @@ import Contact from '../components/Contact';
 
 const MobileDevelopment = () => {
     const breadcrumbs = buildBreadcrumbSchema([
-        { name: 'Home', url: 'https://datavault.ai/' },
-        { name: 'Services', url: 'https://datavault.ai/#services' },
-        { name: 'Mobile Development', url: 'https://datavault.ai/services/mobile-development' }
+        { name: 'Home', url: 'https://datavalutai.com/' },
+        { name: 'Services', url: 'https://datavalutai.com/#services' },
+        { name: 'Mobile Development', url: 'https://datavalutai.com/services/mobile-development' }
     ]);
     const features = [
         { icon: Smartphone, title: 'Native Performance', description: 'Build fast, responsive mobile apps for iOS and Android with native performance and user experience.' },
@@ -26,7 +26,7 @@ const MobileDevelopment = () => {
                 title="Mobile App Development Services - iOS, Android & React Native"
                 description="Custom native and cross-platform mobile app development for iOS and Android. React Native, Swift, and Kotlin expertise with App Store and Google Play deployment."
                 keywords="mobile app development, React Native development, iOS app development, Android app development, Swift, Kotlin, cross-platform apps, App Store optimization, push notifications, in-app purchases"
-                canonical="https://datavault.ai/services/mobile-development"
+                canonical="https://datavalutai.com/services/mobile-development"
                 structuredData={[mobileDevServiceSchema, breadcrumbs]}
             />
             <section className="min-h-screen flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 texture-grid">
