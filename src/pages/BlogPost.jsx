@@ -76,7 +76,7 @@ const BlogPost = () => {
             url: 'https://datavalutai.com/'
         },
         publisher: { '@id': 'https://datavalutai.com/#organization' },
-        image: 'https://datavalutai.com/og-image.svg',
+        image: 'https://datavalutai.com/og-image.png',
         keywords: post.tags.join(', '),
         mainEntityOfPage: { '@type': 'WebPage', '@id': url },
         wordCount: post.body
