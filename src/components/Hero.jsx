@@ -6,7 +6,7 @@ const Hero = () => {
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
             <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-24 md:py-32 lg:py-40">
                 {/* Premium Label - Monospace Typography */}
-                <div className="mb-8">
+                <div className="mb-3">
                     <span
                         className="text-xs uppercase tracking-widest font-medium border-2 border-[var(--foreground)] px-4 py-2 inline-block"
                         style={{ fontFamily: 'var(--font-mono)' }}
@@ -14,6 +14,12 @@ const Hero = () => {
                         ENTERPRISE-GRADE INFRASTRUCTURE
                     </span>
                 </div>
+                <p
+                    className="text-xs mb-8 opacity-50 italic"
+                    style={{ fontFamily: 'var(--font-mono)' }}
+                >
+                    yes, spelt Valut
+                </p>
 
                 {/* Oversized Hero Typography - Editorial Scale */}
                 <h1
@@ -40,8 +46,8 @@ const Hero = () => {
                     className="text-lg md:text-xl lg:text-2xl max-w-3xl mb-16 leading-relaxed"
                     style={{ fontFamily: 'var(--font-body)' }}
                 >
-                    Deploy production-ready infrastructure that scales with precision.
-                    <strong className="font-semibold"> Reduce operational overhead by 60%</strong> while maintaining 99.9% uptime.
+                    Websites and AI tools for UK businesses.{' '}
+                    <strong className="font-semibold">Built by a UK Ltd in Liverpool.</strong>
                 </p>
 
                 {/* Dual CTAs - Sharp & Inverted */}
