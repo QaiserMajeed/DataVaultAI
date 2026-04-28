@@ -160,12 +160,20 @@ const Footer = () => {
 
                 {/* Legal */}
                 <div className="pt-8 border-t-2 border-[var(--foreground)] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <p
-                        className="text-xs uppercase tracking-widest"
-                        style={{ fontFamily: 'var(--font-mono)' }}
-                    >
-                        &copy; {new Date().getFullYear()} DataVault AI. All rights reserved.
-                    </p>
+                    <div className="flex flex-col gap-1">
+                        <p
+                            className="text-xs uppercase tracking-widest"
+                            style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                            &copy; {new Date().getFullYear()} DataVault AI. All rights reserved.
+                        </p>
+                        <p
+                            className="text-xs opacity-60"
+                            style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                            DataVault AI Ltd · Registered in England &amp; Wales · Company No. [YOUR_COMPANY_NO]
+                        </p>
+                    </div>
                     <ul
                         className="flex flex-wrap gap-6 text-xs uppercase tracking-widest"
                         style={{ fontFamily: 'var(--font-mono)' }}
