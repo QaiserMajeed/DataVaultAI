@@ -171,7 +171,7 @@ const Footer = () => {
                             className="text-xs opacity-60"
                             style={{ fontFamily: 'var(--font-mono)' }}
                         >
-                            DataVault AI Ltd · Registered in England &amp; Wales · Company No. [YOUR_COMPANY_NO]
+                            DataVault AI Ltd · Registered in England &amp; Wales · Company No. 16841685
                         </p>
                     </div>
                     <ul
