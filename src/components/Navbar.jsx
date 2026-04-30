@@ -58,7 +58,7 @@ const Navbar = () => {
                             <img
                                 src="/logo.png"
                                 alt="DataVault AI"
-                                className="h-10 w-auto"
+                                className="h-16 w-auto"
                             />
                         </Link>
 

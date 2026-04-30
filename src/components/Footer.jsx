@@ -13,7 +13,7 @@ const Footer = () => {
                             <img
                                 src="/logo.png"
                                 alt="DataVault AI"
-                                className="h-12 w-auto"
+                                className="h-20 w-auto"
                             />
                         </div>
                         <p
