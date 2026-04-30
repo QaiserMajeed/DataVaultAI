@@ -9,21 +9,12 @@ const Footer = () => {
                 <div className="grid md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div className="col-span-2">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center">
-                                <span
-                                    className="font-bold text-sm"
-                                    style={{ fontFamily: 'var(--font-mono)' }}
-                                >
-                                    DV
-                                </span>
-                            </div>
-                            <span
-                                className="text-xl font-bold tracking-tight"
-                                style={{ fontFamily: 'var(--font-display)' }}
-                            >
-                                DataVault AI
-                            </span>
+                        <div className="mb-6">
+                            <img
+                                src="/logo.png"
+                                alt="DataVault AI"
+                                className="h-12 w-auto"
+                            />
                         </div>
                         <p
                             className="text-sm mb-8 max-w-md leading-relaxed"
