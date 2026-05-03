@@ -53,13 +53,19 @@ const Navbar = () => {
                         {/* Logo - Pure Typography */}
                         <Link
                             to="/"
-                            className="flex items-center group"
+                            className="flex items-center gap-3 group"
                         >
-                            <img
-                                src="/logo.png"
-                                alt="DataVault AI"
-                                className="h-10 w-auto"
-                            />
+                            <div className="w-8 h-8 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 group-hover:bg-[var(--foreground)]">
+                                <span className="font-mono text-xs font-bold group-hover:text-[var(--background)] transition-colors duration-100">
+                                    DV
+                                </span>
+                            </div>
+                            <span
+                                className="text-lg font-bold tracking-tight"
+                                style={{ fontFamily: 'var(--font-display)' }}
+                            >
+                                DataVault.AI
+                            </span>
                         </Link>
 
                         {/* Desktop Nav Links */}
