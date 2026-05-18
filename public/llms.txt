@@ -1,0 +1,54 @@
+# DataVault.AI
+
+> DataVault.AI is an enterprise software development agency specialising in custom AI, web, mobile, and cloud infrastructure. We build production-ready LLM integrations, machine learning systems, React/Next.js web applications, React Native mobile apps, and AWS/Azure/GCP cloud deployments for enterprise clients worldwide.
+
+## Company
+
+- [Homepage](https://datavalutai.com/): Full overview of services, portfolio, and company information
+- [About / Why Us](https://datavalutai.com/#why-us): Why enterprise clients choose DataVault.AI — team expertise, process, and guarantees
+- [Portfolio](https://datavalutai.com/#portfolio): Case studies and delivered enterprise projects
+- [Testimonials](https://datavalutai.com/#testimonials): Client reviews and success stories
+- [Contact](https://datavalutai.com/#contact): Get in touch for a free consultation
+
+## Services
+
+- [AI Development](https://datavalutai.com/services/ai-development): Custom LLM integration (GPT-4, Claude, Gemini), RAG systems, vector databases, computer vision, NLP, and ML model training. Enterprise AI consulting and strategy.
+- [Web Development](https://datavalutai.com/services/web-development): Enterprise web applications built with React, Next.js, and Node.js. REST and GraphQL APIs, Progressive Web Apps, headless CMS integration, and TypeScript development.
+- [Mobile Development](https://datavalutai.com/services/mobile-development): Native and cross-platform mobile apps for iOS and Android using React Native, Swift, and Kotlin. App Store Optimization and real-time sync.
+- [Cloud Infrastructure & Hosting](https://datavalutai.com/services/web-hosting): Scalable cloud infrastructure on AWS, Azure, and GCP. Kubernetes, Docker, CI/CD pipelines, and 24/7 infrastructure monitoring with 99.9% uptime SLA.
+
+## Blog
+
+- [Blog](https://datavalutai.com/blog): Technical articles, AI development guides, industry insights, and engineering tutorials from the DataVault.AI team.
+
+## Key Facts
+
+- **Founded:** 2023
+- **Registered:** DataVault AI Ltd · England & Wales · Company No. 16841685
+- **Location:** London, United Kingdom
+- **Email:** hello@datavaultai.com
+- **Phone:** +44 7440 189478
+- **Uptime SLA:** 99.9%
+- **Support Response:** Under 15 minutes for enterprise clients
+- **Cost Reduction:** Average 60% infrastructure cost reduction for clients
+
+## Technology Stack
+
+AI/ML: OpenAI GPT-4, Anthropic Claude, LangChain, Pinecone, Weaviate, TensorFlow, PyTorch, FastAPI
+Frontend: React, Next.js, TypeScript, Tailwind CSS, Progressive Web Apps
+Backend: Node.js, Python, REST APIs, GraphQL, PostgreSQL, MongoDB
+Mobile: React Native, Swift (iOS), Kotlin (Android)
+Cloud: AWS, Microsoft Azure, Google Cloud Platform, Kubernetes, Docker, Terraform
+
+## Social & Contact
+
+- [LinkedIn](https://www.linkedin.com/company/data-valut-ai): Professional updates and company news
+- [Instagram](https://www.instagram.com/datavalutai/): Behind-the-scenes and visual content
+- [Facebook](https://www.facebook.com/people/DataValut-AI/61589233525081/): Community and business updates
+- [Twitter / X](https://twitter.com/datavaultai): Quick updates and tech insights
+- [GitHub](https://github.com/datavaultai): Open-source projects and code samples
+
+## Legal
+
+- [Privacy Policy](https://datavalutai.com/privacy): How we collect, store, and use your data (GDPR compliant)
+- [Terms of Service](https://datavalutai.com/terms): Terms governing use of our services

@@ -104,3 +104,6 @@ Disallow: /
 
 # Sitemap
 Sitemap: https://datavalutai.com/sitemap.xml
+
+# LLMs.txt — machine-readable site summary for AI assistants
+# https://datavalutai.com/llms.txt
