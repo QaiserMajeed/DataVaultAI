@@ -31,8 +31,10 @@ export const organizationSchema = {
         { "@type": "Country", "name": "European Union" }
     ],
     "sameAs": [
+        "https://www.linkedin.com/company/data-valut-ai",
+        "https://www.instagram.com/datavalutai/",
+        "https://www.facebook.com/people/DataValut-AI/61589233525081/",
         "https://twitter.com/datavaultai",
-        "https://linkedin.com/company/datavaultai",
         "https://github.com/datavaultai"
     ],
     "contactPoint": {

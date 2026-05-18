@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Twitter, Linkedin, Phone, Mail } from 'lucide-react';
+import { Github, Twitter, Linkedin, Instagram, Facebook, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -31,16 +31,36 @@ const Footer = () => {
                         >
                             Custom FullStack AI development services for enterprise clients. Expert team delivering production-ready AI solutions.
                         </p>
-                        <div className="flex gap-4">
+                        <div className="flex flex-wrap gap-4">
                             <a
-                                href="https://github.com/datavaultai"
+                                href="https://www.linkedin.com/company/data-valut-ai"
                                 target="_blank"
                                 rel="noopener noreferrer me"
                                 className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
-                                aria-label="DataVault.AI on GitHub"
-                                title="DataVault.AI on GitHub"
+                                aria-label="DataVault.AI on LinkedIn"
+                                title="DataVault.AI on LinkedIn"
                             >
-                                <Github className="w-5 h-5" strokeWidth={2} />
+                                <Linkedin className="w-5 h-5" strokeWidth={2} />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/datavalutai/"
+                                target="_blank"
+                                rel="noopener noreferrer me"
+                                className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                aria-label="DataVault.AI on Instagram"
+                                title="DataVault.AI on Instagram"
+                            >
+                                <Instagram className="w-5 h-5" strokeWidth={2} />
+                            </a>
+                            <a
+                                href="https://www.facebook.com/people/DataValut-AI/61589233525081/"
+                                target="_blank"
+                                rel="noopener noreferrer me"
+                                className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                aria-label="DataVault.AI on Facebook"
+                                title="DataVault.AI on Facebook"
+                            >
+                                <Facebook className="w-5 h-5" strokeWidth={2} />
                             </a>
                             <a
                                 href="https://twitter.com/datavaultai"
@@ -53,14 +73,14 @@ const Footer = () => {
                                 <Twitter className="w-5 h-5" strokeWidth={2} />
                             </a>
                             <a
-                                href="https://linkedin.com/company/datavaultai"
+                                href="https://github.com/datavaultai"
                                 target="_blank"
                                 rel="noopener noreferrer me"
                                 className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
-                                aria-label="DataVault.AI on LinkedIn"
-                                title="DataVault.AI on LinkedIn"
+                                aria-label="DataVault.AI on GitHub"
+                                title="DataVault.AI on GitHub"
                             >
-                                <Linkedin className="w-5 h-5" strokeWidth={2} />
+                                <Github className="w-5 h-5" strokeWidth={2} />
                             </a>
                         </div>
                     </div>
