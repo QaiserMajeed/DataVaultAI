@@ -42,9 +42,65 @@ export const skills = [
 export const portfolioProjects = [
     {
         id: 1,
-        title: 'Symcue - Real-Time Collaboration Platform',
-        category: 'Full Stack Development',
-        description: 'Built a comprehensive real-time collaboration platform using Node.js and React.js. Features include live document editing, team messaging, and project management tools. Implemented WebSocket connections for real-time updates and optimized database queries for handling 1000+ concurrent users.',
+        title: 'Highwood Motorhomes',
+        category: 'WordPress',
+        description: 'Designed and developed a full-featured WordPress website for a family-run motorhome hire and sales business in Staffordshire. Built a live availability checker for rental bookings, a used vehicle inventory with pricing, a servicing appointment system, and a "Sell Your Motorhome" valuation form. Integrated social channels and optimised for mobile and Core Web Vitals.',
+        image: 'https://images.unsplash.com/photo-1533591380348-14193f1de18f?w=1200&q=80',
+        technologies: ['WordPress', 'PHP', 'Custom Theme', 'Booking Plugin', 'WooCommerce', 'WebP / Performance'],
+        stats: {
+            services: '3 core',
+            forms: '4 custom'
+        },
+        testimonial: 'Wonderful working with him. Very professional, attentive to details and showed will and capacity to perform.',
+        link: 'https://www.highwoodmotorhomes.co.uk/'
+    },
+    {
+        id: 2,
+        title: 'Tailored Kitchens',
+        category: 'WordPress',
+        description: 'Built a premium WordPress website for a bespoke kitchen design and installation company in Cheshire. Features a curated project gallery with 9+ case studies, an embedded YouTube video showcase, a consultation booking system, showroom scheduling, and a WhatsApp Business integration for instant customer enquiries. Focused on conversion-led design to drive leads from design-conscious homeowners.',
+        image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80',
+        technologies: ['WordPress', 'PHP', 'Elementor', 'Custom Forms', 'YouTube API', 'WhatsApp Integration'],
+        stats: {
+            gallery: '9+ projects',
+            leads: 'Consultation forms'
+        },
+        testimonial: 'Outstanding platform that exceeded our expectations in functionality and design.',
+        link: 'https://staging.tailoredkitchens.com/'
+    },
+    {
+        id: 3,
+        title: 'Inspired to Change',
+        category: 'WordPress',
+        description: 'Developed a comprehensive WordPress directory website for a nationwide hypnotherapy practice network. Built a searchable therapist directory listing 15+ practitioners across UK regions, structured pages covering 70+ treatable conditions, a free consultation booking flow, Google Reviews integration, and a resources hub with blogs and podcasts. SEO-optimised for local and national search.',
+        image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
+        technologies: ['WordPress', 'PHP', 'Custom Directory', 'Google Reviews', 'SEO', 'Responsive Design'],
+        stats: {
+            therapists: '15+',
+            conditions: '70+'
+        },
+        testimonial: 'Hafiz delivered on all tasks and was always easy to reach for requests or modifications.',
+        link: 'https://inspiredtochange.biz/'
+    },
+    {
+        id: 4,
+        title: 'Exelsys Live — Enterprise HR Platform',
+        category: 'Enterprise Software',
+        description: 'As Senior Software Engineer at Exelsys, led full-stack development of a multi-module enterprise HR and payroll platform used by organisations across multiple industries. Architected scalable ASP.NET Core APIs, built React-powered dashboards for payroll processing, leave management, employee self-service, and compliance reporting. Supports 10,000+ concurrent users with 99.9% uptime on Azure infrastructure.',
+        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80',
+        technologies: ['ASP.NET Core', 'C#', 'React', 'SQL Server', 'Azure', 'REST API', 'CI/CD'],
+        stats: {
+            users: '10K+',
+            uptime: '99.9%'
+        },
+        testimonial: 'Led delivery of 15+ web applications improving operational efficiency by an average of 45%.',
+        link: 'https://app.exelsyslive.com/'
+    },
+    {
+        id: 5,
+        title: 'Symcue — Real-Time Collaboration Platform',
+        category: 'Full Stack',
+        description: 'Built a comprehensive real-time collaboration platform featuring live document editing, team messaging, and project management tools. Implemented WebSocket connections for instant updates across all connected clients and optimised database queries to handle 1,000+ concurrent users without performance degradation.',
         image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
         technologies: ['Node.js', 'React.js', 'WebSocket', 'MongoDB', 'Express'],
         stats: {
@@ -55,66 +111,38 @@ export const portfolioProjects = [
         link: '#'
     },
     {
-        id: 2,
-        title: 'Real Estate CRM Application',
-        category: 'Enterprise CRM',
-        description: 'Developed a full-featured CRM system for real estate professionals with client tracking, automated marketing, and secure property management. Built with ASP.NET Core backend and React frontend. Integrated with third-party APIs for property listings and automated email campaigns.',
-        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80',
-        technologies: ['ASP.NET Core', 'React', 'SQL Server', 'Azure', 'REST API'],
-        stats: {
-            properties: '5K+',
-            automation: '60%'
-        },
-        testimonial: 'Transformed our business operations with efficient automation and user-friendly interface.',
-        link: '#'
-    },
-    {
-        id: 3,
-        title: 'Real Estate Platform',
-        category: 'Property Management',
-        description: 'Created a comprehensive real estate platform with advanced search capabilities, property listings, virtual tours, and integrated payment processing. Implemented responsive design for seamless experience across all devices. Features include map integration, saved searches, and instant notifications.',
-        image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&q=80',
-        technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Google Maps API'],
-        stats: {
-            listings: '10K+',
-            searches: '50K/mo'
-        },
-        testimonial: 'Outstanding platform that exceeded our expectations in functionality and design.',
-        link: '#'
-    },
-    {
-        id: 4,
-        title: 'E-commerce Platform with Stripe Integration',
-        category: 'SaaS/E-commerce',
-        description: 'Built a complete e-commerce platform using Next.js and Supabase with full Stripe integration for checkout, billing, and subscription management. Implemented webhook automation for payment processing, inventory management, and order fulfillment. Features include advanced product filtering, shopping cart, and admin dashboard.',
+        id: 6,
+        title: 'E-commerce Platform & Stripe Billing',
+        category: 'E-commerce',
+        description: 'Built a production-ready e-commerce and SaaS billing platform with Next.js and Supabase. Full Stripe integration covers one-time checkout, recurring subscriptions, and webhook-driven order automation. Includes inventory management, advanced product filtering, shopping cart, and a full admin dashboard for order and customer management.',
         image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=1200&q=80',
-        technologies: ['Next.js', 'Supabase', 'Stripe', 'TypeScript', 'Tailwind CSS'],
+        technologies: ['Next.js', 'Supabase', 'Stripe', 'TypeScript', 'Tailwind CSS', 'Webhooks'],
         stats: {
             transactions: '1K+',
             revenue: '$50K+'
         },
-        testimonial: 'Complete checkout flow and subscription management exceeded requirements.',
+        testimonial: 'Perfect implementation of our payment system. The checkout flow is smooth and subscription management works flawlessly.',
         link: '#'
     },
     {
-        id: 5,
+        id: 7,
         title: 'AI-Powered Data Scraping & Automation',
-        category: 'Python Automation',
-        description: 'Developed an intelligent web scraping and automation system using Python with OpenAI API integration. Built data pipelines for real-time analytics dashboards with automated data enrichment. System handles 10K+ data points daily with 95% accuracy.',
+        category: 'AI & Automation',
+        description: 'Developed an intelligent web scraping and automation pipeline using Python with OpenAI API integration for data enrichment. Built real-time analytics dashboards fed by automated data ingestion. The system processes 10K+ structured data points daily at 95% accuracy, with retry logic, rate limiting, and alerting baked in.',
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
-        technologies: ['Python', 'Django', 'FastAPI', 'OpenAI API', 'PostgreSQL'],
+        technologies: ['Python', 'FastAPI', 'OpenAI API', 'PostgreSQL', 'Django', 'Docker'],
         stats: {
             dataPoints: '10K/day',
             accuracy: '95%'
         },
-        testimonial: 'Complex scraping project handled admirably with great technical expertise.',
+        testimonial: 'Hafiz took a great shot at a very tough project and did an admirable job. I will definitely use his services again.',
         link: '#'
     },
     {
-        id: 6,
+        id: 8,
         title: 'Stock Trading Alert System',
-        category: 'Financial Technology',
-        description: 'Created a chat log scrubbing application for stock trading alerts that integrates financial data processing with real-time notifications. Built with Node.js backend and React frontend, featuring advanced pattern recognition and automated alert generation for trading signals.',
+        category: 'Full Stack',
+        description: 'Built a chat-log scrubbing application for a financial trading firm that parses raw chat streams to extract, classify, and broadcast stock trading alerts in real time. Node.js backend with WebSocket delivery ensures sub-second alert propagation to the React frontend dashboard, with pattern recognition for signal classification.',
         image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80',
         technologies: ['Node.js', 'React', 'WebSocket', 'MongoDB', 'Trading APIs'],
         stats: {
@@ -125,24 +153,10 @@ export const portfolioProjects = [
         link: '#'
     },
     {
-        id: 7,
-        title: 'Django Dashboard Static Demo Generator',
-        category: 'Python/Django',
-        description: 'Generated static HTML demo from Django dashboard application using provided Docker image and SQLite database. Optimized for fast loading and deployed with comprehensive documentation. Implemented automated build process for easy updates.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
-        technologies: ['Python', 'Django', 'Docker', 'SQLite', 'HTML/CSS'],
-        stats: {
-            loadTime: '<2s',
-            pages: '20+'
-        },
-        testimonial: 'Delivered great work in very short time with quick modifications when requested.',
-        link: '#'
-    },
-    {
-        id: 8,
+        id: 9,
         title: 'Login-Aware Web Ingestion API',
-        category: 'API Development',
-        description: 'Built a sophisticated web scraping MVP with login-aware capabilities using Python. Handles authentication, session management, and data extraction from protected resources. Implemented retry logic, rate limiting, and error handling for robust performance.',
+        category: 'AI & Automation',
+        description: 'Built a production-grade web scraping MVP capable of authenticating with protected web applications, managing sessions, and extracting structured data at scale. Handles complex login flows, CSRF tokens, and session cookies transparently. Features exponential-backoff retry logic, Redis-based rate limiting, and Docker deployment for portability.',
         image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80',
         technologies: ['Python', 'FastAPI', 'Selenium', 'Redis', 'Docker'],
         stats: {
@@ -150,6 +164,20 @@ export const portfolioProjects = [
             success: '98%'
         },
         testimonial: 'Took on a very tough project and delivered admirably with great expertise.',
+        link: '#'
+    },
+    {
+        id: 10,
+        title: 'Real Estate CRM',
+        category: 'Enterprise Software',
+        description: 'Developed a full-featured CRM for real estate professionals with client tracking, automated email marketing campaigns, and secure property portfolio management. ASP.NET Core backend with a React frontend, integrated with third-party property listing APIs and automated drip sequences that cut manual follow-up time by 60%.',
+        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80',
+        technologies: ['ASP.NET Core', 'React', 'SQL Server', 'Azure', 'REST API', 'Email Automation'],
+        stats: {
+            properties: '5K+',
+            automation: '60%'
+        },
+        testimonial: 'Transformed our business operations with efficient automation and a user-friendly interface.',
         link: '#'
     }
 ];

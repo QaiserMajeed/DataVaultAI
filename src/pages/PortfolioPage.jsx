@@ -195,12 +195,24 @@ const PortfolioPage = () => {
                                                     "{activeProject.testimonial}"
                                                 </p>
                                             )}
-                                            <button
-                                                className="flex items-center gap-2 uppercase tracking-widest text-sm font-semibold transition-all duration-100 border-b-2 border-[var(--background)] hover:border-transparent focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"
-                                                style={{ fontFamily: 'var(--font-mono)' }}
-                                            >
-                                                View Case Study <ExternalLink className="w-4 h-4" strokeWidth={2} />
-                                            </button>
+                                            {activeProject.link && activeProject.link !== '#' ? (
+                                                <a
+                                                    href={activeProject.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-2 uppercase tracking-widest text-sm font-semibold transition-all duration-100 border-b-2 border-[var(--background)] hover:border-transparent focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"
+                                                    style={{ fontFamily: 'var(--font-mono)' }}
+                                                >
+                                                    Visit Live Site <ExternalLink className="w-4 h-4" strokeWidth={2} />
+                                                </a>
+                                            ) : (
+                                                <span
+                                                    className="inline-flex items-center gap-2 uppercase tracking-widest text-sm font-semibold opacity-50"
+                                                    style={{ fontFamily: 'var(--font-mono)' }}
+                                                >
+                                                    Private / NDA Project
+                                                </span>
+                                            )}
                                         </div>
                                     </div>
                                 )}
