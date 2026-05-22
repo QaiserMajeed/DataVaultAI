@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AnalyticsTracker from './components/AnalyticsTracker';
 import Home from './pages/Home';
+import PortfolioPage from './pages/PortfolioPage';
+import TestimonialsPage from './pages/TestimonialsPage';
 import WebDevelopment from './pages/WebDevelopment';
 import MobileDevelopment from './pages/MobileDevelopment';
 import AIDevelopment from './pages/AIDevelopment';
@@ -30,6 +32,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/mobile-development" element={<MobileDevelopment />} />
             <Route path="/services/ai-development" element={<AIDevelopment />} />

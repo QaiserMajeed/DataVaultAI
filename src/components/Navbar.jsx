@@ -19,8 +19,8 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', href: '/' },
-        { name: 'Portfolio', href: '/#portfolio' },
-        { name: 'Testimonials', href: '/#testimonials' },
+        { name: 'Portfolio', href: '/portfolio' },
+        { name: 'Testimonials', href: '/testimonials' },
         { name: 'Blog', href: '/blog' },
         { name: 'FAQ', href: '/#faq' },
     ];
@@ -34,7 +34,8 @@ const Navbar = () => {
 
     const isActive = (href) => {
         if (href === '/') return location.pathname === '/';
-        return location.pathname.startsWith(href);
+        if (href.startsWith('/#')) return false;
+        return location.pathname === href || location.pathname.startsWith(href + '/');
     };
 
     return (
