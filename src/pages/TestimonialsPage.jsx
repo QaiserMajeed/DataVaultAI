@@ -1,7 +1,7 @@
 import React from 'react';
 import { Quote, Star, ExternalLink, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { clientReviews, profileStats } from '../data/profileData';
+import { clientReviews, profileStats, upworkProfileUrl } from '../data/profileData';
 import SEO from '../components/SEO';
 
 const TestimonialsPage = () => {
@@ -127,7 +127,7 @@ const TestimonialsPage = () => {
                             </div>
 
                             <a
-                                href="https://www.upwork.com"
+                                href={upworkProfileUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[var(--background)] text-xs uppercase tracking-widest font-semibold hover:bg-[var(--background)] hover:text-[var(--foreground)] transition-all duration-100 focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"

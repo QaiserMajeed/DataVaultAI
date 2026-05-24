@@ -1,4 +1,6 @@
 // Real profile data extracted from Upwork profile
+export const upworkProfileUrl = 'https://www.upwork.com/freelancers/~01a39a82efc6bcf8d1';
+
 export const profileStats = {
     totalEarnings: '$2K+',
     totalJobs: 14,
