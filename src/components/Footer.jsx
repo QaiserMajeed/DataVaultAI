@@ -1,6 +1,7 @@
 import React from 'react';
 import { Github, Twitter, Linkedin, Instagram, Facebook, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { upworkProfileUrl } from '../data/profileData';
 
 const Footer = () => {
     return (
@@ -82,6 +83,17 @@ const Footer = () => {
                             >
                                 <Github className="w-5 h-5" strokeWidth={2} />
                             </a>
+                            <a
+                                href={upworkProfileUrl}
+                                target="_blank"
+                                rel="noopener noreferrer me"
+                                className="w-10 h-10 border-2 border-[var(--foreground)] flex items-center justify-center transition-all duration-100 hover:bg-[var(--foreground)] hover:text-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3 font-bold text-sm"
+                                aria-label="DataVault.AI on Upwork"
+                                title="DataVault.AI on Upwork"
+                                style={{ fontFamily: 'var(--font-mono)' }}
+                            >
+                                Up
+                            </a>
                         </div>
                     </div>
 
@@ -158,19 +170,29 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href="#portfolio"
+                                <Link
+                                    to="/portfolio"
                                     className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
                                 >
                                     Portfolio
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#testimonials"
+                                <Link
+                                    to="/testimonials"
                                     className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
                                 >
                                     Testimonials
+                                </Link>
+                            </li>
+                            <li>
+                                <a
+                                    href={upworkProfileUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    Upwork Profile
                                 </a>
                             </li>
                         </ul>
