@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { X, ArrowRight, Tag } from 'lucide-react';
 
 const STORAGE_KEY = 'dv_popup_dismissed';
@@ -7,6 +7,7 @@ const DiscountPopup = () => {
     const [visible, setVisible] = useState(false);
     const [email, setEmail] = useState('');
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         if (sessionStorage.getItem(STORAGE_KEY)) return;
@@ -28,15 +29,22 @@ const DiscountPopup = () => {
         setVisible(false);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!email) return;
-        // TODO: wire up to your email provider / CRM
-        setSubmitted(true);
-        setTimeout(() => {
-            sessionStorage.setItem(STORAGE_KEY, '1');
-            setVisible(false);
-        }, 3000);
+        setError(false);
+        try {
+            const body = new URLSearchParams({ 'form-name': 'discount-popup', email });
+            const res = await fetch('/', { method: 'POST', body });
+            if (!res.ok) throw new Error();
+            setSubmitted(true);
+            setTimeout(() => {
+                sessionStorage.setItem(STORAGE_KEY, '1');
+                setVisible(false);
+            }, 3000);
+        } catch {
+            setError(true);
+        }
     };
 
     if (!visible) return null;
@@ -97,9 +105,12 @@ const DiscountPopup = () => {
                                 Drop your email and we'll send you a 10% discount code to use on your first project with DataVault.AI.
                             </p>
 
-                            <form onSubmit={handleSubmit} className="space-y-3">
+                            <form onSubmit={handleSubmit} className="space-y-3" name="discount-popup" data-netlify="true" data-netlify-honeypot="bot-field">
+                                <input type="hidden" name="form-name" value="discount-popup" />
+                                <input type="hidden" name="bot-field" />
                                 <input
                                     type="email"
+                                    name="email"
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
@@ -107,6 +118,11 @@ const DiscountPopup = () => {
                                     className="w-full px-4 py-3 border-2 border-[var(--foreground)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] focus:outline-none focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-[-3px] text-sm"
                                     style={{ fontFamily: 'var(--font-body)' }}
                                 />
+                                {error && (
+                                    <p className="text-xs text-red-600" style={{ fontFamily: 'var(--font-mono)' }}>
+                                        Something went wrong — please try again or email us directly.
+                                    </p>
+                                )}
                                 <button
                                     type="submit"
                                     className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-[var(--foreground)] text-[var(--background)] text-sm uppercase tracking-widest font-semibold border-2 border-[var(--foreground)] hover:bg-[var(--background)] hover:text-[var(--foreground)] transition-all duration-100 focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
