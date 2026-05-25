@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AnalyticsTracker from './components/AnalyticsTracker';
+import DiscountPopup from './components/DiscountPopup';
+import CookieBanner from './components/CookieBanner';
 import Home from './pages/Home';
 import PortfolioPage from './pages/PortfolioPage';
 import TestimonialsPage from './pages/TestimonialsPage';
@@ -54,6 +56,8 @@ function App() {
             <Route path="/terms" element={<Terms />} />
           </Routes>
           <Footer />
+          <DiscountPopup />
+          <CookieBanner />
         </div>
       </Router>
     </HelmetProvider>
