@@ -47,6 +47,12 @@ const Services = () => {
                         <div className="w-2 h-2 border-2 border-[var(--foreground)]"></div>
                         <div className="h-px w-24 bg-[var(--foreground)]"></div>
                     </div>
+                    <p
+                        className="text-xs uppercase tracking-widest font-medium mb-4"
+                        style={{ fontFamily: 'var(--font-mono)' }}
+                    >
+                        Beyond Café QR
+                    </p>
                     <h2
                         className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tighter"
                         style={{ fontFamily: 'var(--font-display)' }}
@@ -59,7 +65,7 @@ const Services = () => {
                         className="text-lg md:text-xl max-w-2xl leading-relaxed"
                         style={{ fontFamily: 'var(--font-body)' }}
                     >
-                        End-to-end development across web, mobile, AI, and cloud platforms
+                        We also build custom AI, web, mobile, and cloud software for enterprise clients.
                     </p>
                 </div>
 

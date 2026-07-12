@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github, Twitter, Linkedin, Instagram, Facebook, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { upworkProfileUrl } from '../data/profileData';
+import { upworkProfileUrl, cafeQrProduct } from '../data/profileData';
 
 const Footer = () => {
     return (
@@ -30,7 +30,16 @@ const Footer = () => {
                             className="text-sm mb-8 max-w-md leading-relaxed"
                             style={{ fontFamily: 'var(--font-body)' }}
                         >
-                            Custom FullStack AI development services for enterprise clients. Expert team delivering production-ready AI solutions.
+                            Makers of{' '}
+                            <a
+                                href={cafeQrProduct.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-semibold underline hover:no-underline"
+                            >
+                                Café QR
+                            </a>
+                            , the QR ordering &amp; loyalty platform for independent cafés. We also deliver custom FullStack AI development for enterprise clients.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <a
@@ -103,9 +112,19 @@ const Footer = () => {
                             className="font-bold mb-4 uppercase tracking-widest text-sm"
                             style={{ fontFamily: 'var(--font-mono)' }}
                         >
-                            Services
+                            Products &amp; Services
                         </h4>
                         <ul className="space-y-3 text-sm" style={{ fontFamily: 'var(--font-body)' }}>
+                            <li>
+                                <a
+                                    href={cafeQrProduct.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-semibold transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    Café QR
+                                </a>
+                            </li>
                             <li>
                                 <Link
                                     to="/services/web-development"

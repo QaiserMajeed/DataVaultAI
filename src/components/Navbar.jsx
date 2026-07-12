@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
+import { cafeQrProduct } from '../data/profileData';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +20,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', href: '/' },
+        { name: 'Café QR', href: cafeQrProduct.url, external: true },
         { name: 'Portfolio', href: '/portfolio' },
         { name: 'Testimonials', href: '/testimonials' },
         { name: 'Blog', href: '/blog' },
@@ -71,22 +73,35 @@ const Navbar = () => {
 
                         {/* Desktop Nav Links */}
                         <div className="hidden md:flex items-center gap-8">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.href}
-                                    className={cn(
-                                        'relative text-sm uppercase tracking-widest font-medium transition-all duration-100',
-                                        'focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3',
-                                        isActive(link.href)
-                                            ? 'text-[var(--foreground)] border-b-2 border-[var(--foreground)] pb-1'
-                                            : 'text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:border-b-2 hover:border-[var(--foreground)] hover:pb-1'
-                                    )}
-                                    style={{ fontFamily: 'var(--font-mono)' }}
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
+                            {navLinks.map((link) =>
+                                link.external ? (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="relative text-sm uppercase tracking-widest font-bold text-[var(--foreground)] transition-all duration-100 hover:border-b-2 hover:border-[var(--foreground)] hover:pb-1 focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                        style={{ fontFamily: 'var(--font-mono)' }}
+                                    >
+                                        {link.name}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        key={link.name}
+                                        to={link.href}
+                                        className={cn(
+                                            'relative text-sm uppercase tracking-widest font-medium transition-all duration-100',
+                                            'focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3',
+                                            isActive(link.href)
+                                                ? 'text-[var(--foreground)] border-b-2 border-[var(--foreground)] pb-1'
+                                                : 'text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:border-b-2 hover:border-[var(--foreground)] hover:pb-1'
+                                        )}
+                                        style={{ fontFamily: 'var(--font-mono)' }}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )
+                            )}
 
                             {/* Services Dropdown */}
                             <div
@@ -167,23 +182,37 @@ const Navbar = () => {
                 <div className="fixed inset-0 z-40 md:hidden" style={{ top: '64px' }}>
                     <div className="absolute inset-0 bg-[var(--background)] border-t-2 border-[var(--foreground)] overflow-y-auto">
                         <div className="px-6 py-8 space-y-1">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.href}
-                                    className={cn(
-                                        'block px-4 py-4 text-sm uppercase tracking-widest font-medium transition-all duration-100',
-                                        'border-2',
-                                        isActive(link.href)
-                                            ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)]'
-                                            : 'bg-[var(--background)] text-[var(--foreground)] border-[var(--border-light)] hover:border-[var(--foreground)]'
-                                    )}
-                                    style={{ fontFamily: 'var(--font-mono)' }}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
+                            {navLinks.map((link) =>
+                                link.external ? (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block px-4 py-4 text-sm uppercase tracking-widest font-bold border-2 bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)]"
+                                        style={{ fontFamily: 'var(--font-mono)' }}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        {link.name}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        key={link.name}
+                                        to={link.href}
+                                        className={cn(
+                                            'block px-4 py-4 text-sm uppercase tracking-widest font-medium transition-all duration-100',
+                                            'border-2',
+                                            isActive(link.href)
+                                                ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)]'
+                                                : 'bg-[var(--background)] text-[var(--foreground)] border-[var(--border-light)] hover:border-[var(--foreground)]'
+                                        )}
+                                        style={{ fontFamily: 'var(--font-mono)' }}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )
+                            )}
 
                             <div className="pt-6">
                                 <div className="h-px bg-[var(--foreground)] mb-6" />

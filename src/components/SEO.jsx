@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const BASE_URL = 'https://datavalutai.com';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
-const DEFAULT_DESCRIPTION = 'Enterprise AI, web, mobile, and cloud development. LLM integration, React/Next.js, React Native, AWS/Azure/GCP. 99.9% uptime, <15min response, 60% cost reduction.';
+const DEFAULT_DESCRIPTION = "Café QR is DataVault.AI's flagship product: scan-to-order, Stripe payments, and loyalty marketing for independent cafés. We also build custom AI, web, mobile, and cloud software for enterprise clients.";
 
 const SEO = ({
     title,
@@ -21,7 +21,7 @@ const SEO = ({
 }) => {
     const fullTitle = title
         ? `${title} | DataVault.AI`
-        : 'DataVault.AI - Custom AI, Web, Mobile & Cloud Development for Enterprise';
+        : 'Café QR by DataVault.AI - QR Ordering & Loyalty Platform for Cafés';
     const metaDescription = description || DEFAULT_DESCRIPTION;
     const canonicalUrl = canonical || `${BASE_URL}/`;
     const robotsContent = noindex

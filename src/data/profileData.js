@@ -1,6 +1,23 @@
 // Real profile data extracted from Upwork profile
 export const upworkProfileUrl = 'https://www.upwork.com/freelancers/~01a39a82efc6bcf8d1';
 
+export const cafeQrProduct = {
+    name: 'Café QR',
+    tagline: 'Scan. Order. Return.',
+    url: 'https://cafeqr.app/',
+    description: 'The QR ordering & loyalty platform for independent cafés. Customers scan a table code and order in seconds — no app download required.',
+    pricing: '£29/mo per location',
+    trial: '14-day free trial',
+    features: [
+        { title: 'QR Table Ordering', description: 'No app download — customers scan and order straight from their phone.' },
+        { title: 'Live Barista Screen', description: 'Orders appear instantly with real-time status for the team behind the counter.' },
+        { title: 'Stripe Payments', description: 'Apple Pay, Google Pay, and card payments built in, no platform fees.' },
+        { title: 'Loyalty & Marketing', description: 'Built-in loyalty program with WhatsApp and email marketing to bring customers back.' },
+        { title: 'Menu Customisation', description: 'Sizes, milk alternatives, and extras — configured per café.' },
+        { title: 'Own Branding', description: 'Logo and accent colours per location, and GDPR-compliant customer data.' }
+    ]
+};
+
 export const profileStats = {
     totalEarnings: '$2K+',
     totalJobs: 14,
@@ -42,6 +59,19 @@ export const skills = [
 ];
 
 export const portfolioProjects = [
+    {
+        id: 11,
+        title: 'Café QR — QR Ordering & Loyalty Platform',
+        category: 'Flagship Product',
+        description: 'Built and launched Café QR, a "Scan. Order. Return." platform that lets independent cafés take table orders via QR code with no app download required. Features a live barista screen for order status, menu management with size/milk/extras customisation, Apple Pay / Google Pay / card payments via Stripe, and a built-in loyalty program with WhatsApp and email marketing. Fully GDPR compliant with logo and accent-colour branding per café.',
+        image: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&q=80',
+        technologies: ['React', 'Stripe', 'QR Ordering', 'WhatsApp API', 'GDPR', 'SaaS'],
+        stats: {
+            pricing: '£29/mo',
+            trial: '14 days'
+        },
+        link: 'https://cafeqr.app/'
+    },
     {
         id: 1,
         title: 'Highwood Motorhomes',

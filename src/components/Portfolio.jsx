@@ -5,7 +5,7 @@ import { portfolioProjects } from '../data/profileData';
 const projects = portfolioProjects;
 
 const Portfolio = () => {
-    const [activeId, setActiveId] = useState(1);
+    const [activeId, setActiveId] = useState(projects[0]?.id);
 
     return (
         <section id="portfolio" className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
