@@ -1,6 +1,23 @@
 // Real profile data extracted from Upwork profile
 export const upworkProfileUrl = 'https://www.upwork.com/freelancers/~01a39a82efc6bcf8d1';
 
+export const cafeQrProduct = {
+    name: 'Café QR',
+    tagline: 'Scan. Order. Return.',
+    url: 'https://cafeqr.app/',
+    description: 'The QR ordering & loyalty platform for independent cafés. Customers scan a table code and order in seconds — no app download required.',
+    pricing: '£29/mo per location',
+    trial: '14-day free trial',
+    features: [
+        { title: 'QR Table Ordering', description: 'No app download — customers scan and order straight from their phone.' },
+        { title: 'Live Barista Screen', description: 'Orders appear instantly with real-time status for the team behind the counter.' },
+        { title: 'Stripe Payments', description: 'Apple Pay, Google Pay, and card payments built in, no platform fees.' },
+        { title: 'Loyalty & Marketing', description: 'Built-in loyalty program with WhatsApp and email marketing to bring customers back.' },
+        { title: 'Menu Customisation', description: 'Sizes, milk alternatives, and extras — configured per café.' },
+        { title: 'Own Branding', description: 'Logo and accent colours per location, and GDPR-compliant customer data.' }
+    ]
+};
+
 export const profileStats = {
     totalEarnings: '$2K+',
     totalJobs: 14,
