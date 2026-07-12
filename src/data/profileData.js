@@ -43,6 +43,19 @@ export const skills = [
 
 export const portfolioProjects = [
     {
+        id: 11,
+        title: 'Café QR — QR Ordering & Loyalty Platform',
+        category: 'Flagship Product',
+        description: 'Built and launched Café QR, a "Scan. Order. Return." platform that lets independent cafés take table orders via QR code with no app download required. Features a live barista screen for order status, menu management with size/milk/extras customisation, Apple Pay / Google Pay / card payments via Stripe, and a built-in loyalty program with WhatsApp and email marketing. Fully GDPR compliant with logo and accent-colour branding per café.',
+        image: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&q=80',
+        technologies: ['React', 'Stripe', 'QR Ordering', 'WhatsApp API', 'GDPR', 'SaaS'],
+        stats: {
+            pricing: '£29/mo',
+            trial: '14 days'
+        },
+        link: 'https://cafeqr.app/'
+    },
+    {
         id: 1,
         title: 'Highwood Motorhomes',
         category: 'WordPress',
