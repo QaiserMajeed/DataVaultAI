@@ -5,16 +5,16 @@ export const cafeQrProduct = {
     name: 'Café QR',
     tagline: 'Scan. Order. Return.',
     url: 'https://cafeqr.app/',
-    description: 'The QR ordering & loyalty platform for independent cafés. Customers scan a table code and order in seconds — no app download required.',
-    pricing: '£29/mo per location',
-    trial: '14-day free trial',
+    description: 'The all-in-one EPOS and QR ordering platform for independent cafés, restaurants, bars and pubs. Till, kitchen screen, QR table ordering and online orders in one system that runs in the browser — no app download required.',
+    pricing: 'From £9.99/mo',
+    trial: '1-month free trial',
     features: [
-        { title: 'QR Table Ordering', description: 'No app download — customers scan and order straight from their phone.' },
-        { title: 'Live Barista Screen', description: 'Orders appear instantly with real-time status for the team behind the counter.' },
-        { title: 'Stripe Payments', description: 'Apple Pay, Google Pay, and card payments built in, no platform fees.' },
-        { title: 'Loyalty & Marketing', description: 'Built-in loyalty program with WhatsApp and email marketing to bring customers back.' },
-        { title: 'Menu Customisation', description: 'Sizes, milk alternatives, and extras — configured per café.' },
-        { title: 'Own Branding', description: 'Logo and accent colours per location, and GDPR-compliant customer data.' }
+        { title: 'QR Table Ordering', description: 'No app download — guests scan at the table or counter to order and pay from their phone.' },
+        { title: 'Counter Till & Waiter App', description: 'Card and cash till, waiter app, tabs, floor plan and self-order kiosk, on any iPad, tablet or laptop.' },
+        { title: 'Kitchen Screen', description: 'QR, counter and online orders land in one live queue, with printer support.' },
+        { title: 'Stripe Payments', description: 'Card payments go straight to your own Stripe account, with no Café QR platform fee.' },
+        { title: 'Online Ordering & Delivery', description: 'Your own ordering page for collection and delivery, with no commission on delivery orders.' },
+        { title: 'Loyalty, Stock & Reporting', description: 'Loyalty and promotions, stock and recipes, cash-up reports, allergens and food safety checklists.' }
     ]
 };
 
@@ -61,14 +61,14 @@ export const skills = [
 export const portfolioProjects = [
     {
         id: 11,
-        title: 'Café QR — QR Ordering & Loyalty Platform',
+        title: 'Café QR — EPOS & QR Ordering Platform',
         category: 'Flagship Product',
-        description: 'Built and launched Café QR, a "Scan. Order. Return." platform that lets independent cafés take table orders via QR code with no app download required. Features a live barista screen for order status, menu management with size/milk/extras customisation, Apple Pay / Google Pay / card payments via Stripe, and a built-in loyalty program with WhatsApp and email marketing. Fully GDPR compliant with logo and accent-colour branding per café.',
+        description: 'Built and launched Café QR, a "Scan. Order. Return." cloud EPOS for independent cafés, restaurants, bars and pubs. Combines a counter till, waiter app, kitchen screen, QR table ordering and online ordering for collection and delivery in one browser-based system. Card payments run through each venue\'s own Stripe account, and the platform adds stock and recipes, cash-up reporting, bookings, loyalty, allergen management and food safety checklists. Plans start at £9.99 per venue per month with a one-month free trial.',
         image: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&q=80',
         technologies: ['React', 'Stripe', 'QR Ordering', 'WhatsApp API', 'GDPR', 'SaaS'],
         stats: {
-            pricing: '£29/mo',
-            trial: '14 days'
+            pricing: 'From £9.99/mo',
+            trial: '1 month'
         },
         link: 'https://cafeqr.app/'
     },

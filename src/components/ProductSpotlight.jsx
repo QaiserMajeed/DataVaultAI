@@ -72,7 +72,7 @@ const ProductSpotlight = () => {
                                 className="text-xs uppercase tracking-widest opacity-70"
                                 style={{ fontFamily: 'var(--font-mono)' }}
                             >
-                                Per Location
+                                Per Venue
                             </div>
                         </div>
                         <div>
@@ -86,7 +86,7 @@ const ProductSpotlight = () => {
                                 className="text-xs uppercase tracking-widest opacity-70"
                                 style={{ fontFamily: 'var(--font-mono)' }}
                             >
-                                No Setup Fees
+                                No Card, No Contract
                             </div>
                         </div>
                     </div>
