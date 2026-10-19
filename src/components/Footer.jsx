@@ -39,7 +39,7 @@ const Footer = () => {
                             >
                                 Café QR
                             </a>
-                            , the QR ordering &amp; loyalty platform for independent cafés. We also deliver custom FullStack AI development for enterprise clients.
+                            , the EPOS &amp; QR ordering platform for independent cafés. We also deliver custom FullStack AI development for enterprise clients.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <a
