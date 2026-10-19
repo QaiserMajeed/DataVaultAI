@@ -12,6 +12,34 @@ const formatDate = (iso) =>
         day: 'numeric'
     });
 
+// Block content is either a plain string or an array of strings and
+// { text, href } link segments, so posts can carry inline links.
+const renderInline = (content) => {
+    if (!Array.isArray(content)) return content;
+    return content.map((seg, i) => {
+        if (typeof seg === 'string') return seg;
+        const external = /^https?:\/\//.test(seg.href);
+        return (
+            <a
+                key={i}
+                href={seg.href}
+                className="underline underline-offset-4 decoration-2 hover:no-underline"
+                {...(external ? { target: '_blank', rel: 'noopener' } : {})}
+            >
+                {seg.text}
+            </a>
+        );
+    });
+};
+
+const inlineText = (content) =>
+    Array.isArray(content)
+        ? content.map((seg) => (typeof seg === 'string' ? seg : seg.text)).join('')
+        : content;
+
+const blockText = (block) =>
+    block.type === 'ul' ? block.items.map(inlineText).join(' ') : inlineText(block.content);
+
 const renderBlock = (block, idx) => {
     switch (block.type) {
         case 'h2':
@@ -21,7 +49,7 @@ const renderBlock = (block, idx) => {
                     className="text-3xl md:text-4xl font-bold mt-12 mb-6 tracking-tight"
                     style={{ fontFamily: 'var(--font-display)' }}
                 >
-                    {block.content}
+                    {renderInline(block.content)}
                 </h2>
             );
         case 'h3':
@@ -31,8 +59,20 @@ const renderBlock = (block, idx) => {
                     className="text-2xl font-bold mt-8 mb-4 tracking-tight"
                     style={{ fontFamily: 'var(--font-display)' }}
                 >
-                    {block.content}
+                    {renderInline(block.content)}
                 </h3>
+            );
+        case 'ul':
+            return (
+                <ul
+                    key={idx}
+                    className="list-disc pl-6 mb-6 space-y-2 text-lg leading-relaxed"
+                    style={{ fontFamily: 'var(--font-body)' }}
+                >
+                    {block.items.map((item, i) => (
+                        <li key={i}>{renderInline(item)}</li>
+                    ))}
+                </ul>
             );
         case 'p':
         default:
@@ -42,7 +82,7 @@ const renderBlock = (block, idx) => {
                     className="text-lg leading-relaxed mb-6"
                     style={{ fontFamily: 'var(--font-body)' }}
                 >
-                    {block.content}
+                    {renderInline(block.content)}
                 </p>
             );
     }
@@ -80,7 +120,7 @@ const BlogPost = () => {
         keywords: post.tags.join(', '),
         mainEntityOfPage: { '@type': 'WebPage', '@id': url },
         wordCount: post.body
-            .map((b) => (typeof b.content === 'string' ? b.content.split(/\s+/).length : 0))
+            .map((b) => blockText(b).split(/\s+/).length)
             .reduce((a, b) => a + b, 0)
     };
 

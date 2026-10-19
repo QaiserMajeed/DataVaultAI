@@ -3,6 +3,59 @@
 
 export const blogPosts = [
     {
+        slug: 'qr-code-ordering-and-pos-for-independent-cafes',
+        title: 'QR code ordering and POS for independent cafés: what we learned building Café QR',
+        excerpt: 'Why we built Café QR, a browser-based EPOS with QR table ordering for UK cafés, restaurants, bars and pubs, and what independent venues should look for in a till in 2026.',
+        date: '2026-10-19',
+        readingMinutes: 7,
+        category: 'Product',
+        tags: ['Café QR', 'QR Ordering', 'EPOS', 'Hospitality', 'SaaS', 'Stripe'],
+        author: 'DataVault.AI',
+        body: [
+            { type: 'p', content: ['Most of what we write here is about shipping AI and data systems for clients. This post is about a product we build and run ourselves: ', { text: 'Café QR', href: 'https://cafeqr.app/' }, ', a cloud-based EPOS and QR ordering platform for independent cafés, restaurants, bars and pubs. Below is why it exists, how it is put together, and the checklist we would give any independent owner choosing a till today.'] },
+            { type: 'h2', content: 'The problem: independents pay enterprise prices for half a system' },
+            { type: 'p', content: 'Talking to café owners across the UK, we heard the same story. The till came from one vendor, QR ordering from a second, online delivery from a marketplace taking a large commission, and loyalty from a fourth app nobody used. Each had its own monthly fee, its own login and its own hardware. Small venues were paying for an enterprise stack while getting none of the joined-up reporting that makes one worth having.' },
+            { type: 'p', content: 'We set ourselves a simple brief: one system that runs in a web browser on hardware the venue already owns, with QR ordering, the counter till, the kitchen screen and online orders all writing to the same order stream.' },
+            { type: 'h2', content: 'What Café QR does' },
+            { type: 'p', content: ['Café QR combines the till, kitchen screens, waiter app, tabs and online orders in one place. It runs in a browser on an iPad, Android tablet, phone or laptop, so there is no proprietary terminal to buy. The full list lives on the ', { text: 'Café QR features page', href: 'https://cafeqr.app/features' }, ', but the core pieces are:'] },
+            {
+                type: 'ul',
+                items: [
+                    ['QR code ordering and payment: guests scan at the table or the counter and order without downloading an app. See how it works on the ', { text: 'live demo', href: 'https://cafeqr.app/demo' }, '.'],
+                    'A kitchen screen and printers that receive QR, counter and online orders in a single queue.',
+                    'Your own online ordering page for collection and delivery, with delivery zones and no commission on delivery orders.',
+                    'A counter till for card and cash, a waiter app, a floor plan, a self-order kiosk, table bookings and gift cards.',
+                    'Menu and allergen management, plus food safety and HACCP checklists.',
+                    'Stock and recipes, cash-up and reporting, loyalty and promotions.'
+                ]
+            },
+            { type: 'h2', content: 'Architecture decisions that mattered' },
+            { type: 'h3', content: 'Browser-first, not app-first' },
+            { type: 'p', content: 'Asking a customer to install an app before they can order a flat white loses a lot of orders. Asking a venue to install native software on every device makes it harder to support. Building the whole platform as a web app meant guests order from a link and staff log in from whatever tablet is behind the counter.' },
+            { type: 'h3', content: 'Payments go straight to the venue' },
+            { type: 'p', content: ['Card payments are processed through the venue\'s own Stripe account, so the money lands with the business rather than passing through us. Café QR charges no platform fee per transaction. We cover how data and payments are handled on the ', { text: 'Café QR security page', href: 'https://cafeqr.app/security' }, '.'] },
+            { type: 'h3', content: 'Designing for bad Wi-Fi' },
+            { type: 'p', content: 'Café connections drop. If the internet goes down, the Café QR till keeps taking cash and uploads those sales once it reconnects. Card payments, tabs and QR ordering need a connection, and we say so plainly rather than over-promise offline behaviour.' },
+            { type: 'h2', content: 'Choosing a POS for an independent café: a checklist' },
+            { type: 'p', content: ['Whatever system you choose, these are the questions we would ask. We have also written a longer ', { text: 'comparison of POS systems in the UK', href: 'https://cafeqr.app/compare-pos-systems-uk' }, ' on the Café QR site.'] },
+            {
+                type: 'ul',
+                items: [
+                    'Does QR ordering feed the same kitchen screen as the counter till, or is it a separate system?',
+                    'Who holds the card payments, and is there a per-transaction platform fee on top of card processing?',
+                    'Can you take delivery orders without paying marketplace commission?',
+                    'What happens to the till when the internet drops?',
+                    'Is there a contract or a setup fee, and can you try it before committing?',
+                    'Does it export to your accounting software, such as Xero or QuickBooks?'
+                ]
+            },
+            { type: 'h2', content: 'Pricing' },
+            { type: 'p', content: ['Café QR is priced per venue per month, starting at £9.99 for Order & Pay and going up to £59 for multi-site groups. Every plan has a one-month free trial with no card required, no contract and no setup fee. Current plans are on the ', { text: 'Café QR pricing page', href: 'https://cafeqr.app/pricing' }, ', and early UK venues can check the ', { text: 'founding venue offer', href: 'https://cafeqr.app/founding-venues' }, '.'] },
+            { type: 'h2', content: 'Try it' },
+            { type: 'p', content: ['If you run a café, bakery, takeaway, bar or pub, you can ', { text: 'start a free trial of Café QR', href: 'https://cafeqr.app/get-started' }, ' or read more about our ', { text: 'POS system for cafés', href: 'https://cafeqr.app/pos-system-for-cafes' }, '. If you want a product like this built for your own business, ', { text: 'get in touch with DataVault.AI', href: '/#contact' }, '.'] }
+        ]
+    },
+    {
         slug: 'choosing-the-right-llm-for-enterprise',
         title: 'Choosing the right LLM for enterprise: GPT-4, Claude, or open weights',
         excerpt: 'A practical decision framework for picking a language model in production - cost, latency, accuracy, data residency, and vendor lock-in.',
