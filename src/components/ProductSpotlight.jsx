@@ -1,5 +1,6 @@
 import React from 'react';
-import { ExternalLink, Check } from 'lucide-react';
+import { ExternalLink, Check, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { cafeQrProduct } from '../data/profileData';
 
 const ProductSpotlight = () => {
@@ -30,6 +31,13 @@ const ProductSpotlight = () => {
                     >
                         {cafeQrProduct.description}
                     </p>
+                    <Link
+                        to="/products/cafe-qr"
+                        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest underline underline-offset-4"
+                        style={{ fontFamily: 'var(--font-mono)' }}
+                    >
+                        More about Café QR <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                    </Link>
                 </div>
 
                 {/* Feature Grid */}
@@ -97,7 +105,7 @@ const ProductSpotlight = () => {
                         className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[var(--background)] text-[var(--foreground)] uppercase tracking-widest text-sm font-semibold transition-all duration-100 hover:bg-transparent hover:text-[var(--background)] border-2 border-[var(--background)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--background)] focus-visible:outline-offset-3"
                         style={{ fontFamily: 'var(--font-mono)' }}
                     >
-                        Visit cafeqr.app
+                        Visit Café QR, the café POS
                         <ExternalLink
                             className="w-4 h-4 transition-transform duration-100 group-hover:translate-x-1"
                             strokeWidth={2}
