@@ -116,13 +116,21 @@ const Footer = () => {
                         </h4>
                         <ul className="space-y-3 text-sm" style={{ fontFamily: 'var(--font-body)' }}>
                             <li>
+                                <Link
+                                    to="/products/cafe-qr"
+                                    className="font-semibold transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                >
+                                    Café QR
+                                </Link>
+                            </li>
+                            <li>
                                 <a
                                     href={cafeQrProduct.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="font-semibold transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
+                                    className="transition-all duration-100 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-[var(--foreground)] focus-visible:outline-offset-3"
                                 >
-                                    Café QR
+                                    Café QR - POS for cafés
                                 </a>
                             </li>
                             <li>
